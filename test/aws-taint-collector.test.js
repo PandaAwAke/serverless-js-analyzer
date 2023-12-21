@@ -56,8 +56,8 @@ exports.lambdaHandler = async (event) => {
   var ast = esprima.parseScript(input, {loc: true});
   var awsTaintSources = awsTaintCollector.collectTaintSourceObjects(ast);
 
-  expect(awsTaintSources[0][0]).toBe('global');
-  expect(awsTaintSources[0][1]).toBe('S3Client');
-  expect(awsTaintSources[1][0]).toBe('global');
-  expect(awsTaintSources[1][1]).toBe('PutObjectCommand');
+  expect(awsTaintSources[0].scopeName).toBe('global');
+  expect(awsTaintSources[0].variable).toBe('S3Client');
+  expect(awsTaintSources[1].scopeName).toBe('global');
+  expect(awsTaintSources[1].variable).toBe('PutObjectCommand');
 });

@@ -1,14 +1,14 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: AWS]
-[scope: global, var: s3]
-[scope: invokeLambda#37, var: lambda]
-[scope: invokeLambda#37, var: status]
-[scope: anonymous#75, var: bucket]
-[scope: anonymous#75, var: key]
-[scope: getReducerStateInfo#110, var: params]
-[scope: anonymous#75, var: lparams]
-[scope: anonymous#233, var: params]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 21, 22, 29, 40, 47, 58, 72, 78,

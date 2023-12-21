@@ -1,7 +1,10 @@
 Taint objects:
-[scope: 0, var: QueryCommand]
-[scope: 0, var: BatchWriteCommand]
-[scope: 0, var: DynamoDB]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
-
+1, 2, 14, 86, 96, 101, 116, 121

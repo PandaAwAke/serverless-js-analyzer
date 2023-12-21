@@ -1,6 +1,9 @@
 Taint objects:
-[scope: 0, var: SNSClient]
-[scope: 0, var: PublishCommand]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
-
+4, 6, 17, 33, 42

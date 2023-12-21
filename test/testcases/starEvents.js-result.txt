@@ -1,11 +1,11 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: ddbGeo]
-[scope: global, var: ddb]
-[scope: global, var: config]
-[scope: global, var: myGeoTableManager]
-[scope: anonymous#94, var: result]
-[scope: global, var: updateQuestionsTable]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 16, 17, 19, 20, 23, 24, 25, 94,

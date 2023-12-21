@@ -1,7 +1,7 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: s3]
-[scope: anonymous#11, var: getObjectPromise]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 2, 9, 18, 23

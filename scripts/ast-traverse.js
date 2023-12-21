@@ -2,7 +2,7 @@ const estraverse = require('estraverse');
 
 /**
  * 返回一个 node 是否创建一个新的 scope，如果是则返回 scope 名称，否则返回 null
- * @param {*} node 
+ * @param {any} node 
  * @returns scope 名称 (string)，或 null
  */
 function shouldCreatesNewScope(node) {
@@ -42,8 +42,8 @@ function shouldCreatesNewScope(node) {
  */
 function getVarScope(varname, scopeChain) {
   for (var i = scopeChain.length - 1; i >= 0; i--) {
-    var scopeName = scopeChain[i][0];
-    var scope = scopeChain[i][1];
+    var scopeName = scopeChain[i].name;
+    var scope = scopeChain[i].scope;
     if (scope.indexOf(varname) !== -1) {
       return scopeName;
     }
@@ -59,8 +59,8 @@ function getVarScope(varname, scopeChain) {
  */
 function getScopeByName(scopeName, scopeChain) {
   for (var i = scopeChain.length - 1; i >= 0; i--) {
-    var scopeName1 = scopeChain[i][0];
-    var scope = scopeChain[i][1];
+    var scopeName1 = scopeChain[i].name;
+    var scope = scopeChain[i].scope;
     if (scopeName === scopeName1) {
       return scope;
     }
@@ -82,22 +82,32 @@ function printScope(scope, node) {
 }
 
 function traverseAst(root, visitor) {
-  const scopeChain = [];  // scopes，元素是 [scopeName, scope]，scope 是一个 variable 字符串列表
+  /**
+   * scopes, 元素是
+   * {
+   *    name: scope 名,
+   *    scope: [variables...]
+   * }
+   */
+  const scopeChain = [];  // scopes，元素是 scopeName, scope]，scope 是一个 variable 字符串列表
 
   estraverse.traverse(root, {
     enter: function(node, parent) {
       // Create and get scope
       var scopeName = shouldCreatesNewScope(node);
       if (scopeName !== null) {
-        scopeChain.push([scopeName, []]);
+        scopeChain.push({
+          name: scopeName,
+          scope: []
+        });
       }
 
       if (scopeChain.length === 0) {
         return;
       }
 
-      var currentScopeName = scopeChain.at(-1)[0];
-      var currentScope = scopeChain.at(-1)[1];
+      var currentScopeName = scopeChain.at(-1).name;
+      var currentScope = scopeChain.at(-1).scope;
 
       if (node.type === 'VariableDeclarator') {
         // node.id.type 要么是 Identifier，要么是 BindingPattern，目前只考虑 Identifier
@@ -128,8 +138,8 @@ function traverseAst(root, visitor) {
         return;
       }
 
-      var currentScopeName = scopeChain.at(-1)[0];
-      var currentScope = scopeChain.at(-1)[1];
+      var currentScopeName = scopeChain.at(-1).name;
+      var currentScope = scopeChain.at(-1).scope;
 
       if (visitor.leave) {
         visitor.leave(node, parent, currentScopeName, currentScope, scopeChain);

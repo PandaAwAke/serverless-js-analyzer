@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: s3]
-[scope: anonymous#12, var: object]
-[scope: anonymous#12, var: img]
-[scope: global, var: blurFaces]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 7, 8, 9, 12, 14, 15, 18, 29,

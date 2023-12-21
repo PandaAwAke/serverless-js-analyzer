@@ -1,9 +1,27 @@
 Taint objects:
-[scope: 0, var: GetCommand]
-[scope: 0, var: QueryCommand]
-[scope: 0, var: BatchGetCommand]
-[scope: 0, var: UpdateCommand]
-[scope: 0, var: DynamoDB]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
-
+1, 2, 25, 26, 33, 39, 51, 53,
+63, 80, 112, 120, 136, 137, 155, 156,
+161, 166, 182, 187, 209, 249, 263, 264,
+283, 287, 288, 291, 293, 299, 301

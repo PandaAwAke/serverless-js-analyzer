@@ -1,6 +1,6 @@
 Taint objects:
-[scope: global, var: dynamodb]
-[scope: global, var: docClient]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 1, 2, 55

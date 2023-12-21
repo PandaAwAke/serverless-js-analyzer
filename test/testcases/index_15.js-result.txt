@@ -1,7 +1,7 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: S3]
-[scope: uploadVideoAssets#56, var: lineReader]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 3, 4, 61, 62, 65, 75, 129, 154,

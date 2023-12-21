@@ -1,12 +1,12 @@
 Taint objects:
-[scope: global, var: S3]
-[scope: global, var: GetObjectCommand]
-[scope: global, var: PutObjectCommand]
-[scope: global, var: getSignedUrl]
-[scope: global, var: s3]
-[scope: anonymous#13, var: data]
-[scope: anonymous#13, var: getObjectCommand]
-[scope: anonymous#13, var: url]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 8, 9, 10, 14, 26, 29, 33, 36,

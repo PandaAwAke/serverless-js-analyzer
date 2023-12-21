@@ -1,7 +1,7 @@
 Taint objects:
-[scope: global, var: SFNClient]
-[scope: global, var: SendTaskSuccessCommand]
-[scope: global, var: stepfunctions]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 1, 2, 18

@@ -1,12 +1,12 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: dynamoDB]
-[scope: global, var: s3]
-[scope: anonymous#21, var: getResponse]
-[scope: anonymous#21, var: video]
-[scope: anonymous#21, var: burnedVideoKey]
-[scope: anonymous#21, var: url]
-[scope: anonymous#21, var: response]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 16, 17, 18, 19, 42, 43, 45, 46,

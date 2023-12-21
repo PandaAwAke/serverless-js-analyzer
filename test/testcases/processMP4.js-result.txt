@@ -1,8 +1,8 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: s3]
-[scope: anonymous#42, var: url]
-[scope: global, var: processMP4]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 8, 9, 10, 42, 54, 55, 64, 69,

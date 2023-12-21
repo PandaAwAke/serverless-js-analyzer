@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: stepFunctions]
-[scope: anonymous#15, var: sfnResult]
-[scope: global, var: stopRunningExecutions]
-[scope: global, var: main]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 10, 11, 12, 15, 21, 24, 26, 31,

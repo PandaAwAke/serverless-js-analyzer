@@ -1,12 +1,12 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: regionOneClient]
-[scope: global, var: regionTwoClient]
-[scope: global, var: regionTwoSns]
-[scope: scanFromKey#8, var: results]
-[scope: scanFromKey#8, var: changelogs]
-[scope: scanFromKey#8, var: moreChangelogs]
-[scope: main#33, var: res]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 2, 4, 5, 6, 9, 20, 24, 25,

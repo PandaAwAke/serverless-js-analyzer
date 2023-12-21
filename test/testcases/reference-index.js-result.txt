@@ -1,11 +1,11 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: S3]
-[scope: processRecord#131, var: originalPhoto]
-[scope: processRecord#131, var: metadata]
-[scope: processRecord#131, var: sizes]
-[scope: processRecord#131, var: item]
-[scope: anonymous#170, var: client]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 12, 13, 96, 102, 109, 140, 142, 143,

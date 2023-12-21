@@ -1,8 +1,8 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: docClient]
-[scope: anonymous#39, var: result]
-[scope: global, var: saveToDDB]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 18, 19, 20, 39, 58, 59

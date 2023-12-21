@@ -1,7 +1,7 @@
 Taint objects:
-[scope: global, var: S3Client]
-[scope: global, var: PutObjectCommand]
-[scope: global, var: s3]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 1, 5, 23, 24

@@ -61,10 +61,10 @@ exports.lambdaHandler = async (event) => {
 
   console.log(taintObjects)
 
-  expect(taintObjects.at(0)[1]).toBe('S3Client');
-  expect(taintObjects.at(1)[1]).toBe('PutObjectCommand');
-  expect(taintObjects.at(2)[1]).toBe('s3');
-  expect(taintObjects.at(3)[1]).toBe('b');
+  expect(taintObjects.at(0).variable).toBe('S3Client');
+  expect(taintObjects.at(1).variable).toBe('PutObjectCommand');
+  expect(taintObjects.at(2).variable).toBe('s3');
+  expect(taintObjects.at(3).variable).toBe('b');
 
   var taintLineNumberSet = taintAnalysis.collectTaintObjectsLineNumbers(ast, taintObjects);
 
@@ -137,10 +137,10 @@ test('应该正常找出所有污点-test2', () => {
   
   var taintObjects = taintAnalysis.collectTaintObjects(ast, awsTaintSources);
 
-  expect(taintObjects.at(0)[1]).toBe('EventBridgeClient');
-  expect(taintObjects.at(1)[1]).toBe('PutEventsCommand');
-  expect(taintObjects.at(2)[1]).toBe('eventBridgeClient');
-  expect(taintObjects.at(3)[1]).toBe('putEventCommand');
+  expect(taintObjects.at(0).variable).toBe('EventBridgeClient');
+  expect(taintObjects.at(1).variable).toBe('PutEventsCommand');
+  expect(taintObjects.at(2).variable).toBe('eventBridgeClient');
+  expect(taintObjects.at(3).variable).toBe('putEventCommand');
 
   var taintLineNumberSet = taintAnalysis.collectTaintObjectsLineNumbers(ast, taintObjects);
 
@@ -284,12 +284,18 @@ test('应该正常找出所有污点-test3-import', () => {
 
   console.log(taintObjects)
 
-  expect(taintObjects.at(0).join(',')).toBe('global,QueryCommand');
-  expect(taintObjects.at(1).join(',')).toBe('global,BatchWriteCommand');
-  expect(taintObjects.at(2).join(',')).toBe('global,DynamoDB');
-  expect(taintObjects.at(3).join(',')).toBe('global,addToIndex');
-  expect(taintObjects.at(4).join(',')).toBe('anonymous#95,results');
-  expect(taintObjects.at(5).join(',')).toBe('global,completion');
+  expect(taintObjects.at(0).scopeName).toBe("global");
+  expect(taintObjects.at(0).variable).toBe("QueryCommand");
+  expect(taintObjects.at(1).scopeName).toBe("global");
+  expect(taintObjects.at(1).variable).toBe('BatchWriteCommand');
+  expect(taintObjects.at(2).scopeName).toBe("global");
+  expect(taintObjects.at(2).variable).toBe('DynamoDB');
+  expect(taintObjects.at(3).scopeName).toBe("global");
+  expect(taintObjects.at(3).variable).toBe('addToIndex');
+  expect(taintObjects.at(4).scopeName).toBe("anonymous#95");
+  expect(taintObjects.at(4).variable).toBe('results');
+  expect(taintObjects.at(5).scopeName).toBe("global");
+  expect(taintObjects.at(5).variable).toBe('completion');
 
   var taintLineNumberSet = taintAnalysis.collectTaintObjectsLineNumbers(ast, taintObjects);
 

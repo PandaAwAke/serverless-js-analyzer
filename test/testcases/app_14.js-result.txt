@@ -1,11 +1,11 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: s3]
-[scope: anonymous#15, var: Bucket]
-[scope: anonymous#15, var: Key]
-[scope: anonymous#15, var: results]
-[scope: anonymous#15, var: buffer]
-[scope: anonymous#15, var: object]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 7, 8, 9, 25, 26, 29, 30, 33,

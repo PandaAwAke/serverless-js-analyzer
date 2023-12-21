@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: dynamoDB]
-[scope: anonymous#24, var: getItemResponse]
-[scope: anonymous#24, var: vocabulary]
-[scope: anonymous#24, var: response]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 16, 17, 18, 42, 44, 46, 47, 49,

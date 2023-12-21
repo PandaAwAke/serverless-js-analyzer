@@ -1,8 +1,8 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: transcribe]
-[scope: getVocabularies#92, var: listVocabularyResponse]
-[scope: getVocabularies#92, var: vocabularies]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 16, 17, 18, 23, 28, 94, 111, 117,

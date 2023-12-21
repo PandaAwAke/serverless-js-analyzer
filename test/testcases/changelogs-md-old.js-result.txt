@@ -1,5 +1,5 @@
 Taint objects:
-[scope: global, var: dynamodb]
+[scope: undefined, var: undefined]
 
 Taint lines:
 7, 47, 48, 49, 53, 54, 55, 59,

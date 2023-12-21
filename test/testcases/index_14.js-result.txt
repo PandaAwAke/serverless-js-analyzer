@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: anonymous#25, var: httpRequest]
-[scope: anonymous#68, var: signer]
-[scope: anonymous#68, var: options]
-[scope: anonymous#20, var: output]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 12, 25, 62, 63, 64, 65, 66, 68,

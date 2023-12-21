@@ -1,7 +1,12 @@
 Taint objects:
-[scope: 0, var: SignatureV4]
-[scope: 0, var: HttpRequest]
-[scope: 0, var: formatUrl]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
-
+2, 4, 5, 8, 18, 26, 29, 31,
+33, 35

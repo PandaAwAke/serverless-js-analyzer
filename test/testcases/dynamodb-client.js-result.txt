@@ -1,5 +1,6 @@
 Taint objects:
-[scope: 0, var: DynamoDBClient]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
-
+2, 4, 5

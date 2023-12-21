@@ -2,8 +2,12 @@ const astTraverse = require('../ast-traverse');
 
 /**
  * 收集所有 Serverless 相关的入口对象 (污点分析的 sources)
- * @param {*} node 
- * @returns 所有 aws 污点对象，是一个列表，每个元素是 [scope 编号, 变量名]
+ * @param {any} node 
+ * @returns 所有 aws 污点对象，是一个列表，每个元素是
+ * {
+ *    scopeName: scope 名,
+ *    variable: 变量名
+ * }
  */
 function collectTaintSourceObjects(ast) {
   // 匹配 require 括号内的正则表达式，匹配成功就算 aws 对象
@@ -32,10 +36,16 @@ function collectTaintSourceObjects(ast) {
                     // declaration.id 是 ObjectPattern，需要取出其中的 declaration.id.properties
                     for (const property of declaration.id.properties) {
                       // property.key 或 property.value 应该是一样的 Identifier，用哪个都行
-                      taintSourceIdentifiers.push([currentScopeName, property.key.name]);
+                      taintSourceIdentifiers.push({
+                        scopeName: currentScopeName,
+                        variable: property.key.name,
+                      });
                     }
                   } else if (declaration.id.type === 'Identifier') {
-                    taintSourceIdentifiers.push([currentScopeName, declaration.id.name]);
+                    taintSourceIdentifiers.push({
+                      scopeName: currentScopeName,
+                      variable: declaration.id.name,
+                    });
                   }
                   break;
                 }
@@ -51,7 +61,10 @@ function collectTaintSourceObjects(ast) {
             if (new RegExp(regex).test(importName.trim())) {  // 匹配成功
               for (const specifier of node.specifiers) {
                 const asName = specifier.local.name;
-                taintSourceIdentifiers.push([currentScopeName, asName]);
+                taintSourceIdentifiers.push({
+                  scopeName: currentScopeName,
+                  variable: asName,
+                });
               }
               break;
             }

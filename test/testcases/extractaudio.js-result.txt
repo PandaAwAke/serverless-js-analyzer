@@ -1,11 +1,11 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: dynamoDB]
-[scope: checkForPriorProcessing#190, var: response]
-[scope: extractAudio#263, var: endpointPromise]
-[scope: getMediaConvertEndpoint#384, var: getItemResponse]
-[scope: getMediaConvertEndpoint#384, var: endpointPromise]
-[scope: updateDynamoDB#467, var: putData]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 18, 19, 20, 200, 203, 205, 206, 207,

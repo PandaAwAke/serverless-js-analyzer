@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: AWS]
-[scope: global, var: client]
-[scope: startSfnExecution#64, var: startWorkflowResult]
-[scope: startSfnExecution#64, var: executionArn]
-[scope: processRecord#84, var: result]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 16, 25, 30, 74, 80, 81, 105, 111,

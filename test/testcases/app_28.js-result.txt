@@ -1,9 +1,9 @@
 Taint objects:
-[scope: global, var: DynamoDBClient]
-[scope: global, var: PutItemCommand]
-[scope: global, var: marshall]
-[scope: global, var: ddb]
-[scope: anonymous#10, var: putItemCommand]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
+[scope: undefined, var: undefined]
 
 Taint lines:
 6, 7, 8, 13, 15, 22

@@ -9,7 +9,7 @@ const astTraverse = require('./ast-traverse');
  */
 function taintIdentifiersHasVariable(taintIdentifiers, scopeName, variableName) {
   for (var ti of taintIdentifiers) {
-    if (ti[0] === scopeName && ti[1] === variableName) {
+    if (ti.scopeName === scopeName && ti.variable === variableName) {
       return true;
     }
   }
@@ -20,10 +20,18 @@ function taintIdentifiersHasVariable(taintIdentifiers, scopeName, variableName) 
 /**
  * 收集所有的 taint objects
  * 
- * @param {*} ast ast
+ * @param {any} ast ast
  * @param {array} taintSourceIdentifiers taintSourceIdentifiers
+ * @param {any[]} [taintEdges=[]] 
  */
-function collectTaintObjects(ast, taintSourceIdentifiers) {
+function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
+  /**
+   * taintIdentifiers 是一个数组，其元素结构为：
+   * {
+   *    scopeName: scope 名,
+   *    variable: 变量名
+   * }
+   */
   const taintIdentifiers = [...taintSourceIdentifiers];
   var changed = true;   // taintIdentifiers 是否发生变化
 
@@ -50,13 +58,23 @@ function collectTaintObjects(ast, taintSourceIdentifiers) {
           // node.id.type 要么是 Identifier，要么是 BindingPattern，目前只考虑 Identifier
           if (node.id.type === 'Identifier') {
             const variableName = node.id.name;
-            nodeStack.push([node, currentScopeName, variableName, false]);
+            nodeStack.push({
+              node: node,
+              scopeName: currentScopeName,
+              variable: variableName,
+              tainted: false,
+            });
           }
         } else if (node.type === 'AssignmentExpression') {
           // node.left 可以是任意 Expression，目前只考虑 Identifier
           if (node.left && node.left.type === 'Identifier') {
             const variableName = node.left.name;
-            nodeStack.push([node, currentScopeName, variableName, false]);
+            nodeStack.push({
+              node: node,
+              scopeName: currentScopeName,
+              variable: variableName,
+              tainted: false,
+            });
           }
         }
       },
@@ -65,16 +83,19 @@ function collectTaintObjects(ast, taintSourceIdentifiers) {
             taintIdentifiersHasVariable(taintIdentifiers, astTraverse.getVarScope(node.name, scopeChain), node.name)) {
           // 是污点对象，将栈顶语句的"是否污点"修改为 true
           if (nodeStack.length > 0) {
-            nodeStack.at(-1)[3] = true;
+            nodeStack.at(-1).tainted = true;
           }
         } else if (node.type === 'VariableDeclarator' || node.type === 'AssignmentExpression') {
-          if (nodeStack.length > 0 && nodeStack.at(-1)[0] === node) {
-            if (nodeStack.at(-1)[3] === true) {   // 应该被记录
+          if (nodeStack.length > 0 && nodeStack.at(-1).node === node) {
+            if (nodeStack.at(-1).tainted === true) {   // 应该被记录
               // 将该语句的左变量加入污点集合，不要重复加
-              const variableScope = nodeStack.at(-1)[1];
-              const variableName = nodeStack.at(-1)[2];
+              const variableScope = nodeStack.at(-1).scopeName;
+              const variableName = nodeStack.at(-1).variable;
               if (!taintIdentifiersHasVariable(taintIdentifiers, variableScope, variableName)) {
-                taintIdentifiers.push([variableScope, variableName]);
+                taintIdentifiers.push({
+                  scopeName: variableScope,
+                  variable: variableName
+                });
                 changed = true;
               }
             }
@@ -92,7 +113,7 @@ function collectTaintObjects(ast, taintSourceIdentifiers) {
 
 /**
  * 收集所有 taint objects 的行号
- * @param {*} ast ast
+ * @param {any} ast ast
  * @param {array} taintObjects
  */
 function collectTaintObjectsLineNumbers(ast, taintObjects) {
