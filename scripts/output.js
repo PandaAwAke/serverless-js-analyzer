@@ -42,7 +42,6 @@ function writeOutputFile(dir, fileName, taintObjects, taintLineNumbers, taintEdg
 function writeTaintGraphDot(dir, fileName, taintObjects, taintEdges) {
   // Create digraph G
   var g = graphviz.digraph('G');
-  g.set('rankdir', 'TB');
 
   var scopeNamesAndClustersMap = new Map();
   var variablesAndNodesMap = new Map();

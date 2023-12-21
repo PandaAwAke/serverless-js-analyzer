@@ -1,5 +1,4 @@
 digraph G {
-  graph [ rankdir =TB ];
 subgraph global {
   graph [ label = "Scope [global]" ];
   "[scope: global]
