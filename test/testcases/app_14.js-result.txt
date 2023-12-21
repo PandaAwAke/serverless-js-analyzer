@@ -12,9 +12,9 @@ Taint lines:
 36, 37, 38, 39
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#15) Bucket
-(global) s3 -> (anonymous#15) Key
-(anonymous#15) Key -> (anonymous#15) results
-(anonymous#15) results -> (anonymous#15) buffer
-(anonymous#15) Key -> (anonymous#15) object
+[(global) AWS, 9:15] -> [(global) s3, 9:6]
+[(global) s3, 25:36] -> [(anonymous#15) Bucket, 25:8]
+[(global) s3, 26:52] -> [(anonymous#15) Key, 26:8]
+[(anonymous#15) Key, 29:44] -> [(anonymous#15) results, 29:8]
+[(anonymous#15) results, 33:46] -> [(anonymous#15) buffer, 33:8]
+[(anonymous#15) Key, 39:4] -> [(anonymous#15) object, 36:8]

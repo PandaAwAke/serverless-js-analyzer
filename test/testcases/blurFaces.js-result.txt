@@ -10,7 +10,7 @@ Taint lines:
 32, 37
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#12) object
-(anonymous#12) object -> (anonymous#12) img
-(anonymous#12) img -> (global) blurFaces
+[(global) AWS, 9:15] -> [(global) s3, 9:6]
+[(global) s3, 14:23] -> [(anonymous#12) object, 14:8]
+[(anonymous#12) object, 15:15] -> [(anonymous#12) img, 15:6]
+[(anonymous#12) img, 32:8] -> [(global) blurFaces, 12:6]

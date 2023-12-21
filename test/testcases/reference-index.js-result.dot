@@ -1,0 +1,47 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (12,6)";
+  "[scope: global]
+S3 (13,6)";
+}
+
+subgraph processRecord_131 {
+  graph [ label = "Scope [processRecord_131]" ];
+  "[scope: processRecord#131]
+originalPhoto (140,8)";
+  "[scope: processRecord#131]
+metadata (142,8)";
+  "[scope: processRecord#131]
+sizes (145,8)";
+  "[scope: processRecord#131]
+item (148,8)";
+}
+
+subgraph anonymous_170 {
+  graph [ label = "Scope [anonymous_170]" ];
+  "[scope: anonymous#170]
+client (173,2)";
+}
+
+  "[scope: global]
+AWS (12,6)" -> "[scope: global]
+S3 (13,6)";
+  "[scope: global]
+S3 (13,6)" -> "[scope: processRecord#131]
+originalPhoto (140,8)";
+  "[scope: processRecord#131]
+originalPhoto (140,8)" -> "[scope: processRecord#131]
+metadata (142,8)";
+  "[scope: processRecord#131]
+originalPhoto (140,8)" -> "[scope: processRecord#131]
+sizes (145,8)";
+  "[scope: processRecord#131]
+sizes (145,8)" -> "[scope: processRecord#131]
+item (148,8)";
+  "[scope: global]
+AWS (12,6)" -> "[scope: anonymous#170]
+client (173,2)";
+}

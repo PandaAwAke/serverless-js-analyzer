@@ -7,5 +7,5 @@ Taint lines:
 5, 6, 36, 46
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#12) s3result
+[(global) AWS, 6:15] -> [(global) s3, 6:6]
+[(global) s3, 36:27] -> [(anonymous#12) s3result, 36:10]

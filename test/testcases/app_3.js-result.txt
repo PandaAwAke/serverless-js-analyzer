@@ -27,17 +27,17 @@ Taint lines:
 120, 121, 124, 127, 129
 
 Taint edges:
-(global) S3Client -> (global) s3Client
-(global) SSMClient -> (global) ssmClient
-(global) EventBridgeClient -> (global) ebClient
-(global) GetParameterCommand -> (anonymous#14) api_key_response
-(anonymous#14) api_key_response -> (anonymous#14) apiKey
-(anonymous#14) apiKey -> (anonymous#14) response
-(anonymous#14) response -> (anonymous#14) tags
-(anonymous#14) tags -> (anonymous#14) res
-(anonymous#14) tags -> (anonymous#14) msg
-(anonymous#14) msg -> (anonymous#14) eb_res
-(global) S3Client -> (getFileContents#111) s3Client
-(global) GetObjectCommand -> (getFileContents#111) getObjectCommand
-(getFileContents#111) getObjectCommand -> (getFileContents#111) response
-(getFileContents#111) response -> (getFileContents#111) fileContents
+[(global) S3Client, 3:21] -> [(global) s3Client, 3:6]
+[(global) SSMClient, 7:22] -> [(global) ssmClient, 7:6]
+[(global) EventBridgeClient, 8:21] -> [(global) ebClient, 8:6]
+[(global) GetParameterCommand, 30:8] -> [(anonymous#14) api_key_response, 29:8]
+[(anonymous#14) api_key_response, 36:17] -> [(anonymous#14) apiKey, 36:8]
+[(anonymous#14) apiKey, 50:39] -> [(anonymous#14) response, 50:8]
+[(anonymous#14) response, 53:13] -> [(anonymous#14) tags, 53:6]
+[(anonymous#14) tags, 57:34] -> [(anonymous#14) res, 57:6]
+[(anonymous#14) tags, 66:18] -> [(anonymous#14) msg, 60:8]
+[(anonymous#14) msg, 76:17] -> [(anonymous#14) eb_res, 74:8]
+[(global) S3Client, 112:23] -> [(getFileContents#111) s3Client, 112:8]
+[(global) GetObjectCommand, 120:33] -> [(getFileContents#111) getObjectCommand, 120:10]
+[(getFileContents#111) getObjectCommand, 121:41] -> [(getFileContents#111) response, 121:10]
+[(getFileContents#111) response, 124:46] -> [(getFileContents#111) fileContents, 124:10]

@@ -1,0 +1,43 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+IvsClient (1,8)";
+  "[scope: global]
+PutMetadataCommand (1,19)";
+  "[scope: global]
+DynamoDBClient (2,8)";
+  "[scope: global]
+GetItemCommand (2,24)";
+  "[scope: global]
+IoTDataPlaneClient (3,8)";
+  "[scope: global]
+PublishCommand (3,28)";
+  "[scope: global]
+client (5,6)";
+  "[scope: global]
+dynamodb (6,6)";
+  "[scope: global]
+iotClient (7,6)";
+}
+
+subgraph anonymous_11 {
+  graph [ label = "Scope [anonymous_11]" ];
+  "[scope: anonymous#11]
+command (41,14)";
+}
+
+  "[scope: global]
+IvsClient (1,8)" -> "[scope: global]
+client (5,6)";
+  "[scope: global]
+DynamoDBClient (2,8)" -> "[scope: global]
+dynamodb (6,6)";
+  "[scope: global]
+IoTDataPlaneClient (3,8)" -> "[scope: global]
+iotClient (7,6)";
+  "[scope: global]
+PutMetadataCommand (1,19)" -> "[scope: anonymous#11]
+command (41,14)";
+}

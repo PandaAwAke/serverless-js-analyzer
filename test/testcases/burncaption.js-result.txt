@@ -16,11 +16,11 @@ Taint lines:
 347
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) dynamoDB -> (getVideoInfo#74) getVideoResponse
-(global) s3 -> (prepareSrtCaptions#88) captionsObject
-(prepareSrtCaptions#88) captionsObject -> (prepareSrtCaptions#88) captionsStr
-(global) AWS -> (burnCaptions#118) endpointPromise
-(global) dynamoDB -> (getMediaConvertEndpoint#274) getItemResponse
-(global) AWS -> (getMediaConvertEndpoint#274) endpointPromise
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) AWS, 19:13] -> [(global) s3, 19:4]
+[(global) dynamoDB, 83:31] -> [(getVideoInfo#74) getVideoResponse, 83:6]
+[(global) s3, 103:29] -> [(prepareSrtCaptions#88) captionsObject, 103:6]
+[(prepareSrtCaptions#88) captionsObject, 104:16] -> [(prepareSrtCaptions#88) captionsStr, 104:2]
+[(global) AWS, 249:26] -> [(burnCaptions#118) endpointPromise, 249:4]
+[(global) dynamoDB, 285:30] -> [(getMediaConvertEndpoint#274) getItemResponse, 285:6]
+[(global) AWS, 303:28] -> [(getMediaConvertEndpoint#274) endpointPromise, 303:6]

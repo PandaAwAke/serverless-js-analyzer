@@ -7,5 +7,5 @@ Taint lines:
 17, 18, 19, 35, 74, 87
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (global) ffCreateSnippets
+[(global) AWS, 19:15] -> [(global) s3, 19:6]
+[(global) s3, 74:14] -> [(global) ffCreateSnippets, 35:6]

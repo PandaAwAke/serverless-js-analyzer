@@ -1,0 +1,28 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+transcribe (23,2)";
+}
+
+subgraph getVocabularies_92 {
+  graph [ label = "Scope [getVocabularies_92]" ];
+  "[scope: getVocabularies#92]
+listVocabularyResponse (111,8)";
+  "[scope: getVocabularies#92]
+vocabularies (121,6)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+transcribe (23,2)";
+  "[scope: global]
+transcribe (23,2)" -> "[scope: getVocabularies#92]
+listVocabularyResponse (111,8)";
+  "[scope: getVocabularies#92]
+listVocabularyResponse (111,8)" -> "[scope: getVocabularies#92]
+vocabularies (121,6)";
+}

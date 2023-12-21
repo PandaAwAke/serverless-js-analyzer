@@ -1,0 +1,48 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+s3 (19,4)";
+}
+
+subgraph anonymous_21 {
+  graph [ label = "Scope [anonymous_21]" ];
+  "[scope: anonymous#21]
+getResponse (42,8)";
+  "[scope: anonymous#21]
+video (46,10)";
+  "[scope: anonymous#21]
+burnedVideoKey (53,8)";
+  "[scope: anonymous#21]
+url (65,12)";
+  "[scope: anonymous#21]
+response (78,12)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (19,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: anonymous#21]
+getResponse (42,8)";
+  "[scope: anonymous#21]
+getResponse (42,8)" -> "[scope: anonymous#21]
+video (46,10)";
+  "[scope: anonymous#21]
+video (46,10)" -> "[scope: anonymous#21]
+burnedVideoKey (53,8)";
+  "[scope: anonymous#21]
+burnedVideoKey (53,8)" -> "[scope: anonymous#21]
+url (65,12)";
+  "[scope: anonymous#21]
+url (65,12)" -> "[scope: anonymous#21]
+response (78,12)";
+}

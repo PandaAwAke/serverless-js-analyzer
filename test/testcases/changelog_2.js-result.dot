@@ -1,0 +1,106 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+GetCommand (1,9)";
+  "[scope: global]
+QueryCommand (1,21)";
+  "[scope: global]
+BatchGetCommand (1,35)";
+  "[scope: global]
+UpdateCommand (1,52)";
+  "[scope: global]
+DynamoDB (2,9)";
+  "[scope: global]
+getMetadata (25,13)";
+  "[scope: global]
+bulkGetMetadata (39,13)";
+  "[scope: global]
+upsertOne (63,13)";
+  "[scope: global]
+upsert (112,13)";
+  "[scope: global]
+rejectForDuration (136,13)";
+  "[scope: global]
+recentlyUpdated (155,13)";
+  "[scope: global]
+crawled (182,13)";
+  "[scope: global]
+_queryIndexForSecond (263,13)";
+  "[scope: global]
+selectChangelogsToCrawl (299,13)";
+}
+
+subgraph anonymous_25 {
+  graph [ label = "Scope [anonymous_25]" ];
+  "[scope: anonymous#25]
+result (26,6)";
+}
+
+subgraph anonymous_39 {
+  graph [ label = "Scope [anonymous_39]" ];
+  "[scope: anonymous#39]
+results (51,6)";
+}
+
+subgraph anonymous_155 {
+  graph [ label = "Scope [anonymous_155]" ];
+  "[scope: anonymous#155]
+response (156,6)";
+}
+
+subgraph anonymous_263 {
+  graph [ label = "Scope [anonymous_263]" ];
+  "[scope: anonymous#263]
+changelogs (283,6)";
+  "[scope: anonymous#263]
+moreChangelogs (291,6)";
+}
+
+  "[scope: global]
+GetCommand (1,9)" -> "[scope: anonymous#25]
+result (26,6)";
+  "[scope: anonymous#25]
+result (26,6)" -> "[scope: global]
+getMetadata (25,13)";
+  "[scope: global]
+BatchGetCommand (1,35)" -> "[scope: anonymous#39]
+results (51,6)";
+  "[scope: anonymous#39]
+results (51,6)" -> "[scope: global]
+bulkGetMetadata (39,13)";
+  "[scope: global]
+UpdateCommand (1,52)" -> "[scope: global]
+upsertOne (63,13)";
+  "[scope: global]
+upsertOne (63,13)" -> "[scope: global]
+upsert (112,13)";
+  "[scope: global]
+UpdateCommand (1,52)" -> "[scope: global]
+rejectForDuration (136,13)";
+  "[scope: global]
+GetCommand (1,9)" -> "[scope: anonymous#155]
+response (156,6)";
+  "[scope: anonymous#155]
+response (156,6)" -> "[scope: global]
+recentlyUpdated (155,13)";
+  "[scope: global]
+UpdateCommand (1,52)" -> "[scope: global]
+crawled (182,13)";
+  "[scope: global]
+QueryCommand (1,21)" -> "[scope: anonymous#39]
+results (51,6)";
+  "[scope: anonymous#39]
+results (51,6)" -> "[scope: anonymous#263]
+changelogs (283,6)";
+  "[scope: anonymous#39]
+results (51,6)" -> "[scope: anonymous#263]
+moreChangelogs (291,6)";
+  "[scope: anonymous#263]
+moreChangelogs (291,6)" -> "[scope: global]
+_queryIndexForSecond (263,13)";
+  "[scope: global]
+_queryIndexForSecond (263,13)" -> "[scope: global]
+selectChangelogsToCrawl (299,13)";
+}

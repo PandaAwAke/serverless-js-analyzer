@@ -8,6 +8,6 @@ Taint lines:
 2, 10, 17, 19, 20, 28, 77
 
 Taint edges:
-(global) S3 -> (global) s3
-(global) s3 -> (generateThumbnail#16) originalPhoto
-(generateThumbnail#16) originalPhoto -> (generateThumbnail#16) resizePromise
+[(global) S3, 10:15] -> [(global) s3, 10:6]
+[(global) s3, 17:27] -> [(generateThumbnail#16) originalPhoto, 17:5]
+[(generateThumbnail#16) originalPhoto, 20:5] -> [(generateThumbnail#16) resizePromise, 19:7]

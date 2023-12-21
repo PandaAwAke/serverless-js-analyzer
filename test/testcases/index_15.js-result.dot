@@ -1,0 +1,23 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (3,6)";
+  "[scope: global]
+S3 (4,6)";
+}
+
+subgraph uploadVideoAssets_56 {
+  graph [ label = "Scope [uploadVideoAssets_56]" ];
+  "[scope: uploadVideoAssets#56]
+lineReader (61,5)";
+}
+
+  "[scope: global]
+AWS (3,6)" -> "[scope: global]
+S3 (4,6)";
+  "[scope: global]
+S3 (4,6)" -> "[scope: uploadVideoAssets#56]
+lineReader (61,5)";
+}

@@ -18,10 +18,10 @@ Taint lines:
 89, 96, 111, 112, 118
 
 Taint edges:
-(global) S3Client -> (global) s3Client
-(global) SFNClient -> (global) sfnClient
-(global) PutObjectCommand -> (main#11) command
-(global) SendTaskSuccessCommand -> (main#11) taskSuccessCommand
-(global) SendTaskFailureCommand -> (main#11) taskFailureCommand
-(global) GetObjectCommand -> (downloadAndStoreFile#105) getObjectCommand
-(downloadAndStoreFile#105) getObjectCommand -> (downloadAndStoreFile#105) response
+[(global) S3Client, 8:21] -> [(global) s3Client, 8:6]
+[(global) SFNClient, 9:22] -> [(global) sfnClient, 9:6]
+[(global) PutObjectCommand, 64:26] -> [(main#11) command, 64:12]
+[(global) SendTaskSuccessCommand, 72:35] -> [(main#11) taskSuccessCommand, 72:10]
+[(global) SendTaskFailureCommand, 89:35] -> [(main#11) taskFailureCommand, 89:10]
+[(global) GetObjectCommand, 111:33] -> [(downloadAndStoreFile#105) getObjectCommand, 111:10]
+[(downloadAndStoreFile#105) getObjectCommand, 112:41] -> [(downloadAndStoreFile#105) response, 112:10]

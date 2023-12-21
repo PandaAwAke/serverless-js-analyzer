@@ -12,7 +12,7 @@ Taint lines:
 33, 35
 
 Taint edges:
-(global) SignatureV4 -> (getIoTClient#7) signer
-(global) HttpRequest -> (getIoTClient#7) req
-(getIoTClient#7) req -> (getIoTClient#7) request
-(getIoTClient#7) request -> (getIoTClient#7) iot_url
+[(global) SignatureV4, 8:20] -> [(getIoTClient#7) signer, 8:7]
+[(global) HttpRequest, 18:17] -> [(getIoTClient#7) req, 18:7]
+[(getIoTClient#7) req, 26:38] -> [(getIoTClient#7) request, 26:7]
+[(getIoTClient#7) request, 31:27] -> [(getIoTClient#7) iot_url, 31:7]

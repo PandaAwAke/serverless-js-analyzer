@@ -7,5 +7,5 @@ Taint lines:
 12, 13, 37
 
 Taint edges:
-(global) aws -> (global) stepfunctions
-(global) stepfunctions -> (anonymous#15) res
+[(global) aws, 13:27] -> [(global) stepfunctions, 13:7]
+[(global) stepfunctions, 37:26] -> [(anonymous#15) res, 37:14]

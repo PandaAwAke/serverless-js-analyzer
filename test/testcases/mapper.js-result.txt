@@ -7,5 +7,5 @@ Taint lines:
 7, 10, 33, 72, 81, 96, 126
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#17) mapfunc
+[(global) AWS, 10:13] -> [(global) s3, 10:4]
+[(global) s3, 81:16] -> [(anonymous#17) mapfunc, 33:8]

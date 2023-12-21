@@ -9,6 +9,6 @@ Taint lines:
 72, 79
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#24) url
-(anonymous#24) url -> (anonymous#24) response
+[(global) AWS, 19:13] -> [(global) s3, 19:4]
+[(global) s3, 56:22] -> [(anonymous#24) url, 56:10]
+[(anonymous#24) url, 61:40] -> [(anonymous#24) response, 58:10]

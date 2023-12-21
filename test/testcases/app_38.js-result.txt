@@ -8,6 +8,6 @@ Taint lines:
 18, 19, 20, 42, 61, 62
 
 Taint edges:
-(global) AWS -> (global) docClient
-(global) docClient -> (anonymous#42) result
-(anonymous#42) result -> (global) processMessage
+[(global) AWS, 20:22] -> [(global) docClient, 20:6]
+[(global) docClient, 61:25] -> [(anonymous#42) result, 61:10]
+[(anonymous#42) result, 62:16] -> [(global) processMessage, 42:6]

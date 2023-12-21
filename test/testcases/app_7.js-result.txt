@@ -11,7 +11,7 @@ Taint lines:
 1, 7, 69, 70, 104, 105, 111
 
 Taint edges:
-(global) S3Client -> (global) s3Client
-(global) PutObjectCommand -> (anonymous#10) command
-(global) GetObjectCommand -> (downloadAndStoreFile#98) getObjectCommand
-(downloadAndStoreFile#98) getObjectCommand -> (downloadAndStoreFile#98) response
+[(global) S3Client, 7:21] -> [(global) s3Client, 7:6]
+[(global) PutObjectCommand, 69:26] -> [(anonymous#10) command, 69:12]
+[(global) GetObjectCommand, 104:33] -> [(downloadAndStoreFile#98) getObjectCommand, 104:10]
+[(downloadAndStoreFile#98) getObjectCommand, 105:41] -> [(downloadAndStoreFile#98) response, 105:10]

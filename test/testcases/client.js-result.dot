@@ -1,0 +1,37 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SignatureV4 (2,9)";
+  "[scope: global]
+HttpRequest (4,9)";
+  "[scope: global]
+formatUrl (5,9)";
+}
+
+subgraph getIoTClient_7 {
+  graph [ label = "Scope [getIoTClient_7]" ];
+  "[scope: getIoTClient#7]
+signer (8,7)";
+  "[scope: getIoTClient#7]
+req (18,7)";
+  "[scope: getIoTClient#7]
+request (26,7)";
+  "[scope: getIoTClient#7]
+iot_url (31,7)";
+}
+
+  "[scope: global]
+SignatureV4 (2,9)" -> "[scope: getIoTClient#7]
+signer (8,7)";
+  "[scope: global]
+HttpRequest (4,9)" -> "[scope: getIoTClient#7]
+req (18,7)";
+  "[scope: getIoTClient#7]
+req (18,7)" -> "[scope: getIoTClient#7]
+request (26,7)";
+  "[scope: getIoTClient#7]
+request (26,7)" -> "[scope: getIoTClient#7]
+iot_url (31,7)";
+}

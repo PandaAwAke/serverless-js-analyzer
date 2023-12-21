@@ -13,9 +13,9 @@ Taint lines:
 101, 106, 111, 120
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) dynamoDB -> (anonymous#24) scanResponse
-(anonymous#24) scanResponse -> (anonymous#24) videos
-(anonymous#24) videos -> (anonymous#24) responseBody
-(anonymous#24) responseBody -> (anonymous#24) response
-(global) AWS -> (getVocabularyList#98) transcribe
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) dynamoDB, 51:29] -> [(anonymous#24) scanResponse, 51:8]
+[(anonymous#24) scanResponse, 52:17] -> [(anonymous#24) videos, 52:8]
+[(anonymous#24) videos, 68:14] -> [(anonymous#24) responseBody, 67:8]
+[(anonymous#24) responseBody, 83:27] -> [(anonymous#24) response, 80:10]
+[(global) AWS, 106:21] -> [(getVocabularyList#98) transcribe, 106:4]

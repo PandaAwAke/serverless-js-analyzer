@@ -10,7 +10,7 @@ Taint lines:
 32, 35
 
 Taint edges:
-(global) AWS -> (global) stepFunctions
-(global) stepFunctions -> (anonymous#15) sfnResult
-(global) stepFunctions -> (global) stopRunningExecutions
-(global) stopRunningExecutions -> (global) main
+[(global) AWS, 12:26] -> [(global) stepFunctions, 12:6]
+[(global) stepFunctions, 21:26] -> [(anonymous#15) sfnResult, 21:8]
+[(global) stepFunctions, 26:11] -> [(global) stopRunningExecutions, 15:6]
+[(global) stopRunningExecutions, 32:20] -> [(global) main, 31:6]

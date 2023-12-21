@@ -1,0 +1,74 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SSMClient (1,8)";
+  "[scope: global]
+GetParameterCommand (1,19)";
+  "[scope: global]
+S3Client (2,8)";
+  "[scope: global]
+GetObjectCommand (2,18)";
+  "[scope: global]
+ssmClient (4,6)";
+  "[scope: global]
+s3Client (10,6)";
+}
+
+subgraph anonymous_12 {
+  graph [ label = "Scope [anonymous_12]" ];
+  "[scope: anonymous#12]
+api_key_response (26,8)";
+  "[scope: anonymous#12]
+apiKey (33,8)";
+  "[scope: anonymous#12]
+response (47,8)";
+  "[scope: anonymous#12]
+videoTitle (50,6)";
+  "[scope: anonymous#12]
+videoTitleArray (55,10)";
+}
+
+subgraph getFileContents_90 {
+  graph [ label = "Scope [getFileContents_90]" ];
+  "[scope: getFileContents#90]
+getObjectCommand (99,10)";
+  "[scope: getFileContents#90]
+fileContents (103,10)";
+}
+
+  "[scope: global]
+SSMClient (1,8)" -> "[scope: global]
+ssmClient (4,6)";
+  "[scope: global]
+S3Client (2,8)" -> "[scope: global]
+s3Client (10,6)";
+  "[scope: global]
+GetParameterCommand (1,19)" -> "[scope: anonymous#12]
+api_key_response (26,8)";
+  "[scope: anonymous#12]
+api_key_response (26,8)" -> "[scope: anonymous#12]
+apiKey (33,8)";
+  "[scope: anonymous#12]
+apiKey (33,8)" -> "[scope: anonymous#12]
+response (47,8)";
+  "[scope: anonymous#12]
+response (47,8)" -> "[scope: anonymous#12]
+videoTitle (50,6)";
+  "[scope: anonymous#12]
+videoTitle (50,6)" -> "[scope: anonymous#12]
+videoTitleArray (55,10)";
+  "[scope: global]
+S3Client (2,8)" -> "[scope: global]
+s3Client (10,6)";
+  "[scope: global]
+GetObjectCommand (2,18)" -> "[scope: getFileContents#90]
+getObjectCommand (99,10)";
+  "[scope: getFileContents#90]
+getObjectCommand (99,10)" -> "[scope: anonymous#12]
+response (47,8)";
+  "[scope: anonymous#12]
+response (47,8)" -> "[scope: getFileContents#90]
+fileContents (103,10)";
+}

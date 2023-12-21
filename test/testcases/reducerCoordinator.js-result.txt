@@ -16,11 +16,11 @@ Taint lines:
 259, 263, 265, 272, 286
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) AWS -> (invokeLambda#37) lambda
-(invokeLambda#37) lambda -> (invokeLambda#37) status
-(global) s3 -> (anonymous#75) bucket
-(global) s3 -> (anonymous#75) key
-(anonymous#75) bucket -> (getReducerStateInfo#110) params
-(anonymous#75) bucket -> (anonymous#75) lparams
-(anonymous#75) bucket -> (anonymous#233) params
+[(global) AWS, 29:13] -> [(global) s3, 29:4]
+[(global) AWS, 40:25] -> [(invokeLambda#37) lambda, 40:12]
+[(invokeLambda#37) lambda, 47:21] -> [(invokeLambda#37) status, 47:12]
+[(global) s3, 78:36] -> [(anonymous#75) bucket, 78:10]
+[(global) s3, 79:50] -> [(anonymous#75) key, 79:8]
+[(anonymous#75) bucket, 139:34] -> [(getReducerStateInfo#110) params, 139:16]
+[(anonymous#75) bucket, 210:16] -> [(anonymous#75) lparams, 209:8]
+[(anonymous#75) bucket, 265:43] -> [(anonymous#233) params, 259:28]

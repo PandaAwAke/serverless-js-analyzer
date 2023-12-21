@@ -13,9 +13,9 @@ Taint lines:
 159, 160, 161, 165, 166, 178
 
 Taint edges:
-(global) AWS -> (global) S3
-(global) S3 -> (processRecord#131) originalPhoto
-(processRecord#131) originalPhoto -> (processRecord#131) metadata
-(processRecord#131) originalPhoto -> (processRecord#131) sizes
-(processRecord#131) sizes -> (processRecord#131) item
-(global) AWS -> (anonymous#170) client
+[(global) AWS, 13:15] -> [(global) S3, 13:6]
+[(global) S3, 140:30] -> [(processRecord#131) originalPhoto, 140:8]
+[(processRecord#131) originalPhoto, 142:19] -> [(processRecord#131) metadata, 142:8]
+[(processRecord#131) originalPhoto, 145:29] -> [(processRecord#131) sizes, 145:8]
+[(processRecord#131) sizes, 161:11] -> [(processRecord#131) item, 148:8]
+[(global) AWS, 178:19] -> [(anonymous#170) client, 173:2]

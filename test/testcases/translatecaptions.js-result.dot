@@ -1,0 +1,70 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+translate (19,4)";
+  "[scope: global]
+s3 (20,4)";
+}
+
+subgraph anonymous_25 {
+  graph [ label = "Scope [anonymous_25]" ];
+  "[scope: anonymous#25]
+captionsObject (51,10)";
+  "[scope: anonymous#25]
+captionsStr (53,6)";
+}
+
+subgraph anonymous_99 {
+  graph [ label = "Scope [anonymous_99]" ];
+  "[scope: anonymous#99]
+p (116,10)";
+  "[scope: anonymous#99]
+e (119,10)";
+}
+
+subgraph transcribePromisePool_95 {
+  graph [ label = "Scope [transcribePromisePool_95]" ];
+  "[scope: transcribePromisePool#95]
+enqueue (99,8)";
+}
+
+subgraph getVideoInfo_132 {
+  graph [ label = "Scope [getVideoInfo_132]" ];
+  "[scope: getVideoInfo#132]
+getVideoResponse (141,6)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+translate (19,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (20,4)";
+  "[scope: global]
+s3 (20,4)" -> "[scope: anonymous#25]
+captionsObject (51,10)";
+  "[scope: anonymous#25]
+captionsObject (51,10)" -> "[scope: anonymous#25]
+captionsStr (53,6)";
+  "[scope: global]
+translate (19,4)" -> "[scope: anonymous#99]
+p (116,10)";
+  "[scope: anonymous#99]
+p (116,10)" -> "[scope: anonymous#99]
+e (119,10)";
+  "[scope: anonymous#99]
+e (119,10)" -> "[scope: transcribePromisePool#95]
+enqueue (99,8)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: getVideoInfo#132]
+getVideoResponse (141,6)";
+}

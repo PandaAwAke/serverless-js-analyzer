@@ -27,10 +27,18 @@ function taintIdentifiersHasVariable(taintIdentifiers, scopeName, variableName) 
  *    source: {
  *      scopeName: ...,
  *      variable: ...
+ *      position: {
+ *        line: 行号,
+ *        column: 列号
+ *      }
  *    },
  *    target: {
  *      scopeName: ...,
  *      variable: ...
+ *      position: {
+ *        line: 行号,
+ *        column: 列号
+ *      }
  *    }
  * }
  */
@@ -39,7 +47,11 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
    * taintIdentifiers 是一个数组，其元素结构为：
    * {
    *    scopeName: scope 名,
-   *    variable: 变量名
+   *    variable: 变量名,
+   *    position: {
+   *      line: 行号,
+   *      column: 列号
+   *    }
    * }
    */
   const taintIdentifiers = [...taintSourceIdentifiers];
@@ -64,11 +76,14 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
           if (node.id.type === 'Identifier') {
             const variableName = node.id.name;
             nodeStack.push({
-              node: node,                   // 语句 (node)
-              scopeName: currentScopeName,  // scope 名 (string)
-              variable: variableName,       // 变量名 (string)
-              tainted: false,               // 是否污点 (boolean)
-              taintedBy: null,              // 污染是从哪个变量传递来的，结构为 { scopeName: scope 名, variable: 变量名 }
+              node: node,                     // 语句 (node)
+              variable: {
+                scopeName: currentScopeName,  // scope 名 (string)
+                variable: variableName,       // 变量名 (string)
+                position: node.id.loc.start,  // 行号和列号
+              },
+              tainted: false,                 // 是否污点 (boolean)
+              taintedBy: null,                // 污染是从哪个变量传递来的，结构为 { scopeName: scope 名, variable: 变量名 }
             });
           }
         } else if (node.type === 'AssignmentExpression') {
@@ -77,8 +92,11 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
             const variableName = node.left.name;
             nodeStack.push({
               node: node,
-              scopeName: currentScopeName,
-              variable: variableName,
+              variable: {
+                scopeName: currentScopeName,
+                variable: variableName,
+                position: node.left.loc.start,
+              },
               tainted: false,
               taintedBy: null,
             });
@@ -96,6 +114,7 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
               nodeStack.at(-1).taintedBy = {
                 scopeName: identifierScope,
                 variable: variableName,
+                position: node.loc.start,
               };
             }
           }
@@ -103,21 +122,17 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
           if (nodeStack.length > 0 && nodeStack.at(-1).node === node) {
             if (nodeStack.at(-1).tainted === true) {   // 应该被记录
               // 将该语句的左变量加入污点集合，不要重复加
-              const variableScope = nodeStack.at(-1).scopeName;
-              const variableName = nodeStack.at(-1).variable;
+              const variable = nodeStack.at(-1).variable;
+              const variableScope = variable.scopeName;
+              const variableName = variable.variable;
               if (!taintIdentifiersHasVariable(taintIdentifiers, variableScope, variableName)) {
-                var newTaintIdentifier = {
-                  scopeName: variableScope,
-                  variable: variableName
-                };
-
-                taintIdentifiers.push(newTaintIdentifier);
+                taintIdentifiers.push(variable);
 
                 taintEdges.push({
                   source: nodeStack.at(-1).taintedBy,
-                  target: newTaintIdentifier
+                  target: variable
                 });
-                
+
                 changed = true;
               }
             }

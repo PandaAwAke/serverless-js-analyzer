@@ -8,6 +8,6 @@ Taint lines:
 7, 8, 9, 10, 31, 32
 
 Taint edges:
-(global) AWS -> (global) documentClient
-(global) AWS -> (global) eventbridge
-(global) eventbridge -> (anonymous#13) response
+[(global) AWS, 9:27] -> [(global) documentClient, 9:6]
+[(global) AWS, 10:24] -> [(global) eventbridge, 10:6]
+[(global) eventbridge, 31:25] -> [(anonymous#13) response, 31:8]

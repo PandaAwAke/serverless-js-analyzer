@@ -7,5 +7,5 @@ Taint lines:
 3, 130, 138
 
 Taint edges:
-(global) AWS -> (anonymous#127) lambda
-(anonymous#127) lambda -> (anonymous#127) status
+[(global) AWS, 130:25] -> [(anonymous#127) lambda, 130:12]
+[(anonymous#127) lambda, 138:21] -> [(anonymous#127) status, 138:12]

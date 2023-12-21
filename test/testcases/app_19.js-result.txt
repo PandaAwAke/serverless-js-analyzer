@@ -12,8 +12,8 @@ Taint lines:
 66
 
 Taint edges:
-(global) AWS -> (global) documentClient
-(global) AWS -> (global) eventbridge
-(global) documentClient -> (anonymous#14) result
-(anonymous#14) result -> (anonymous#14) ebParams
-(anonymous#14) ebParams -> (anonymous#14) response
+[(global) AWS, 10:27] -> [(global) documentClient, 10:6]
+[(global) AWS, 11:24] -> [(global) eventbridge, 11:6]
+[(global) documentClient, 38:23] -> [(anonymous#14) result, 38:8]
+[(anonymous#14) result, 53:14] -> [(anonymous#14) ebParams, 42:8]
+[(anonymous#14) ebParams, 65:47] -> [(anonymous#14) response, 65:8]

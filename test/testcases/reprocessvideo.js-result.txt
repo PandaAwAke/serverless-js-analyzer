@@ -18,14 +18,14 @@ Taint lines:
 73, 76, 83, 86, 89, 122
 
 Taint edges:
-(global) AWS -> (global) lambda
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) dynamoDB -> (anonymous#28) getResponse
-(anonymous#28) getResponse -> (anonymous#28) video
-(anonymous#28) video -> (anonymous#28) videoBucket
-(anonymous#28) video -> (anonymous#28) inputVideoKey
-(anonymous#28) video -> (anonymous#28) audioBucket
-(anonymous#28) video -> (anonymous#28) audioKey
-(anonymous#28) inputVideoKey -> (anonymous#28) s3Event
-(anonymous#28) s3Event -> (anonymous#28) params
+[(global) AWS, 19:17] -> [(global) lambda, 19:4]
+[(global) AWS, 20:19] -> [(global) dynamoDB, 20:4]
+[(global) AWS, 21:13] -> [(global) s3, 21:4]
+[(global) dynamoDB, 48:28] -> [(anonymous#28) getResponse, 48:8]
+[(anonymous#28) getResponse, 52:25] -> [(anonymous#28) video, 52:10]
+[(anonymous#28) video, 54:37] -> [(anonymous#28) videoBucket, 54:12]
+[(anonymous#28) video, 56:39] -> [(anonymous#28) inputVideoKey, 56:12]
+[(anonymous#28) video, 58:37] -> [(anonymous#28) audioBucket, 58:12]
+[(anonymous#28) video, 59:34] -> [(anonymous#28) audioKey, 59:12]
+[(anonymous#28) inputVideoKey, 76:21] -> [(anonymous#28) s3Event, 68:10]
+[(anonymous#28) s3Event, 86:32] -> [(anonymous#28) params, 83:10]

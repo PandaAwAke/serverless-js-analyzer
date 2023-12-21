@@ -21,14 +21,14 @@ Taint lines:
 100, 103, 106, 108
 
 Taint edges:
-(global) SSMClient -> (global) ssmClient
-(global) S3Client -> (global) s3Client
-(global) GetParameterCommand -> (anonymous#12) api_key_response
-(anonymous#12) api_key_response -> (anonymous#12) apiKey
-(anonymous#12) apiKey -> (anonymous#12) response
-(anonymous#12) response -> (anonymous#12) videoTitle
-(anonymous#12) videoTitle -> (anonymous#12) videoTitleArray
-(global) S3Client -> (getFileContents#90) s3Client
-(global) GetObjectCommand -> (getFileContents#90) getObjectCommand
-(getFileContents#90) getObjectCommand -> (getFileContents#90) response
-(getFileContents#90) response -> (getFileContents#90) fileContents
+[(global) SSMClient, 4:22] -> [(global) ssmClient, 4:6]
+[(global) S3Client, 10:21] -> [(global) s3Client, 10:6]
+[(global) GetParameterCommand, 27:8] -> [(anonymous#12) api_key_response, 26:8]
+[(anonymous#12) api_key_response, 33:17] -> [(anonymous#12) apiKey, 33:8]
+[(anonymous#12) apiKey, 47:39] -> [(anonymous#12) response, 47:8]
+[(anonymous#12) response, 50:19] -> [(anonymous#12) videoTitle, 50:6]
+[(anonymous#12) videoTitle, 55:28] -> [(anonymous#12) videoTitleArray, 55:10]
+[(global) S3Client, 91:23] -> [(getFileContents#90) s3Client, 91:8]
+[(global) GetObjectCommand, 99:33] -> [(getFileContents#90) getObjectCommand, 99:10]
+[(getFileContents#90) getObjectCommand, 100:41] -> [(getFileContents#90) response, 100:10]
+[(getFileContents#90) response, 103:46] -> [(getFileContents#90) fileContents, 103:10]

@@ -7,5 +7,5 @@ Taint lines:
 2, 9, 18, 23
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#11) getObjectPromise
+[(global) AWS, 9:15] -> [(global) s3, 9:6]
+[(global) s3, 18:24] -> [(anonymous#11) getObjectPromise, 18:5]

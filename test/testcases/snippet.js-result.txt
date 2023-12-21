@@ -12,9 +12,9 @@ Taint lines:
 25, 26, 27, 33, 35, 38, 46
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#15) params
-(anonymous#15) params -> (anonymous#15) url
-(anonymous#15) url -> (anonymous#15) metadata
-(anonymous#15) metadata -> (anonymous#15) length
-(anonymous#15) length -> (global) createSnippets
+[(global) AWS, 10:15] -> [(global) s3, 10:6]
+[(global) s3, 19:14] -> [(anonymous#15) params, 17:7]
+[(anonymous#15) params, 22:42] -> [(anonymous#15) url, 22:7]
+[(anonymous#15) url, 25:32] -> [(anonymous#15) metadata, 25:7]
+[(anonymous#15) metadata, 26:16] -> [(anonymous#15) length, 26:7]
+[(anonymous#15) length, 38:3] -> [(global) createSnippets, 15:6]

@@ -1,0 +1,26 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (21,6)";
+  "[scope: global]
+ddbGeo (25,6)";
+  "[scope: global]
+ddb (24,6)";
+  "[scope: global]
+config (29,6)";
+  "[scope: global]
+createTableInput (33,6)";
+}
+
+  "[scope: global]
+AWS (21,6)" -> "[scope: global]
+ddb (24,6)";
+  "[scope: global]
+ddb (24,6)" -> "[scope: global]
+config (29,6)";
+  "[scope: global]
+config (29,6)" -> "[scope: global]
+createTableInput (33,6)";
+}

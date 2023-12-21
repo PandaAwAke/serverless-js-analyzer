@@ -1,0 +1,56 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (11,4)";
+  "[scope: global]
+s3 (15,4)";
+}
+
+subgraph anonymous_64 {
+  graph [ label = "Scope [anonymous_64]" ];
+  "[scope: anonymous#64]
+lambda (90,8)";
+  "[scope: anonymous#64]
+lmapper (147,8)";
+  "[scope: anonymous#64]
+lreducer (148,8)";
+  "[scope: anonymous#64]
+lreducerMgr (149,8)";
+}
+
+subgraph LambdaInvoker_99 {
+  graph [ label = "Scope [LambdaInvoker_99]" ];
+  "[scope: LambdaInvoker#99]
+lStatus (114,12)";
+}
+
+subgraph anonymous_179 {
+  graph [ label = "Scope [anonymous_179]" ];
+  "[scope: anonymous#179]
+lambdaCost (196,36)";
+}
+
+  "[scope: global]
+AWS (11,4)" -> "[scope: global]
+s3 (15,4)";
+  "[scope: global]
+AWS (11,4)" -> "[scope: anonymous#64]
+lambda (90,8)";
+  "[scope: anonymous#64]
+lambda (90,8)" -> "[scope: LambdaInvoker#99]
+lStatus (114,12)";
+  "[scope: global]
+s3 (15,4)" -> "[scope: anonymous#64]
+lmapper (147,8)";
+  "[scope: global]
+s3 (15,4)" -> "[scope: anonymous#64]
+lreducer (148,8)";
+  "[scope: global]
+s3 (15,4)" -> "[scope: anonymous#64]
+lreducerMgr (149,8)";
+  "[scope: anonymous#64]
+lmapper (147,8)" -> "[scope: anonymous#179]
+lambdaCost (196,36)";
+}

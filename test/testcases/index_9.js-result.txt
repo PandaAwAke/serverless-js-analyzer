@@ -7,5 +7,5 @@ Taint lines:
 3, 9, 14, 113
 
 Taint edges:
-(global) AWS -> (global) client
-(global) client -> (anonymous#65) result
+[(global) AWS, 14:15] -> [(global) client, 9:4]
+[(global) client, 113:22] -> [(anonymous#65) result, 113:7]

@@ -1,0 +1,18 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+DynamoDBClient (6,8)";
+  "[scope: global]
+ScanCommand (6,24)";
+  "[scope: global]
+BatchWriteItemCommand (6,37)";
+  "[scope: global]
+ddb (7,6)";
+}
+
+  "[scope: global]
+DynamoDBClient (6,8)" -> "[scope: global]
+ddb (7,6)";
+}

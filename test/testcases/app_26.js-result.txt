@@ -7,4 +7,4 @@ Taint lines:
 6, 12, 18, 28
 
 Taint edges:
-(global) ApiGatewayManagementApiClient -> (anonymous#8) apiGatewayManagementAPIClient
+[(global) ApiGatewayManagementApiClient, 12:44] -> [(anonymous#8) apiGatewayManagementAPIClient, 12:8]

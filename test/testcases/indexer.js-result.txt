@@ -10,6 +10,6 @@ Taint lines:
 1, 2, 14, 86, 96, 101, 116, 121
 
 Taint edges:
-(global) BatchWriteCommand -> (global) addToIndex
-(global) QueryCommand -> (anonymous#96) results
-(anonymous#96) results -> (global) completion
+[(global) BatchWriteCommand, 86:36] -> [(global) addToIndex, 14:13]
+[(global) QueryCommand, 101:40] -> [(anonymous#96) results, 101:6]
+[(anonymous#96) results, 116:16] -> [(global) completion, 96:13]

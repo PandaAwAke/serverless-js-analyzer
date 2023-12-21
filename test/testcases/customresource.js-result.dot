@@ -1,0 +1,105 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (31,4)";
+  "[scope: global]
+s3 (32,4)";
+  "[scope: global]
+apiGateway (33,4)";
+  "[scope: global]
+cloudwatchlogs (35,4)";
+}
+
+subgraph waitForStage_146 {
+  graph [ label = "Scope [waitForStage_146]" ];
+  "[scope: waitForStage#146]
+result (158,10)";
+}
+
+subgraph deleteApiKey_225 {
+  graph [ label = "Scope [deleteApiKey_225]" ];
+  "[scope: deleteApiKey#225]
+getApiKeysResponse (242,8)";
+  "[scope: deleteApiKey#225]
+keyId (249,6)";
+  "[scope: deleteApiKey#225]
+getUsagePlansRequest (251,10)";
+  "[scope: deleteApiKey#225]
+getUsagePlansResponse (255,10)";
+  "[scope: deleteApiKey#225]
+deleteUsagePlanKeyRequest (275,10)";
+  "[scope: deleteApiKey#225]
+deleteApiKeyRequest (310,10)";
+}
+
+subgraph createAPIKey_327 {
+  graph [ label = "Scope [createAPIKey_327]" ];
+  "[scope: createAPIKey#327]
+createApiKeyResponse (353,8)";
+  "[scope: createAPIKey#327]
+createUsagePlanResponse (375,8)";
+  "[scope: createAPIKey#327]
+createUsagePlanKeyParams (384,8)";
+  "[scope: createAPIKey#327]
+createUsagePlanKeyResponse (395,8)";
+}
+
+subgraph loadManifest_447 {
+  graph [ label = "Scope [loadManifest_447]" ];
+  "[scope: loadManifest#447]
+getObjectResponse (456,8)";
+  "[scope: loadManifest#447]
+body (458,8)";
+}
+
+  "[scope: global]
+AWS (31,4)" -> "[scope: global]
+s3 (32,4)";
+  "[scope: global]
+AWS (31,4)" -> "[scope: global]
+apiGateway (33,4)";
+  "[scope: global]
+AWS (31,4)" -> "[scope: global]
+cloudwatchlogs (35,4)";
+  "[scope: global]
+apiGateway (33,4)" -> "[scope: waitForStage#146]
+result (158,10)";
+  "[scope: global]
+apiGateway (33,4)" -> "[scope: deleteApiKey#225]
+getApiKeysResponse (242,8)";
+  "[scope: deleteApiKey#225]
+getApiKeysResponse (242,8)" -> "[scope: deleteApiKey#225]
+keyId (249,6)";
+  "[scope: deleteApiKey#225]
+keyId (249,6)" -> "[scope: deleteApiKey#225]
+getUsagePlansRequest (251,10)";
+  "[scope: deleteApiKey#225]
+getUsagePlansRequest (251,10)" -> "[scope: deleteApiKey#225]
+getUsagePlansResponse (255,10)";
+  "[scope: deleteApiKey#225]
+keyId (249,6)" -> "[scope: deleteApiKey#225]
+deleteUsagePlanKeyRequest (275,10)";
+  "[scope: deleteApiKey#225]
+keyId (249,6)" -> "[scope: deleteApiKey#225]
+deleteApiKeyRequest (310,10)";
+  "[scope: global]
+apiGateway (33,4)" -> "[scope: createAPIKey#327]
+createApiKeyResponse (353,8)";
+  "[scope: global]
+apiGateway (33,4)" -> "[scope: createAPIKey#327]
+createUsagePlanResponse (375,8)";
+  "[scope: createAPIKey#327]
+createUsagePlanResponse (375,8)" -> "[scope: createAPIKey#327]
+createUsagePlanKeyParams (384,8)";
+  "[scope: createAPIKey#327]
+createUsagePlanKeyParams (384,8)" -> "[scope: createAPIKey#327]
+createUsagePlanKeyResponse (395,8)";
+  "[scope: global]
+s3 (32,4)" -> "[scope: loadManifest#447]
+getObjectResponse (456,8)";
+  "[scope: loadManifest#447]
+getObjectResponse (456,8)" -> "[scope: loadManifest#447]
+body (458,8)";
+}

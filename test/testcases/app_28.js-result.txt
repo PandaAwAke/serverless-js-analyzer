@@ -9,5 +9,5 @@ Taint lines:
 6, 7, 8, 13, 15, 22
 
 Taint edges:
-(global) DynamoDBClient -> (global) ddb
-(global) marshall -> (anonymous#10) putItemCommand
+[(global) DynamoDBClient, 8:16] -> [(global) ddb, 8:6]
+[(global) marshall, 15:10] -> [(anonymous#10) putItemCommand, 13:8]

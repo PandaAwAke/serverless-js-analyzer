@@ -1,0 +1,42 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+s3 (19,4)";
+}
+
+subgraph getVideoInfo_94 {
+  graph [ label = "Scope [getVideoInfo_94]" ];
+  "[scope: getVideoInfo#94]
+getVideoResponse (103,6)";
+}
+
+subgraph generateCaptions_108 {
+  graph [ label = "Scope [generateCaptions_108]" ];
+  "[scope: generateCaptions#108]
+captionsObject (130,6)";
+  "[scope: generateCaptions#108]
+captionsStr (131,2)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (19,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: getVideoInfo#94]
+getVideoResponse (103,6)";
+  "[scope: global]
+s3 (19,4)" -> "[scope: generateCaptions#108]
+captionsObject (130,6)";
+  "[scope: generateCaptions#108]
+captionsObject (130,6)" -> "[scope: generateCaptions#108]
+captionsStr (131,2)";
+}

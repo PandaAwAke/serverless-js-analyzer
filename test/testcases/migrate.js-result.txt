@@ -13,10 +13,10 @@ Taint lines:
 28, 30, 39, 52
 
 Taint edges:
-(global) AWS -> (global) regionOneClient
-(global) AWS -> (global) regionTwoClient
-(global) AWS -> (global) regionTwoSns
-(global) regionOneClient -> (scanFromKey#8) results
-(scanFromKey#8) results -> (scanFromKey#8) changelogs
-(scanFromKey#8) results -> (scanFromKey#8) moreChangelogs
-(global) regionTwoClient -> (main#33) res
+[(global) AWS, 4:26] -> [(global) regionOneClient, 4:4]
+[(global) AWS, 5:26] -> [(global) regionTwoClient, 5:4]
+[(global) AWS, 6:23] -> [(global) regionTwoSns, 6:4]
+[(global) regionOneClient, 9:22] -> [(scanFromKey#8) results, 9:6]
+[(scanFromKey#8) results, 20:19] -> [(scanFromKey#8) changelogs, 20:6]
+[(scanFromKey#8) results, 28:41] -> [(scanFromKey#8) moreChangelogs, 28:6]
+[(global) regionTwoClient, 39:20] -> [(main#33) res, 39:8]

@@ -11,8 +11,8 @@ Taint lines:
 131, 136, 145, 169
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) dynamoDB -> (getVideoInfo#94) getVideoResponse
-(global) s3 -> (generateCaptions#108) captionsObject
-(generateCaptions#108) captionsObject -> (generateCaptions#108) captionsStr
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) AWS, 19:13] -> [(global) s3, 19:4]
+[(global) dynamoDB, 103:31] -> [(getVideoInfo#94) getVideoResponse, 103:6]
+[(global) s3, 130:29] -> [(generateCaptions#108) captionsObject, 130:6]
+[(generateCaptions#108) captionsObject, 131:16] -> [(generateCaptions#108) captionsStr, 131:2]

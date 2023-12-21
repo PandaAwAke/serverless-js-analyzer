@@ -1,0 +1,62 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+S3Client (1,8)";
+  "[scope: global]
+PutObjectCommand (1,18)";
+  "[scope: global]
+GetObjectCommand (1,36)";
+  "[scope: global]
+SFNClient (2,8)";
+  "[scope: global]
+SendTaskSuccessCommand (2,19)";
+  "[scope: global]
+SendTaskFailureCommand (2,43)";
+  "[scope: global]
+s3Client (8,6)";
+  "[scope: global]
+sfnClient (9,6)";
+}
+
+subgraph main_11 {
+  graph [ label = "Scope [main_11]" ];
+  "[scope: main#11]
+command (64,12)";
+  "[scope: main#11]
+taskSuccessCommand (72,10)";
+  "[scope: main#11]
+taskFailureCommand (89,10)";
+}
+
+subgraph downloadAndStoreFile_105 {
+  graph [ label = "Scope [downloadAndStoreFile_105]" ];
+  "[scope: downloadAndStoreFile#105]
+getObjectCommand (111,10)";
+  "[scope: downloadAndStoreFile#105]
+response (112,10)";
+}
+
+  "[scope: global]
+S3Client (1,8)" -> "[scope: global]
+s3Client (8,6)";
+  "[scope: global]
+SFNClient (2,8)" -> "[scope: global]
+sfnClient (9,6)";
+  "[scope: global]
+PutObjectCommand (1,18)" -> "[scope: main#11]
+command (64,12)";
+  "[scope: global]
+SendTaskSuccessCommand (2,19)" -> "[scope: main#11]
+taskSuccessCommand (72,10)";
+  "[scope: global]
+SendTaskFailureCommand (2,43)" -> "[scope: main#11]
+taskFailureCommand (89,10)";
+  "[scope: global]
+GetObjectCommand (1,36)" -> "[scope: downloadAndStoreFile#105]
+getObjectCommand (111,10)";
+  "[scope: downloadAndStoreFile#105]
+getObjectCommand (111,10)" -> "[scope: downloadAndStoreFile#105]
+response (112,10)";
+}

@@ -8,6 +8,6 @@ Taint lines:
 5, 6, 7, 10, 27, 28, 36
 
 Taint edges:
-(global) AWS -> (global) iotdata
-(global) iotdata -> (anonymous#10) result
-(anonymous#10) result -> (global) iotPublish
+[(global) AWS, 7:20] -> [(global) iotdata, 7:6]
+[(global) iotdata, 27:25] -> [(anonymous#10) result, 27:10]
+[(anonymous#10) result, 28:50] -> [(global) iotPublish, 10:6]

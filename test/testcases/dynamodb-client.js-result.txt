@@ -6,4 +6,4 @@ Taint lines:
 2, 4, 5
 
 Taint edges:
-(global) DynamoDBClient -> (global) ddbClient
+[(global) DynamoDBClient, 4:22] -> [(global) ddbClient, 4:6]

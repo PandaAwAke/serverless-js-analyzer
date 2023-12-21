@@ -1,0 +1,37 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,6)";
+  "[scope: global]
+client (25,4)";
+}
+
+subgraph startSfnExecution_64 {
+  graph [ label = "Scope [startSfnExecution_64]" ];
+  "[scope: startSfnExecution#64]
+startWorkflowResult (74,8)";
+  "[scope: startSfnExecution#64]
+executionArn (80,6)";
+}
+
+subgraph processRecord_84 {
+  graph [ label = "Scope [processRecord_84]" ];
+  "[scope: processRecord#84]
+result (105,8)";
+}
+
+  "[scope: global]
+AWS (16,6)" -> "[scope: global]
+client (25,4)";
+  "[scope: global]
+client (25,4)" -> "[scope: startSfnExecution#64]
+startWorkflowResult (74,8)";
+  "[scope: startSfnExecution#64]
+startWorkflowResult (74,8)" -> "[scope: startSfnExecution#64]
+executionArn (80,6)";
+  "[scope: global]
+client (25,4)" -> "[scope: processRecord#84]
+result (105,8)";
+}

@@ -1,0 +1,30 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SNSClient (4,9)";
+  "[scope: global]
+PublishCommand (4,20)";
+  "[scope: global]
+snsclient (6,6)";
+  "[scope: global]
+handler (17,13)";
+}
+
+subgraph anonymous_17 {
+  graph [ label = "Scope [anonymous_17]" ];
+  "[scope: anonymous#17]
+command (33,18)";
+}
+
+  "[scope: global]
+SNSClient (4,9)" -> "[scope: global]
+snsclient (6,6)";
+  "[scope: global]
+PublishCommand (4,20)" -> "[scope: anonymous#17]
+command (33,18)";
+  "[scope: anonymous#17]
+command (33,18)" -> "[scope: global]
+handler (17,13)";
+}

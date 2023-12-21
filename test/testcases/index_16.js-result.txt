@@ -6,4 +6,4 @@ Taint lines:
 1, 3, 152, 159
 
 Taint edges:
-(global) AWS -> (global) athena
+[(global) AWS, 3:19] -> [(global) athena, 3:6]

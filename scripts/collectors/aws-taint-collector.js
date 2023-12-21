@@ -6,7 +6,11 @@ const astTraverse = require('../ast-traverse');
  * @returns 所有 aws 污点对象，是一个列表，每个元素是
  * {
  *    scopeName: scope 名,
- *    variable: 变量名
+ *    variable: 变量名,
+ *    position: {
+ *      line: 行号,
+ *      column: 列号
+ *    }
  * }
  */
 function collectTaintSourceObjects(ast) {
@@ -39,12 +43,20 @@ function collectTaintSourceObjects(ast) {
                       taintSourceIdentifiers.push({
                         scopeName: currentScopeName,
                         variable: property.key.name,
+                        position: {
+                          line: property.loc.start.line,
+                          column: property.loc.start.column,
+                        },
                       });
                     }
                   } else if (declaration.id.type === 'Identifier') {
                     taintSourceIdentifiers.push({
                       scopeName: currentScopeName,
                       variable: declaration.id.name,
+                      position: {
+                        line: declaration.id.loc.start.line,
+                        column: declaration.id.loc.start.column,
+                      },
                     });
                   }
                   break;
@@ -60,10 +72,14 @@ function collectTaintSourceObjects(ast) {
           for (const regex of AWS_REQUIRE_REGEX_PATTERNS) {
             if (new RegExp(regex).test(importName.trim())) {  // 匹配成功
               for (const specifier of node.specifiers) {
-                const asName = specifier.local.name;
+                const identifier = specifier.local;
                 taintSourceIdentifiers.push({
                   scopeName: currentScopeName,
-                  variable: asName,
+                  variable: identifier.name,
+                  position: {
+                    line: identifier.loc.start.line,
+                    column: identifier.loc.start.column,
+                  },
                 });
               }
               break;

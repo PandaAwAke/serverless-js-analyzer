@@ -12,8 +12,8 @@ Taint lines:
 134, 150
 
 Taint edges:
-(global) S3Client -> (global) S3
-(global) PutObjectCommand -> (global) saveApiResponse
-(global) PutObjectCommand -> (global) saveRecentlyCrawled
-(global) PutObjectCommand -> (global) saveWebPage
-(global) PutObjectCommand -> (global) regenerateHomePage
+[(global) S3Client, 6:13] -> [(global) S3, 6:4]
+[(global) PutObjectCommand, 68:27] -> [(global) saveApiResponse, 67:13]
+[(global) PutObjectCommand, 82:27] -> [(global) saveRecentlyCrawled, 81:13]
+[(global) PutObjectCommand, 121:27] -> [(global) saveWebPage, 95:13]
+[(global) PutObjectCommand, 150:27] -> [(global) regenerateHomePage, 134:13]

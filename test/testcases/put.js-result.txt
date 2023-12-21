@@ -15,11 +15,11 @@ Taint lines:
 85
 
 Taint edges:
-(global) AWS -> (global) stepFunctions
-(global) AWS -> (global) documentClient
-(global) documentClient -> (anonymous#18) result
-(anonymous#18) result -> (global) updateDrinkOrder
-(global) stepFunctions -> (anonymous#45) sfnResult
-(anonymous#45) sfnResult -> (global) sendTaskSuccess
-(global) updateDrinkOrder -> (anonymous#57) result
-(anonymous#57) result -> (anonymous#57) sfnResult
+[(global) AWS, 10:26] -> [(global) stepFunctions, 10:6]
+[(global) AWS, 11:27] -> [(global) documentClient, 11:6]
+[(global) documentClient, 39:23] -> [(anonymous#18) result, 39:8]
+[(anonymous#18) result, 41:9] -> [(global) updateDrinkOrder, 18:6]
+[(global) stepFunctions, 51:26] -> [(anonymous#45) sfnResult, 51:8]
+[(anonymous#45) sfnResult, 53:9] -> [(global) sendTaskSuccess, 45:6]
+[(global) updateDrinkOrder, 76:19] -> [(anonymous#57) result, 76:4]
+[(anonymous#57) result, 84:62] -> [(anonymous#57) sfnResult, 84:12]

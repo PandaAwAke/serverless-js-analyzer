@@ -6,4 +6,4 @@ Taint lines:
 18, 19, 62
 
 Taint edges:
-(global) AWS -> (global) doc
+[(global) AWS, 19:14] -> [(global) doc, 19:4]

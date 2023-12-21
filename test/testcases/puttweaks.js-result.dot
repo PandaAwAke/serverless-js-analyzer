@@ -1,0 +1,23 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+}
+
+subgraph anonymous_24 {
+  graph [ label = "Scope [anonymous_24]" ];
+  "[scope: anonymous#24]
+putResponse (42,8)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: anonymous#24]
+putResponse (42,8)";
+}

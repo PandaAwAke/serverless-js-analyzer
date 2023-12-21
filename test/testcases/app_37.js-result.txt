@@ -8,6 +8,6 @@ Taint lines:
 18, 19, 20, 39, 58, 59
 
 Taint edges:
-(global) AWS -> (global) docClient
-(global) docClient -> (anonymous#39) result
-(anonymous#39) result -> (global) saveToDDB
+[(global) AWS, 20:22] -> [(global) docClient, 20:6]
+[(global) docClient, 58:25] -> [(anonymous#39) result, 58:10]
+[(anonymous#39) result, 59:16] -> [(global) saveToDDB, 39:6]

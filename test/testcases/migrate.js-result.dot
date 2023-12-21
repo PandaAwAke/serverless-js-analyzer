@@ -1,0 +1,52 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (2,4)";
+  "[scope: global]
+regionOneClient (4,4)";
+  "[scope: global]
+regionTwoClient (5,4)";
+  "[scope: global]
+regionTwoSns (6,4)";
+}
+
+subgraph scanFromKey_8 {
+  graph [ label = "Scope [scanFromKey_8]" ];
+  "[scope: scanFromKey#8]
+results (9,6)";
+  "[scope: scanFromKey#8]
+changelogs (20,6)";
+  "[scope: scanFromKey#8]
+moreChangelogs (28,6)";
+}
+
+subgraph main_33 {
+  graph [ label = "Scope [main_33]" ];
+  "[scope: main#33]
+res (39,8)";
+}
+
+  "[scope: global]
+AWS (2,4)" -> "[scope: global]
+regionOneClient (4,4)";
+  "[scope: global]
+AWS (2,4)" -> "[scope: global]
+regionTwoClient (5,4)";
+  "[scope: global]
+AWS (2,4)" -> "[scope: global]
+regionTwoSns (6,4)";
+  "[scope: global]
+regionOneClient (4,4)" -> "[scope: scanFromKey#8]
+results (9,6)";
+  "[scope: scanFromKey#8]
+results (9,6)" -> "[scope: scanFromKey#8]
+changelogs (20,6)";
+  "[scope: scanFromKey#8]
+results (9,6)" -> "[scope: scanFromKey#8]
+moreChangelogs (28,6)";
+  "[scope: global]
+regionTwoClient (5,4)" -> "[scope: main#33]
+res (39,8)";
+}

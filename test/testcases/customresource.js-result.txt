@@ -27,19 +27,19 @@ Taint lines:
 462, 483, 504
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) AWS -> (global) apiGateway
-(global) AWS -> (global) cloudwatchlogs
-(global) apiGateway -> (waitForStage#146) result
-(global) apiGateway -> (deleteApiKey#225) getApiKeysResponse
-(deleteApiKey#225) getApiKeysResponse -> (deleteApiKey#225) keyId
-(deleteApiKey#225) keyId -> (deleteApiKey#225) getUsagePlansRequest
-(deleteApiKey#225) getUsagePlansRequest -> (deleteApiKey#225) getUsagePlansResponse
-(deleteApiKey#225) keyId -> (deleteApiKey#225) deleteUsagePlanKeyRequest
-(deleteApiKey#225) keyId -> (deleteApiKey#225) deleteApiKeyRequest
-(global) apiGateway -> (createAPIKey#327) createApiKeyResponse
-(global) apiGateway -> (createAPIKey#327) createUsagePlanResponse
-(createAPIKey#327) createUsagePlanResponse -> (createAPIKey#327) createUsagePlanKeyParams
-(createAPIKey#327) createUsagePlanKeyParams -> (createAPIKey#327) createUsagePlanKeyResponse
-(global) s3 -> (loadManifest#447) getObjectResponse
-(loadManifest#447) getObjectResponse -> (loadManifest#447) body
+[(global) AWS, 32:13] -> [(global) s3, 32:4]
+[(global) AWS, 33:21] -> [(global) apiGateway, 33:4]
+[(global) AWS, 35:25] -> [(global) cloudwatchlogs, 35:4]
+[(global) apiGateway, 158:25] -> [(waitForStage#146) result, 158:10]
+[(global) apiGateway, 242:35] -> [(deleteApiKey#225) getApiKeysResponse, 242:8]
+[(deleteApiKey#225) getApiKeysResponse, 249:14] -> [(deleteApiKey#225) keyId, 249:6]
+[(deleteApiKey#225) keyId, 252:15] -> [(deleteApiKey#225) getUsagePlansRequest, 251:10]
+[(deleteApiKey#225) getUsagePlansRequest, 256:23] -> [(deleteApiKey#225) getUsagePlansResponse, 255:10]
+[(deleteApiKey#225) keyId, 276:15] -> [(deleteApiKey#225) deleteUsagePlanKeyRequest, 275:10]
+[(deleteApiKey#225) keyId, 311:16] -> [(deleteApiKey#225) deleteApiKeyRequest, 310:10]
+[(global) apiGateway, 353:37] -> [(createAPIKey#327) createApiKeyResponse, 353:8]
+[(global) apiGateway, 375:40] -> [(createAPIKey#327) createUsagePlanResponse, 375:8]
+[(createAPIKey#327) createUsagePlanResponse, 387:19] -> [(createAPIKey#327) createUsagePlanKeyParams, 384:8]
+[(createAPIKey#327) createUsagePlanKeyParams, 396:26] -> [(createAPIKey#327) createUsagePlanKeyResponse, 395:8]
+[(global) s3, 456:34] -> [(loadManifest#447) getObjectResponse, 456:8]
+[(loadManifest#447) getObjectResponse, 458:15] -> [(loadManifest#447) body, 458:8]

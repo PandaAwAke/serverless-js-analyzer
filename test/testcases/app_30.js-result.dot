@@ -1,0 +1,61 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SFNClient (6,8)";
+  "[scope: global]
+StartExecutionCommand (6,19)";
+  "[scope: global]
+DynamoDBClient (7,8)";
+  "[scope: global]
+PutItemCommand (7,24)";
+  "[scope: global]
+marshall (8,8)";
+  "[scope: global]
+docClient (10,6)";
+  "[scope: global]
+stepFunctions (11,6)";
+}
+
+subgraph anonymous_17 {
+  graph [ label = "Scope [anonymous_17]" ];
+  "[scope: anonymous#17]
+startExecCommand (24,8)";
+  "[scope: anonymous#17]
+executionResult (25,8)";
+  "[scope: anonymous#17]
+item (29,8)";
+  "[scope: anonymous#17]
+result (30,8)";
+  "[scope: anonymous#17]
+body (35,8)";
+  "[scope: anonymous#17]
+response (40,8)";
+}
+
+  "[scope: global]
+DynamoDBClient (7,8)" -> "[scope: global]
+docClient (10,6)";
+  "[scope: global]
+SFNClient (6,8)" -> "[scope: global]
+stepFunctions (11,6)";
+  "[scope: global]
+StartExecutionCommand (6,19)" -> "[scope: anonymous#17]
+startExecCommand (24,8)";
+  "[scope: anonymous#17]
+startExecCommand (24,8)" -> "[scope: anonymous#17]
+executionResult (25,8)";
+  "[scope: anonymous#17]
+executionResult (25,8)" -> "[scope: anonymous#17]
+item (29,8)";
+  "[scope: anonymous#17]
+item (29,8)" -> "[scope: anonymous#17]
+result (30,8)";
+  "[scope: anonymous#17]
+executionResult (25,8)" -> "[scope: anonymous#17]
+body (35,8)";
+  "[scope: anonymous#17]
+body (35,8)" -> "[scope: anonymous#17]
+response (40,8)";
+}

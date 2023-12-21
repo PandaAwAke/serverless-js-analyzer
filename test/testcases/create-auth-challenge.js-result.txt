@@ -7,5 +7,5 @@ Taint lines:
 8, 9, 49, 50
 
 Taint edges:
-(global) AWS -> (global) sns
-(global) sns -> (sendSMSviaSNS#44) result
+[(global) AWS, 9:16] -> [(global) sns, 9:6]
+[(global) sns, 49:23] -> [(sendSMSviaSNS#44) result, 49:8]

@@ -9,7 +9,7 @@ Taint lines:
 16, 17, 18, 19, 72, 73, 74, 99
 
 Taint edges:
-(global) AWS -> (global) transcribe
-(global) AWS -> (global) dynamoDB
-(global) transcribe -> (getTranscriptionJob#68) jobResult
-(global) dynamoDB -> (updateDynamoDB#80) result
+[(global) AWS, 18:21] -> [(global) transcribe, 18:4]
+[(global) AWS, 19:19] -> [(global) dynamoDB, 19:4]
+[(global) transcribe, 72:24] -> [(getTranscriptionJob#68) jobResult, 72:6]
+[(global) dynamoDB, 99:23] -> [(updateDynamoDB#80) result, 99:8]

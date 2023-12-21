@@ -1,0 +1,53 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (18,4)";
+  "[scope: global]
+dynamoDB (20,4)";
+}
+
+subgraph checkForPriorProcessing_190 {
+  graph [ label = "Scope [checkForPriorProcessing_190]" ];
+  "[scope: checkForPriorProcessing#190]
+response (200,10)";
+}
+
+subgraph extractAudio_263 {
+  graph [ label = "Scope [extractAudio_263]" ];
+  "[scope: extractAudio#263]
+endpointPromise (359,4)";
+}
+
+subgraph getMediaConvertEndpoint_384 {
+  graph [ label = "Scope [getMediaConvertEndpoint_384]" ];
+  "[scope: getMediaConvertEndpoint#384]
+getItemResponse (395,6)";
+}
+
+subgraph updateDynamoDB_467 {
+  graph [ label = "Scope [updateDynamoDB_467]" ];
+  "[scope: updateDynamoDB#467]
+putData (495,10)";
+}
+
+  "[scope: global]
+AWS (18,4)" -> "[scope: global]
+dynamoDB (20,4)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: checkForPriorProcessing#190]
+response (200,10)";
+  "[scope: global]
+AWS (18,4)" -> "[scope: extractAudio#263]
+endpointPromise (359,4)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: getMediaConvertEndpoint#384]
+getItemResponse (395,6)";
+  "[scope: global]
+AWS (18,4)" -> "[scope: extractAudio#263]
+endpointPromise (359,4)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: updateDynamoDB#467]
+putData (495,10)";
+}

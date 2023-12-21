@@ -7,5 +7,5 @@ Taint lines:
 5, 6, 7, 27
 
 Taint edges:
-(global) AWS -> (global) documentClient
-(global) documentClient -> (anonymous#10) result
+[(global) AWS, 7:27] -> [(global) documentClient, 7:6]
+[(global) documentClient, 27:23] -> [(anonymous#10) result, 27:8]

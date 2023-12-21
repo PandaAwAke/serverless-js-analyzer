@@ -8,5 +8,5 @@ Taint lines:
 1, 26, 39, 45
 
 Taint edges:
-(global) EventBridgeClient -> (anonymous#3) eventBridgeClient
-(global) PutEventsCommand -> (anonymous#3) putEventCommand
+[(global) EventBridgeClient, 26:32] -> [(anonymous#3) eventBridgeClient, 26:8]
+[(global) PutEventsCommand, 39:30] -> [(anonymous#3) putEventCommand, 39:8]

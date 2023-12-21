@@ -13,10 +13,10 @@ Taint lines:
 152, 154, 156, 158, 160, 179, 196, 197
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) AWS -> (anonymous#64) lambda
-(anonymous#64) lambda -> (LambdaInvoker#99) lStatus
-(global) s3 -> (anonymous#64) lmapper
-(global) s3 -> (anonymous#64) lreducer
-(global) s3 -> (anonymous#64) lreducerMgr
-(anonymous#64) lmapper -> (anonymous#179) lambdaCost
+[(global) AWS, 15:13] -> [(global) s3, 15:4]
+[(global) AWS, 90:21] -> [(anonymous#64) lambda, 90:8]
+[(anonymous#64) lambda, 114:22] -> [(LambdaInvoker#99) lStatus, 114:12]
+[(global) s3, 147:42] -> [(anonymous#64) lmapper, 147:8]
+[(global) s3, 148:43] -> [(anonymous#64) lreducer, 148:8]
+[(global) s3, 149:46] -> [(anonymous#64) lreducerMgr, 149:8]
+[(anonymous#64) lmapper, 196:87] -> [(anonymous#179) lambdaCost, 196:36]

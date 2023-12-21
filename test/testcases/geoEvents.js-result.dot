@@ -1,0 +1,40 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,6)";
+  "[scope: global]
+ddbGeo (20,6)";
+  "[scope: global]
+ddb (19,6)";
+  "[scope: global]
+config (23,6)";
+  "[scope: global]
+myGeoTableManager (25,6)";
+  "[scope: global]
+updateQuestionsTable (105,6)";
+}
+
+subgraph anonymous_105 {
+  graph [ label = "Scope [anonymous_105]" ];
+  "[scope: anonymous#105]
+result (127,10)";
+}
+
+  "[scope: global]
+AWS (16,6)" -> "[scope: global]
+ddb (19,6)";
+  "[scope: global]
+ddb (19,6)" -> "[scope: global]
+config (23,6)";
+  "[scope: global]
+config (23,6)" -> "[scope: global]
+myGeoTableManager (25,6)";
+  "[scope: global]
+myGeoTableManager (25,6)" -> "[scope: anonymous#105]
+result (127,10)";
+  "[scope: anonymous#105]
+result (127,10)" -> "[scope: global]
+updateQuestionsTable (105,6)";
+}

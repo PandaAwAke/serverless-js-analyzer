@@ -6,4 +6,4 @@ Taint lines:
 5, 6, 7, 49
 
 Taint edges:
-(global) AWS -> (global) cloudWatch
+[(global) AWS, 7:23] -> [(global) cloudWatch, 7:6]

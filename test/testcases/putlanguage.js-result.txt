@@ -7,5 +7,5 @@ Taint lines:
 16, 17, 19, 94, 95
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) dynamoDB -> (updateDynamoDB#75) putData
+[(global) AWS, 19:19] -> [(global) dynamoDB, 19:4]
+[(global) dynamoDB, 94:26] -> [(updateDynamoDB#75) putData, 94:10]

@@ -14,10 +14,10 @@ Taint lines:
 78, 81, 83, 84
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) dynamoDB -> (anonymous#21) getResponse
-(anonymous#21) getResponse -> (anonymous#21) video
-(anonymous#21) video -> (anonymous#21) burnedVideoKey
-(anonymous#21) burnedVideoKey -> (anonymous#21) url
-(anonymous#21) url -> (anonymous#21) response
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) AWS, 19:13] -> [(global) s3, 19:4]
+[(global) dynamoDB, 42:28] -> [(anonymous#21) getResponse, 42:8]
+[(anonymous#21) getResponse, 46:25] -> [(anonymous#21) video, 46:10]
+[(anonymous#21) video, 53:25] -> [(anonymous#21) burnedVideoKey, 53:8]
+[(anonymous#21) burnedVideoKey, 67:13] -> [(anonymous#21) url, 65:12]
+[(anonymous#21) url, 81:14] -> [(anonymous#21) response, 78:12]

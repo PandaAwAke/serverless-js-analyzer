@@ -1,0 +1,32 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+QueryCommand (1,9)";
+  "[scope: global]
+BatchWriteCommand (1,23)";
+  "[scope: global]
+DynamoDB (2,9)";
+  "[scope: global]
+addToIndex (14,13)";
+  "[scope: global]
+completion (96,13)";
+}
+
+subgraph anonymous_96 {
+  graph [ label = "Scope [anonymous_96]" ];
+  "[scope: anonymous#96]
+results (101,6)";
+}
+
+  "[scope: global]
+BatchWriteCommand (1,23)" -> "[scope: global]
+addToIndex (14,13)";
+  "[scope: global]
+QueryCommand (1,9)" -> "[scope: anonymous#96]
+results (101,6)";
+  "[scope: anonymous#96]
+results (101,6)" -> "[scope: global]
+completion (96,13)";
+}

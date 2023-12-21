@@ -1,0 +1,63 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+s3 (19,4)";
+}
+
+subgraph getVideoInfo_74 {
+  graph [ label = "Scope [getVideoInfo_74]" ];
+  "[scope: getVideoInfo#74]
+getVideoResponse (83,6)";
+}
+
+subgraph prepareSrtCaptions_88 {
+  graph [ label = "Scope [prepareSrtCaptions_88]" ];
+  "[scope: prepareSrtCaptions#88]
+captionsObject (103,6)";
+  "[scope: prepareSrtCaptions#88]
+captionsStr (104,2)";
+}
+
+subgraph burnCaptions_118 {
+  graph [ label = "Scope [burnCaptions_118]" ];
+  "[scope: burnCaptions#118]
+endpointPromise (249,4)";
+}
+
+subgraph getMediaConvertEndpoint_274 {
+  graph [ label = "Scope [getMediaConvertEndpoint_274]" ];
+  "[scope: getMediaConvertEndpoint#274]
+getItemResponse (285,6)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (19,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: getVideoInfo#74]
+getVideoResponse (83,6)";
+  "[scope: global]
+s3 (19,4)" -> "[scope: prepareSrtCaptions#88]
+captionsObject (103,6)";
+  "[scope: prepareSrtCaptions#88]
+captionsObject (103,6)" -> "[scope: prepareSrtCaptions#88]
+captionsStr (104,2)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: burnCaptions#118]
+endpointPromise (249,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: getMediaConvertEndpoint#274]
+getItemResponse (285,6)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: burnCaptions#118]
+endpointPromise (249,4)";
+}

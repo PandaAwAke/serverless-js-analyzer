@@ -10,7 +10,7 @@ Taint lines:
 29, 36
 
 Taint edges:
-(global) AWS -> (global) stepFunctions
-(global) stepFunctions -> (anonymous#10) sfnResult
-(anonymous#10) sfnResult -> (global) getQueueSize
-(global) getQueueSize -> (anonymous#22) QueueSize
+[(global) AWS, 7:26] -> [(global) stepFunctions, 7:6]
+[(global) stepFunctions, 17:26] -> [(anonymous#10) sfnResult, 17:8]
+[(anonymous#10) sfnResult, 18:9] -> [(global) getQueueSize, 10:6]
+[(global) getQueueSize, 25:26] -> [(anonymous#22) QueueSize, 25:8]

@@ -1,0 +1,64 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (1,6)";
+  "[scope: global]
+dynamoDb (2,6)";
+  "[scope: global]
+getDrinkByOrderId (4,6)";
+  "[scope: global]
+getAllOrderByDrink (23,6)";
+}
+
+subgraph anonymous_4 {
+  graph [ label = "Scope [anonymous_4]" ];
+  "[scope: anonymous#4]
+result (15,14)";
+}
+
+subgraph anonymous_23 {
+  graph [ label = "Scope [anonymous_23]" ];
+}
+
+subgraph anonymous_69 {
+  graph [ label = "Scope [anonymous_69]" ];
+  "[scope: anonymous#69]
+drink (71,10)";
+  "[scope: anonymous#69]
+orders (73,10)";
+  "[scope: anonymous#69]
+duration (75,10)";
+  "[scope: anonymous#69]
+response (77,10)";
+}
+
+  "[scope: global]
+AWS (1,6)" -> "[scope: global]
+dynamoDb (2,6)";
+  "[scope: global]
+dynamoDb (2,6)" -> "[scope: anonymous#4]
+result (15,14)";
+  "[scope: anonymous#4]
+result (15,14)" -> "[scope: global]
+getDrinkByOrderId (4,6)";
+  "[scope: global]
+dynamoDb (2,6)" -> "[scope: anonymous#4]
+result (15,14)";
+  "[scope: anonymous#4]
+result (15,14)" -> "[scope: global]
+getAllOrderByDrink (23,6)";
+  "[scope: global]
+getDrinkByOrderId (4,6)" -> "[scope: anonymous#69]
+drink (71,10)";
+  "[scope: anonymous#69]
+drink (71,10)" -> "[scope: anonymous#69]
+orders (73,10)";
+  "[scope: anonymous#69]
+orders (73,10)" -> "[scope: anonymous#69]
+duration (75,10)";
+  "[scope: anonymous#69]
+duration (75,10)" -> "[scope: anonymous#69]
+response (77,10)";
+}

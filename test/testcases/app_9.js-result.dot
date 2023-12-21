@@ -1,0 +1,16 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SFNClient (1,8)";
+  "[scope: global]
+SendTaskSuccessCommand (1,19)";
+  "[scope: global]
+stepfunctions (2,6)";
+}
+
+  "[scope: global]
+SFNClient (1,8)" -> "[scope: global]
+stepfunctions (2,6)";
+}

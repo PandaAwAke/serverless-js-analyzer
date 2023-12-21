@@ -9,6 +9,6 @@ Taint lines:
 51, 53, 58, 62, 69
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) dynamoDB -> (anonymous#24) getItemResponse
-(anonymous#24) getItemResponse -> (anonymous#24) response
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) dynamoDB, 41:32] -> [(anonymous#24) getItemResponse, 41:8]
+[(anonymous#24) getItemResponse, 49:14] -> [(anonymous#24) response, 46:12]

@@ -1,0 +1,20 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+S3Client (1,8)";
+  "[scope: global]
+PutObjectCommand (1,18)";
+}
+
+subgraph anonymous_6 {
+  graph [ label = "Scope [anonymous_6]" ];
+  "[scope: anonymous#6]
+s3 (22,10)";
+}
+
+  "[scope: global]
+S3Client (1,8)" -> "[scope: anonymous#6]
+s3 (22,10)";
+}

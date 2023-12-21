@@ -14,10 +14,10 @@ Taint lines:
 174, 177, 178, 179, 183
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) transcribe
-(global) transcribe -> (anonymous#35) updateVocabularyResponse
-(global) transcribe -> (anonymous#35) createVocabularyResponse
-(global) dynamoDB -> (anonymous#35) putResponse
-(global) transcribe -> (getVocabularies#145) listVocabularyResponse
-(getVocabularies#145) listVocabularyResponse -> (getVocabularies#145) vocabularies
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) AWS, 24:19] -> [(global) transcribe, 24:2]
+[(global) transcribe, 70:43] -> [(anonymous#35) updateVocabularyResponse, 70:10]
+[(global) transcribe, 90:43] -> [(anonymous#35) createVocabularyResponse, 90:10]
+[(global) dynamoDB, 114:28] -> [(anonymous#35) putResponse, 114:8]
+[(global) transcribe, 164:39] -> [(getVocabularies#145) listVocabularyResponse, 164:8]
+[(getVocabularies#145) listVocabularyResponse, 174:41] -> [(getVocabularies#145) vocabularies, 174:6]

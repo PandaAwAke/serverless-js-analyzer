@@ -10,7 +10,7 @@ Taint lines:
 36
 
 Taint edges:
-(global) AWS -> (anonymous#3) dynamodb
-(anonymous#3) dynamodb -> (anonymous#3) data
-(global) AWS -> (anonymous#3) items
-(anonymous#3) items -> (anonymous#3) response
+[(global) AWS, 4:23] -> [(anonymous#3) dynamodb, 4:8]
+[(anonymous#3) dynamodb, 18:23] -> [(anonymous#3) data, 18:10]
+[(global) AWS, 20:43] -> [(anonymous#3) items, 20:10]
+[(anonymous#3) items, 24:27] -> [(anonymous#3) response, 22:10]

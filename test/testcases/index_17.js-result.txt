@@ -10,7 +10,7 @@ Taint lines:
 62, 63, 65, 66, 67, 68, 71, 90
 
 Taint edges:
-(global) AWS -> (anonymous#25) httpRequest
-(anonymous#25) httpRequest -> (anonymous#61) signer
-(anonymous#25) httpRequest -> (anonymous#61) options
-(anonymous#61) options -> (anonymous#20) output
+[(global) AWS, 55:32] -> [(anonymous#25) httpRequest, 55:14]
+[(anonymous#25) httpRequest, 62:46] -> [(anonymous#61) signer, 62:18]
+[(anonymous#25) httpRequest, 68:25] -> [(anonymous#61) options, 65:18]
+[(anonymous#61) options, 71:28] -> [(anonymous#20) output, 25:10]

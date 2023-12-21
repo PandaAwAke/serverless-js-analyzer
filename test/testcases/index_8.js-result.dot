@@ -1,0 +1,28 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+S3 (2,6)";
+  "[scope: global]
+s3 (10,6)";
+}
+
+subgraph generateThumbnail_16 {
+  graph [ label = "Scope [generateThumbnail_16]" ];
+  "[scope: generateThumbnail#16]
+originalPhoto (17,5)";
+  "[scope: generateThumbnail#16]
+resizePromise (19,7)";
+}
+
+  "[scope: global]
+S3 (2,6)" -> "[scope: global]
+s3 (10,6)";
+  "[scope: global]
+s3 (10,6)" -> "[scope: generateThumbnail#16]
+originalPhoto (17,5)";
+  "[scope: generateThumbnail#16]
+originalPhoto (17,5)" -> "[scope: generateThumbnail#16]
+resizePromise (19,7)";
+}

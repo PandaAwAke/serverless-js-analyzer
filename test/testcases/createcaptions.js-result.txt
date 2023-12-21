@@ -20,15 +20,15 @@ Taint lines:
 162, 163, 189, 191, 193, 194, 195, 231
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#27) getObjectParams
-(anonymous#27) getObjectParams -> (anonymous#27) transcribeFile
-(anonymous#27) transcribeFile -> (anonymous#27) videoId
-(anonymous#27) getObjectParams -> (anonymous#27) getObjectResponse
-(anonymous#27) getObjectResponse -> (anonymous#27) captionArray
-(anonymous#27) videoId -> (anonymous#27) videoInfo
-(global) dynamoDB -> (getTweaks#147) getItemResponse
-(global) dynamoDB -> (getVideo#178) getResponse
-(getVideo#178) getResponse -> (getVideo#178) videoInfo
-(global) dynamoDB -> (updateDynamoDB#208) result
+[(global) AWS, 20:19] -> [(global) dynamoDB, 20:4]
+[(global) AWS, 21:13] -> [(global) s3, 21:4]
+[(global) s3, 34:25] -> [(anonymous#27) getObjectParams, 31:8]
+[(anonymous#27) getObjectParams, 37:39] -> [(anonymous#27) transcribeFile, 37:8]
+[(anonymous#27) transcribeFile, 38:46] -> [(anonymous#27) videoId, 38:8]
+[(anonymous#27) getObjectParams, 50:47] -> [(anonymous#27) getObjectResponse, 50:8]
+[(anonymous#27) getObjectResponse, 58:41] -> [(anonymous#27) captionArray, 58:8]
+[(anonymous#27) videoId, 68:35] -> [(anonymous#27) videoInfo, 68:8]
+[(global) dynamoDB, 158:32] -> [(getTweaks#147) getItemResponse, 158:8]
+[(global) dynamoDB, 189:28] -> [(getVideo#178) getResponse, 189:8]
+[(getVideo#178) getResponse, 194:29] -> [(getVideo#178) videoInfo, 194:10]
+[(global) dynamoDB, 231:23] -> [(updateDynamoDB#208) result, 231:8]

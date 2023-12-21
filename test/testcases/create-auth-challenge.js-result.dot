@@ -1,0 +1,23 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (8,6)";
+  "[scope: global]
+sns (9,6)";
+}
+
+subgraph sendSMSviaSNS_44 {
+  graph [ label = "Scope [sendSMSviaSNS_44]" ];
+  "[scope: sendSMSviaSNS#44]
+result (49,8)";
+}
+
+  "[scope: global]
+AWS (8,6)" -> "[scope: global]
+sns (9,6)";
+  "[scope: global]
+sns (9,6)" -> "[scope: sendSMSviaSNS#44]
+result (49,8)";
+}

@@ -15,10 +15,10 @@ Taint lines:
 52, 72, 95
 
 Taint edges:
-(global) DynamoDBClient -> (global) dbclient
-(global) GetItemCommand -> (anonymous#25) command
-(anonymous#25) command -> (anonymous#25) results
-(anonymous#25) results -> (global) queryDynamoDb
-(global) PutItemCommand -> (anonymous#45) command
-(anonymous#45) command -> (anonymous#45) results
-(global) queryDynamoDb -> (global) handler
+[(global) DynamoDBClient, 8:21] -> [(global) dbclient, 8:6]
+[(global) GetItemCommand, 30:22] -> [(anonymous#25) command, 30:8]
+[(anonymous#25) command, 32:40] -> [(anonymous#25) results, 32:10]
+[(anonymous#25) results, 37:24] -> [(global) queryDynamoDb, 25:6]
+[(global) PutItemCommand, 50:24] -> [(anonymous#45) command, 50:10]
+[(anonymous#45) command, 52:44] -> [(anonymous#45) results, 52:14]
+[(global) queryDynamoDb, 95:10] -> [(global) handler, 72:13]

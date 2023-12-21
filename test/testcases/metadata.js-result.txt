@@ -15,7 +15,7 @@ Taint lines:
 41, 45, 57, 58
 
 Taint edges:
-(global) IvsClient -> (global) client
-(global) DynamoDBClient -> (global) dynamodb
-(global) IoTDataPlaneClient -> (global) iotClient
-(global) PutMetadataCommand -> (anonymous#11) command
+[(global) IvsClient, 5:19] -> [(global) client, 5:6]
+[(global) DynamoDBClient, 6:21] -> [(global) dynamodb, 6:6]
+[(global) IoTDataPlaneClient, 7:22] -> [(global) iotClient, 7:6]
+[(global) PutMetadataCommand, 41:28] -> [(anonymous#11) command, 41:14]

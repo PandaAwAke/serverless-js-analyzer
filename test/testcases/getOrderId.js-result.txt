@@ -10,7 +10,7 @@ Taint lines:
 31
 
 Taint edges:
-(global) AWS -> (global) documentClient
-(global) documentClient -> (anonymous#10) result
-(anonymous#10) result -> (global) incrementCount
-(global) incrementCount -> (anonymous#28) orderNumber
+[(global) AWS, 7:27] -> [(global) documentClient, 7:6]
+[(global) documentClient, 22:23] -> [(anonymous#10) result, 22:8]
+[(anonymous#10) result, 24:9] -> [(global) incrementCount, 10:6]
+[(global) incrementCount, 30:28] -> [(anonymous#28) orderNumber, 30:8]

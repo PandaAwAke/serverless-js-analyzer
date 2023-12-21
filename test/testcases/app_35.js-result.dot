@@ -1,0 +1,14 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,6)";
+  "[scope: global]
+ddb (18,6)";
+}
+
+  "[scope: global]
+AWS (16,6)" -> "[scope: global]
+ddb (18,6)";
+}

@@ -1,0 +1,52 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+DynamoDBClient (5,9)";
+  "[scope: global]
+GetItemCommand (5,25)";
+  "[scope: global]
+PutItemCommand (5,40)";
+  "[scope: global]
+dbclient (8,6)";
+  "[scope: global]
+queryDynamoDb (25,6)";
+  "[scope: global]
+handler (72,13)";
+}
+
+subgraph anonymous_25 {
+  graph [ label = "Scope [anonymous_25]" ];
+  "[scope: anonymous#25]
+command (30,8)";
+  "[scope: anonymous#25]
+results (32,10)";
+}
+
+subgraph anonymous_45 {
+  graph [ label = "Scope [anonymous_45]" ];
+}
+
+  "[scope: global]
+DynamoDBClient (5,9)" -> "[scope: global]
+dbclient (8,6)";
+  "[scope: global]
+GetItemCommand (5,25)" -> "[scope: anonymous#25]
+command (30,8)";
+  "[scope: anonymous#25]
+command (30,8)" -> "[scope: anonymous#25]
+results (32,10)";
+  "[scope: anonymous#25]
+results (32,10)" -> "[scope: global]
+queryDynamoDb (25,6)";
+  "[scope: global]
+PutItemCommand (5,40)" -> "[scope: anonymous#25]
+command (30,8)";
+  "[scope: anonymous#25]
+command (30,8)" -> "[scope: anonymous#25]
+results (32,10)";
+  "[scope: global]
+queryDynamoDb (25,6)" -> "[scope: global]
+handler (72,13)";
+}

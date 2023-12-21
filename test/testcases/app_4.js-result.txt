@@ -7,4 +7,4 @@ Taint lines:
 1, 22, 23, 24
 
 Taint edges:
-(global) S3Client -> (anonymous#6) s3
+[(global) S3Client, 22:19] -> [(anonymous#6) s3, 22:10]

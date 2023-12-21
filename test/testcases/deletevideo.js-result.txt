@@ -17,12 +17,12 @@ Taint lines:
 104, 105, 107, 171, 193, 213, 238
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) AWS -> (global) s3
-(global) AWS -> (global) transcribe
-(global) dynamoDB -> (anonymous#35) getResponse
-(anonymous#35) getResponse -> (anonymous#35) video
-(anonymous#35) video -> (anonymous#35) inputVideoKey
-(anonymous#35) video -> (anonymous#35) transcodedVideoKey
-(anonymous#35) video -> (anonymous#35) burnedVideoKey
-(anonymous#35) video -> (anonymous#35) audioKey
+[(global) AWS, 18:19] -> [(global) dynamoDB, 18:4]
+[(global) AWS, 19:13] -> [(global) s3, 19:4]
+[(global) AWS, 25:19] -> [(global) transcribe, 25:2]
+[(global) dynamoDB, 55:28] -> [(anonymous#35) getResponse, 55:8]
+[(anonymous#35) getResponse, 59:25] -> [(anonymous#35) video, 59:10]
+[(anonymous#35) video, 69:30] -> [(anonymous#35) inputVideoKey, 69:14]
+[(anonymous#35) video, 82:35] -> [(anonymous#35) transcodedVideoKey, 82:14]
+[(anonymous#35) video, 95:31] -> [(anonymous#35) burnedVideoKey, 95:14]
+[(anonymous#35) video, 105:25] -> [(anonymous#35) audioKey, 105:14]

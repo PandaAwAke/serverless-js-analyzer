@@ -9,6 +9,6 @@ Taint lines:
 1, 2, 10, 11, 17, 29
 
 Taint edges:
-(global) DynamoDB -> (global) client
-(global) client -> (global) ddbDocClient
-(global) ddbDocClient -> (anonymous#13) results
+[(global) DynamoDB, 10:19] -> [(global) client, 10:6]
+[(global) client, 11:43] -> [(global) ddbDocClient, 11:6]
+[(global) ddbDocClient, 17:26] -> [(anonymous#13) results, 17:10]

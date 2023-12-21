@@ -8,5 +8,5 @@ Taint lines:
 182
 
 Taint edges:
-(global) AWS -> (global) S3
-(global) S3 -> (uploadVideoAssets#56) lineReader
+[(global) AWS, 4:15] -> [(global) S3, 4:6]
+[(global) S3, 62:10] -> [(uploadVideoAssets#56) lineReader, 61:5]

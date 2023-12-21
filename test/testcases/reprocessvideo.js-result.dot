@@ -1,0 +1,68 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+lambda (19,4)";
+  "[scope: global]
+dynamoDB (20,4)";
+  "[scope: global]
+s3 (21,4)";
+}
+
+subgraph anonymous_28 {
+  graph [ label = "Scope [anonymous_28]" ];
+  "[scope: anonymous#28]
+getResponse (48,8)";
+  "[scope: anonymous#28]
+video (52,10)";
+  "[scope: anonymous#28]
+videoBucket (54,12)";
+  "[scope: anonymous#28]
+inputVideoKey (56,12)";
+  "[scope: anonymous#28]
+audioBucket (58,12)";
+  "[scope: anonymous#28]
+audioKey (59,12)";
+  "[scope: anonymous#28]
+s3Event (68,10)";
+  "[scope: anonymous#28]
+params (83,10)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+lambda (19,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (20,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (21,4)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: anonymous#28]
+getResponse (48,8)";
+  "[scope: anonymous#28]
+getResponse (48,8)" -> "[scope: anonymous#28]
+video (52,10)";
+  "[scope: anonymous#28]
+video (52,10)" -> "[scope: anonymous#28]
+videoBucket (54,12)";
+  "[scope: anonymous#28]
+video (52,10)" -> "[scope: anonymous#28]
+inputVideoKey (56,12)";
+  "[scope: anonymous#28]
+video (52,10)" -> "[scope: anonymous#28]
+audioBucket (58,12)";
+  "[scope: anonymous#28]
+video (52,10)" -> "[scope: anonymous#28]
+audioKey (59,12)";
+  "[scope: anonymous#28]
+inputVideoKey (56,12)" -> "[scope: anonymous#28]
+s3Event (68,10)";
+  "[scope: anonymous#28]
+s3Event (68,10)" -> "[scope: anonymous#28]
+params (83,10)";
+}

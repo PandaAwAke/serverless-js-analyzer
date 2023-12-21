@@ -1,0 +1,41 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+S3Client (1,8)";
+  "[scope: global]
+PutObjectCommand (1,18)";
+  "[scope: global]
+GetObjectCommand (1,35)";
+  "[scope: global]
+s3Client (9,6)";
+}
+
+subgraph anonymous_12 {
+  graph [ label = "Scope [anonymous_12]" ];
+  "[scope: anonymous#12]
+command (102,12)";
+}
+
+subgraph downloadAndStoreFile_146 {
+  graph [ label = "Scope [downloadAndStoreFile_146]" ];
+  "[scope: downloadAndStoreFile#146]
+getObjectCommand (158,10)";
+  "[scope: downloadAndStoreFile#146]
+response (159,10)";
+}
+
+  "[scope: global]
+S3Client (1,8)" -> "[scope: global]
+s3Client (9,6)";
+  "[scope: global]
+PutObjectCommand (1,18)" -> "[scope: anonymous#12]
+command (102,12)";
+  "[scope: global]
+GetObjectCommand (1,35)" -> "[scope: downloadAndStoreFile#146]
+getObjectCommand (158,10)";
+  "[scope: downloadAndStoreFile#146]
+getObjectCommand (158,10)" -> "[scope: downloadAndStoreFile#146]
+response (159,10)";
+}

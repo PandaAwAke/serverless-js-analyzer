@@ -1,0 +1,63 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (16,4)";
+  "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+s3 (19,4)";
+}
+
+subgraph anonymous_26 {
+  graph [ label = "Scope [anonymous_26]" ];
+  "[scope: anonymous#26]
+getResponse (54,8)";
+  "[scope: anonymous#26]
+video (58,10)";
+  "[scope: anonymous#26]
+index (60,10)";
+  "[scope: anonymous#26]
+videoBucket (61,12)";
+  "[scope: anonymous#26]
+videoKey (62,12)";
+  "[scope: anonymous#26]
+url (68,12)";
+  "[scope: anonymous#26]
+captionsUrl (75,12)";
+  "[scope: anonymous#26]
+response (93,12)";
+}
+
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+dynamoDB (18,4)";
+  "[scope: global]
+AWS (16,4)" -> "[scope: global]
+s3 (19,4)";
+  "[scope: global]
+dynamoDB (18,4)" -> "[scope: anonymous#26]
+getResponse (54,8)";
+  "[scope: anonymous#26]
+getResponse (54,8)" -> "[scope: anonymous#26]
+video (58,10)";
+  "[scope: anonymous#26]
+video (58,10)" -> "[scope: anonymous#26]
+index (60,10)";
+  "[scope: anonymous#26]
+index (60,10)" -> "[scope: anonymous#26]
+videoBucket (61,12)";
+  "[scope: anonymous#26]
+video (58,10)" -> "[scope: anonymous#26]
+videoKey (62,12)";
+  "[scope: anonymous#26]
+videoKey (62,12)" -> "[scope: anonymous#26]
+url (68,12)";
+  "[scope: global]
+s3 (19,4)" -> "[scope: anonymous#26]
+captionsUrl (75,12)";
+  "[scope: anonymous#26]
+video (58,10)" -> "[scope: anonymous#26]
+response (93,12)";
+}

@@ -10,6 +10,6 @@ Taint lines:
 37, 38, 44, 47, 49
 
 Taint edges:
-(global) AWS -> (global) ddb
-(global) ddb -> (global) config
-(global) config -> (global) createTableInput
+[(global) AWS, 24:16] -> [(global) ddb, 24:6]
+[(global) ddb, 29:54] -> [(global) config, 29:6]
+[(global) config, 33:67] -> [(global) createTableInput, 33:6]

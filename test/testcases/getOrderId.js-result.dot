@@ -1,0 +1,37 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (5,6)";
+  "[scope: global]
+documentClient (7,6)";
+  "[scope: global]
+incrementCount (10,6)";
+}
+
+subgraph anonymous_10 {
+  graph [ label = "Scope [anonymous_10]" ];
+  "[scope: anonymous#10]
+result (22,8)";
+}
+
+subgraph anonymous_28 {
+  graph [ label = "Scope [anonymous_28]" ];
+  "[scope: anonymous#28]
+orderNumber (30,8)";
+}
+
+  "[scope: global]
+AWS (5,6)" -> "[scope: global]
+documentClient (7,6)";
+  "[scope: global]
+documentClient (7,6)" -> "[scope: anonymous#10]
+result (22,8)";
+  "[scope: anonymous#10]
+result (22,8)" -> "[scope: global]
+incrementCount (10,6)";
+  "[scope: global]
+incrementCount (10,6)" -> "[scope: anonymous#28]
+orderNumber (30,8)";
+}

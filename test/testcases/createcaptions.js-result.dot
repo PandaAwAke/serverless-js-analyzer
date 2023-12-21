@@ -1,0 +1,83 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (17,4)";
+  "[scope: global]
+dynamoDB (20,4)";
+  "[scope: global]
+s3 (21,4)";
+}
+
+subgraph anonymous_27 {
+  graph [ label = "Scope [anonymous_27]" ];
+  "[scope: anonymous#27]
+getObjectParams (31,8)";
+  "[scope: anonymous#27]
+transcribeFile (37,8)";
+  "[scope: anonymous#27]
+videoId (38,8)";
+  "[scope: anonymous#27]
+getObjectResponse (50,8)";
+  "[scope: anonymous#27]
+captionArray (58,8)";
+  "[scope: anonymous#27]
+videoInfo (68,8)";
+}
+
+subgraph getTweaks_147 {
+  graph [ label = "Scope [getTweaks_147]" ];
+  "[scope: getTweaks#147]
+getItemResponse (158,8)";
+}
+
+subgraph getVideo_178 {
+  graph [ label = "Scope [getVideo_178]" ];
+  "[scope: getVideo#178]
+getResponse (189,8)";
+}
+
+subgraph updateDynamoDB_208 {
+  graph [ label = "Scope [updateDynamoDB_208]" ];
+  "[scope: updateDynamoDB#208]
+result (231,8)";
+}
+
+  "[scope: global]
+AWS (17,4)" -> "[scope: global]
+dynamoDB (20,4)";
+  "[scope: global]
+AWS (17,4)" -> "[scope: global]
+s3 (21,4)";
+  "[scope: global]
+s3 (21,4)" -> "[scope: anonymous#27]
+getObjectParams (31,8)";
+  "[scope: anonymous#27]
+getObjectParams (31,8)" -> "[scope: anonymous#27]
+transcribeFile (37,8)";
+  "[scope: anonymous#27]
+transcribeFile (37,8)" -> "[scope: anonymous#27]
+videoId (38,8)";
+  "[scope: anonymous#27]
+getObjectParams (31,8)" -> "[scope: anonymous#27]
+getObjectResponse (50,8)";
+  "[scope: anonymous#27]
+getObjectResponse (50,8)" -> "[scope: anonymous#27]
+captionArray (58,8)";
+  "[scope: anonymous#27]
+videoId (38,8)" -> "[scope: anonymous#27]
+videoInfo (68,8)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: getTweaks#147]
+getItemResponse (158,8)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: getVideo#178]
+getResponse (189,8)";
+  "[scope: getVideo#178]
+getResponse (189,8)" -> "[scope: anonymous#27]
+videoInfo (68,8)";
+  "[scope: global]
+dynamoDB (20,4)" -> "[scope: updateDynamoDB#208]
+result (231,8)";
+}

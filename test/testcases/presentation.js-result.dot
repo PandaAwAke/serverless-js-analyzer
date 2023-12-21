@@ -1,0 +1,36 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+S3Client (5,9)";
+  "[scope: global]
+PutObjectCommand (5,19)";
+  "[scope: global]
+S3 (6,4)";
+  "[scope: global]
+saveApiResponse (67,13)";
+  "[scope: global]
+saveRecentlyCrawled (81,13)";
+  "[scope: global]
+saveWebPage (95,13)";
+  "[scope: global]
+regenerateHomePage (134,13)";
+}
+
+  "[scope: global]
+S3Client (5,9)" -> "[scope: global]
+S3 (6,4)";
+  "[scope: global]
+PutObjectCommand (5,19)" -> "[scope: global]
+saveApiResponse (67,13)";
+  "[scope: global]
+PutObjectCommand (5,19)" -> "[scope: global]
+saveRecentlyCrawled (81,13)";
+  "[scope: global]
+PutObjectCommand (5,19)" -> "[scope: global]
+saveWebPage (95,13)";
+  "[scope: global]
+PutObjectCommand (5,19)" -> "[scope: global]
+regenerateHomePage (134,13)";
+}

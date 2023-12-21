@@ -10,7 +10,7 @@ Taint lines:
 69, 70, 76, 81, 189
 
 Taint edges:
-(global) AWS -> (global) s3
-(global) s3 -> (anonymous#23) captionsObject
-(anonymous#23) captionsObject -> (anonymous#23) captionsStr
-(anonymous#23) captionsStr -> (anonymous#23) captionData
+[(global) AWS, 18:13] -> [(global) s3, 18:4]
+[(global) s3, 55:31] -> [(anonymous#23) captionsObject, 55:8]
+[(anonymous#23) captionsObject, 57:22] -> [(anonymous#23) captionsStr, 57:8]
+[(anonymous#23) captionsStr, 59:33] -> [(anonymous#23) captionData, 59:8]

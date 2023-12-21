@@ -1,0 +1,20 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+ApiGatewayManagementApiClient (6,8)";
+  "[scope: global]
+PostToConnectionCommand (6,39)";
+}
+
+subgraph anonymous_8 {
+  graph [ label = "Scope [anonymous_8]" ];
+  "[scope: anonymous#8]
+apiGatewayManagementAPIClient (12,8)";
+}
+
+  "[scope: global]
+ApiGatewayManagementApiClient (6,8)" -> "[scope: anonymous#8]
+apiGatewayManagementAPIClient (12,8)";
+}

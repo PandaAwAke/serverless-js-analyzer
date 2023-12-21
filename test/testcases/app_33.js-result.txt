@@ -12,8 +12,8 @@ Taint lines:
 51, 70
 
 Taint edges:
-(global) AWS -> (global) ddb
-(global) ddb -> (global) config
-(global) config -> (global) myGeoTableManager
-(global) myGeoTableManager -> (anonymous#45) result
-(anonymous#45) result -> (global) saveToDDB
+[(global) AWS, 21:16] -> [(global) ddb, 21:6]
+[(global) ddb, 23:54] -> [(global) config, 23:6]
+[(global) config, 26:52] -> [(global) myGeoTableManager, 26:6]
+[(global) myGeoTableManager, 51:25] -> [(anonymous#45) result, 51:10]
+[(anonymous#45) result, 70:16] -> [(global) saveToDDB, 45:6]

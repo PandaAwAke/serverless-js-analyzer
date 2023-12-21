@@ -6,4 +6,4 @@ Taint lines:
 1, 2, 55
 
 Taint edges:
-(global) dynamodb -> (global) docClient
+[(global) dynamodb, 2:22] -> [(global) docClient, 2:6]

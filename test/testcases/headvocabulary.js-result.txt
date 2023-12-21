@@ -9,6 +9,6 @@ Taint lines:
 120, 121, 124, 125, 126, 130
 
 Taint edges:
-(global) AWS -> (global) transcribe
-(global) transcribe -> (getVocabularies#92) listVocabularyResponse
-(getVocabularies#92) listVocabularyResponse -> (getVocabularies#92) vocabularies
+[(global) AWS, 23:19] -> [(global) transcribe, 23:2]
+[(global) transcribe, 111:39] -> [(getVocabularies#92) listVocabularyResponse, 111:8]
+[(getVocabularies#92) listVocabularyResponse, 121:41] -> [(getVocabularies#92) vocabularies, 121:6]

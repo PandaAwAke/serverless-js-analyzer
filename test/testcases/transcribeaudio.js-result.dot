@@ -1,0 +1,56 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (17,4)";
+  "[scope: global]
+transcribe (24,2)";
+  "[scope: global]
+dynamoDB (31,4)";
+}
+
+subgraph transcribeAudio_129 {
+  graph [ label = "Scope [transcribeAudio_129]" ];
+  "[scope: transcribeAudio#129]
+transcribeResult (171,8)";
+}
+
+subgraph getVocabularies_223 {
+  graph [ label = "Scope [getVocabularies_223]" ];
+  "[scope: getVocabularies#223]
+listVocabularyResponse (242,8)";
+  "[scope: getVocabularies#223]
+vocabularies (252,6)";
+}
+
+subgraph getVideo_271 {
+  graph [ label = "Scope [getVideo_271]" ];
+  "[scope: getVideo#271]
+getResponse (282,8)";
+  "[scope: getVideo#271]
+videoInfo (287,10)";
+}
+
+  "[scope: global]
+AWS (17,4)" -> "[scope: global]
+transcribe (24,2)";
+  "[scope: global]
+AWS (17,4)" -> "[scope: global]
+dynamoDB (31,4)";
+  "[scope: global]
+transcribe (24,2)" -> "[scope: transcribeAudio#129]
+transcribeResult (171,8)";
+  "[scope: global]
+transcribe (24,2)" -> "[scope: getVocabularies#223]
+listVocabularyResponse (242,8)";
+  "[scope: getVocabularies#223]
+listVocabularyResponse (242,8)" -> "[scope: getVocabularies#223]
+vocabularies (252,6)";
+  "[scope: global]
+dynamoDB (31,4)" -> "[scope: getVideo#271]
+getResponse (282,8)";
+  "[scope: getVideo#271]
+getResponse (282,8)" -> "[scope: getVideo#271]
+videoInfo (287,10)";
+}

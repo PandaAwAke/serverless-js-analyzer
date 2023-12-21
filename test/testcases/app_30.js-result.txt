@@ -19,11 +19,11 @@ Taint lines:
 47
 
 Taint edges:
-(global) DynamoDBClient -> (global) docClient
-(global) SFNClient -> (global) stepFunctions
-(global) StartExecutionCommand -> (anonymous#17) startExecCommand
-(anonymous#17) startExecCommand -> (anonymous#17) executionResult
-(anonymous#17) executionResult -> (anonymous#17) item
-(anonymous#17) item -> (anonymous#17) result
-(anonymous#17) executionResult -> (anonymous#17) body
-(anonymous#17) body -> (anonymous#17) response
+[(global) DynamoDBClient, 10:22] -> [(global) docClient, 10:6]
+[(global) SFNClient, 11:26] -> [(global) stepFunctions, 11:6]
+[(global) StartExecutionCommand, 24:31] -> [(anonymous#17) startExecCommand, 24:8]
+[(anonymous#17) startExecCommand, 25:51] -> [(anonymous#17) executionResult, 25:8]
+[(anonymous#17) executionResult, 29:42] -> [(anonymous#17) item, 29:8]
+[(anonymous#17) item, 30:87] -> [(anonymous#17) result, 30:8]
+[(anonymous#17) executionResult, 36:18] -> [(anonymous#17) body, 35:8]
+[(anonymous#17) body, 42:25] -> [(anonymous#17) response, 40:8]

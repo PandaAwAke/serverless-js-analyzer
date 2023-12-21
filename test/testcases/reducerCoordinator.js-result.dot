@@ -1,0 +1,63 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+AWS (21,4)";
+  "[scope: global]
+s3 (29,4)";
+}
+
+subgraph invokeLambda_37 {
+  graph [ label = "Scope [invokeLambda_37]" ];
+  "[scope: invokeLambda#37]
+lambda (40,12)";
+  "[scope: invokeLambda#37]
+status (47,12)";
+}
+
+subgraph anonymous_75 {
+  graph [ label = "Scope [anonymous_75]" ];
+  "[scope: anonymous#75]
+bucket (78,10)";
+  "[scope: anonymous#75]
+key (79,8)";
+  "[scope: anonymous#75]
+lparams (209,8)";
+}
+
+subgraph getReducerStateInfo_110 {
+  graph [ label = "Scope [getReducerStateInfo_110]" ];
+  "[scope: getReducerStateInfo#110]
+params (139,16)";
+}
+
+subgraph anonymous_233 {
+  graph [ label = "Scope [anonymous_233]" ];
+}
+
+  "[scope: global]
+AWS (21,4)" -> "[scope: global]
+s3 (29,4)";
+  "[scope: global]
+AWS (21,4)" -> "[scope: invokeLambda#37]
+lambda (40,12)";
+  "[scope: invokeLambda#37]
+lambda (40,12)" -> "[scope: invokeLambda#37]
+status (47,12)";
+  "[scope: global]
+s3 (29,4)" -> "[scope: anonymous#75]
+bucket (78,10)";
+  "[scope: global]
+s3 (29,4)" -> "[scope: anonymous#75]
+key (79,8)";
+  "[scope: anonymous#75]
+bucket (78,10)" -> "[scope: getReducerStateInfo#110]
+params (139,16)";
+  "[scope: anonymous#75]
+bucket (78,10)" -> "[scope: anonymous#75]
+lparams (209,8)";
+  "[scope: anonymous#75]
+bucket (78,10)" -> "[scope: getReducerStateInfo#110]
+params (139,16)";
+}

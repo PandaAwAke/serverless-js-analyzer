@@ -16,12 +16,12 @@ Taint lines:
 78, 79, 83, 84
 
 Taint edges:
-(global) AWS -> (global) dynamoDb
-(global) dynamoDb -> (anonymous#4) result
-(anonymous#4) result -> (global) getDrinkByOrderId
-(global) dynamoDb -> (anonymous#23) result
-(anonymous#23) result -> (global) getAllOrderByDrink
-(global) getDrinkByOrderId -> (anonymous#69) drink
-(anonymous#69) drink -> (anonymous#69) orders
-(anonymous#69) orders -> (anonymous#69) duration
-(anonymous#69) duration -> (anonymous#69) response
+[(global) AWS, 2:21] -> [(global) dynamoDb, 2:6]
+[(global) dynamoDb, 15:29] -> [(anonymous#4) result, 15:14]
+[(anonymous#4) result, 17:15] -> [(global) getDrinkByOrderId, 4:6]
+[(global) dynamoDb, 38:29] -> [(anonymous#23) result, 38:14]
+[(anonymous#23) result, 39:15] -> [(global) getAllOrderByDrink, 23:6]
+[(global) getDrinkByOrderId, 71:24] -> [(anonymous#69) drink, 71:10]
+[(anonymous#69) drink, 73:44] -> [(anonymous#69) orders, 73:10]
+[(anonymous#69) orders, 75:43] -> [(anonymous#69) duration, 75:10]
+[(anonymous#69) duration, 79:25] -> [(anonymous#69) response, 77:10]

@@ -9,7 +9,7 @@ Taint lines:
 7, 8, 9, 11, 39, 40, 48, 49
 
 Taint edges:
-(global) AWS -> (global) cognito
-(global) AWS -> (global) eventbridge
-(global) eventbridge -> (anonymous#14) response
-(global) cognito -> (anonymous#14) ug_response
+[(global) AWS, 9:20] -> [(global) cognito, 9:6]
+[(global) AWS, 11:24] -> [(global) eventbridge, 11:6]
+[(global) eventbridge, 39:27] -> [(anonymous#14) response, 39:10]
+[(global) cognito, 48:30] -> [(anonymous#14) ug_response, 48:10]

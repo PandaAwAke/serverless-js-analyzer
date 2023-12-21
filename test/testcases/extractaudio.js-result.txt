@@ -15,9 +15,9 @@ Taint lines:
 413, 422, 428, 457, 495, 496
 
 Taint edges:
-(global) AWS -> (global) dynamoDB
-(global) dynamoDB -> (checkForPriorProcessing#190) response
-(global) AWS -> (extractAudio#263) endpointPromise
-(global) dynamoDB -> (getMediaConvertEndpoint#384) getItemResponse
-(global) AWS -> (getMediaConvertEndpoint#384) endpointPromise
-(global) dynamoDB -> (updateDynamoDB#467) putData
+[(global) AWS, 20:19] -> [(global) dynamoDB, 20:4]
+[(global) dynamoDB, 200:27] -> [(checkForPriorProcessing#190) response, 200:10]
+[(global) AWS, 359:26] -> [(extractAudio#263) endpointPromise, 359:4]
+[(global) dynamoDB, 395:30] -> [(getMediaConvertEndpoint#384) getItemResponse, 395:6]
+[(global) AWS, 413:28] -> [(getMediaConvertEndpoint#384) endpointPromise, 413:6]
+[(global) dynamoDB, 495:26] -> [(updateDynamoDB#467) putData, 495:10]

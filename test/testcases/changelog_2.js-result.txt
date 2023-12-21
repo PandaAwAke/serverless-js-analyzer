@@ -27,18 +27,18 @@ Taint lines:
 283, 287, 288, 291, 293, 299, 301
 
 Taint edges:
-(global) GetCommand -> (anonymous#25) result
-(anonymous#25) result -> (global) getMetadata
-(global) BatchGetCommand -> (anonymous#39) results
-(anonymous#39) results -> (global) bulkGetMetadata
-(global) UpdateCommand -> (global) upsertOne
-(global) upsertOne -> (global) upsert
-(global) UpdateCommand -> (global) rejectForDuration
-(global) GetCommand -> (anonymous#155) response
-(anonymous#155) response -> (global) recentlyUpdated
-(global) UpdateCommand -> (global) crawled
-(global) QueryCommand -> (anonymous#263) results
-(anonymous#263) results -> (anonymous#263) changelogs
-(anonymous#263) results -> (anonymous#263) moreChangelogs
-(anonymous#263) moreChangelogs -> (global) _queryIndexForSecond
-(global) _queryIndexForSecond -> (global) selectChangelogsToCrawl
+[(global) GetCommand, 26:39] -> [(anonymous#25) result, 26:6]
+[(anonymous#25) result, 33:9] -> [(global) getMetadata, 25:13]
+[(global) BatchGetCommand, 51:40] -> [(anonymous#39) results, 51:6]
+[(anonymous#39) results, 53:9] -> [(global) bulkGetMetadata, 39:13]
+[(global) UpdateCommand, 80:28] -> [(global) upsertOne, 63:13]
+[(global) upsertOne, 120:10] -> [(global) upsert, 112:13]
+[(global) UpdateCommand, 137:33] -> [(global) rejectForDuration, 136:13]
+[(global) GetCommand, 156:41] -> [(anonymous#155) response, 156:6]
+[(anonymous#155) response, 166:2] -> [(global) recentlyUpdated, 155:13]
+[(global) UpdateCommand, 249:26] -> [(global) crawled, 182:13]
+[(global) QueryCommand, 264:40] -> [(anonymous#263) results, 264:6]
+[(anonymous#263) results, 283:19] -> [(anonymous#263) changelogs, 283:6]
+[(anonymous#263) results, 291:58] -> [(anonymous#263) moreChangelogs, 291:6]
+[(anonymous#263) moreChangelogs, 293:27] -> [(global) _queryIndexForSecond, 263:13]
+[(global) _queryIndexForSecond, 301:15] -> [(global) selectChangelogsToCrawl, 299:13]

@@ -10,7 +10,7 @@ Taint lines:
 112
 
 Taint edges:
-(global) AWS -> (global) client
-(global) client -> (startSfnExecution#64) startWorkflowResult
-(startSfnExecution#64) startWorkflowResult -> (startSfnExecution#64) executionArn
-(global) client -> (processRecord#84) result
+[(global) AWS, 30:17] -> [(global) client, 25:4]
+[(global) client, 74:36] -> [(startSfnExecution#64) startWorkflowResult, 74:8]
+[(startSfnExecution#64) startWorkflowResult, 80:21] -> [(startSfnExecution#64) executionArn, 80:6]
+[(global) client, 105:23] -> [(processRecord#84) result, 105:8]

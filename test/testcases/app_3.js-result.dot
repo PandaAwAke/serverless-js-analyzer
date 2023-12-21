@@ -1,0 +1,93 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+SSMClient (1,8)";
+  "[scope: global]
+GetParameterCommand (1,19)";
+  "[scope: global]
+S3Client (2,8)";
+  "[scope: global]
+GetObjectCommand (2,18)";
+  "[scope: global]
+EventBridgeClient (6,8)";
+  "[scope: global]
+PutEventsCommand (6,27)";
+  "[scope: global]
+s3Client (3,6)";
+  "[scope: global]
+ssmClient (7,6)";
+  "[scope: global]
+ebClient (8,6)";
+}
+
+subgraph anonymous_14 {
+  graph [ label = "Scope [anonymous_14]" ];
+  "[scope: anonymous#14]
+api_key_response (29,8)";
+  "[scope: anonymous#14]
+apiKey (36,8)";
+  "[scope: anonymous#14]
+response (50,8)";
+  "[scope: anonymous#14]
+tags (53,6)";
+  "[scope: anonymous#14]
+res (57,6)";
+  "[scope: anonymous#14]
+msg (60,8)";
+  "[scope: anonymous#14]
+eb_res (74,8)";
+}
+
+subgraph getFileContents_111 {
+  graph [ label = "Scope [getFileContents_111]" ];
+  "[scope: getFileContents#111]
+getObjectCommand (120,10)";
+  "[scope: getFileContents#111]
+fileContents (124,10)";
+}
+
+  "[scope: global]
+S3Client (2,8)" -> "[scope: global]
+s3Client (3,6)";
+  "[scope: global]
+SSMClient (1,8)" -> "[scope: global]
+ssmClient (7,6)";
+  "[scope: global]
+EventBridgeClient (6,8)" -> "[scope: global]
+ebClient (8,6)";
+  "[scope: global]
+GetParameterCommand (1,19)" -> "[scope: anonymous#14]
+api_key_response (29,8)";
+  "[scope: anonymous#14]
+api_key_response (29,8)" -> "[scope: anonymous#14]
+apiKey (36,8)";
+  "[scope: anonymous#14]
+apiKey (36,8)" -> "[scope: anonymous#14]
+response (50,8)";
+  "[scope: anonymous#14]
+response (50,8)" -> "[scope: anonymous#14]
+tags (53,6)";
+  "[scope: anonymous#14]
+tags (53,6)" -> "[scope: anonymous#14]
+res (57,6)";
+  "[scope: anonymous#14]
+tags (53,6)" -> "[scope: anonymous#14]
+msg (60,8)";
+  "[scope: anonymous#14]
+msg (60,8)" -> "[scope: anonymous#14]
+eb_res (74,8)";
+  "[scope: global]
+S3Client (2,8)" -> "[scope: global]
+s3Client (3,6)";
+  "[scope: global]
+GetObjectCommand (2,18)" -> "[scope: getFileContents#111]
+getObjectCommand (120,10)";
+  "[scope: getFileContents#111]
+getObjectCommand (120,10)" -> "[scope: anonymous#14]
+response (50,8)";
+  "[scope: anonymous#14]
+response (50,8)" -> "[scope: getFileContents#111]
+fileContents (124,10)";
+}

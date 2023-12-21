@@ -1,0 +1,27 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+DynamoDBClient (6,8)";
+  "[scope: global]
+PutItemCommand (6,24)";
+  "[scope: global]
+marshall (7,8)";
+  "[scope: global]
+ddb (8,6)";
+}
+
+subgraph anonymous_10 {
+  graph [ label = "Scope [anonymous_10]" ];
+  "[scope: anonymous#10]
+putItemCommand (13,8)";
+}
+
+  "[scope: global]
+DynamoDBClient (6,8)" -> "[scope: global]
+ddb (8,6)";
+  "[scope: global]
+marshall (7,8)" -> "[scope: anonymous#10]
+putItemCommand (13,8)";
+}

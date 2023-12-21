@@ -7,4 +7,4 @@ Taint lines:
 1, 2, 18
 
 Taint edges:
-(global) SFNClient -> (global) stepfunctions
+[(global) SFNClient, 2:26] -> [(global) stepfunctions, 2:6]

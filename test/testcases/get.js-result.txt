@@ -6,4 +6,4 @@ Taint lines:
 16, 17, 19, 36
 
 Taint edges:
-(global) AWS -> (global) ddb
+[(global) AWS, 19:16] -> [(global) ddb, 19:6]

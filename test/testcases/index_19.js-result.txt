@@ -9,6 +9,6 @@ Taint lines:
 4, 6, 17, 33, 42
 
 Taint edges:
-(global) SNSClient -> (global) snsclient
-(global) PublishCommand -> (anonymous#17) command
-(anonymous#17) command -> (global) handler
+[(global) SNSClient, 6:22] -> [(global) snsclient, 6:6]
+[(global) PublishCommand, 33:32] -> [(anonymous#17) command, 33:18]
+[(anonymous#17) command, 42:38] -> [(global) handler, 17:13]

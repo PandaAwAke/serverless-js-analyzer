@@ -9,7 +9,7 @@ Taint lines:
 16, 17, 18, 42, 78, 79, 83, 86
 
 Taint edges:
-(global) AWS -> (global) sqs
-(global) sqs -> (anonymous#42) result
-(anonymous#42) result -> (global) addToQueue
-(global) addToQueue -> (global) main
+[(global) AWS, 18:16] -> [(global) sqs, 18:6]
+[(global) sqs, 78:25] -> [(anonymous#42) result, 78:10]
+[(anonymous#42) result, 79:16] -> [(global) addToQueue, 42:6]
+[(global) addToQueue, 83:32] -> [(global) main, 83:6]

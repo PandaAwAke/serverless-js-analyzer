@@ -1,0 +1,25 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+EventBridgeClient (1,8)";
+  "[scope: global]
+PutEventsCommand (1,27)";
+}
+
+subgraph anonymous_3 {
+  graph [ label = "Scope [anonymous_3]" ];
+  "[scope: anonymous#3]
+eventBridgeClient (26,8)";
+  "[scope: anonymous#3]
+putEventCommand (39,8)";
+}
+
+  "[scope: global]
+EventBridgeClient (1,8)" -> "[scope: anonymous#3]
+eventBridgeClient (26,8)";
+  "[scope: global]
+PutEventsCommand (1,27)" -> "[scope: anonymous#3]
+putEventCommand (39,8)";
+}

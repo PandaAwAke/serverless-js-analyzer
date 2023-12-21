@@ -14,10 +14,10 @@ Taint lines:
 256, 257, 261, 282, 284, 286, 287, 288
 
 Taint edges:
-(global) AWS -> (global) transcribe
-(global) AWS -> (global) dynamoDB
-(global) transcribe -> (transcribeAudio#129) transcribeResult
-(global) transcribe -> (getVocabularies#223) listVocabularyResponse
-(getVocabularies#223) listVocabularyResponse -> (getVocabularies#223) vocabularies
-(global) dynamoDB -> (getVideo#271) getResponse
-(getVideo#271) getResponse -> (getVideo#271) videoInfo
+[(global) AWS, 24:19] -> [(global) transcribe, 24:2]
+[(global) AWS, 31:19] -> [(global) dynamoDB, 31:4]
+[(global) transcribe, 171:33] -> [(transcribeAudio#129) transcribeResult, 171:8]
+[(global) transcribe, 242:39] -> [(getVocabularies#223) listVocabularyResponse, 242:8]
+[(getVocabularies#223) listVocabularyResponse, 252:41] -> [(getVocabularies#223) vocabularies, 252:6]
+[(global) dynamoDB, 282:28] -> [(getVideo#271) getResponse, 282:8]
+[(getVideo#271) getResponse, 287:29] -> [(getVideo#271) videoInfo, 287:10]

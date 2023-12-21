@@ -7,5 +7,5 @@ Taint lines:
 2, 3, 30, 31
 
 Taint edges:
-(global) AWS -> (global) rekognition
-(global) rekognition -> (anonymous#11) result
+[(global) AWS, 3:24] -> [(global) rekognition, 3:6]
+[(global) rekognition, 30:23] -> [(anonymous#11) result, 30:8]

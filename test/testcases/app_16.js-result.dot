@@ -1,0 +1,14 @@
+digraph G {
+  graph [ rankdir =TB ];
+subgraph global {
+  graph [ label = "Scope [global]" ];
+  "[scope: global]
+dynamodb (1,6)";
+  "[scope: global]
+docClient (2,6)";
+}
+
+  "[scope: global]
+dynamodb (1,6)" -> "[scope: global]
+docClient (2,6)";
+}
