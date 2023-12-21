@@ -66,13 +66,31 @@ function writeTaintGraphDot(dir, fileName, taintObjects, taintEdges) {
     }
   }
 
+  var addedEdges = [];
+
   for (var edge of taintEdges) {
     var source = edge.source;
     var target = edge.target;
     var sourceNode = variablesAndNodesMap.get(source.variable);
     var targetNode = variablesAndNodesMap.get(target.variable);
 
-    g.addEdge(sourceNode, targetNode);
+    // 防止添加重复边
+    var edgeExists = false;
+    for (var addedEdge of addedEdges) {
+      if (addedEdge.source === sourceNode && addedEdge.target === targetNode) {
+        edgeExists = true;
+        break;
+      }
+    }
+
+    if (!edgeExists) {
+      addedEdges.push({
+        source: sourceNode,
+        target: targetNode
+      });
+
+      g.addEdge(sourceNode, targetNode);
+    }
   }
 
   fs.writeFileSync(path.join(dir, fileName + '-result.dot'), g.to_dot());

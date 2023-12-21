@@ -42,9 +42,6 @@ queryDynamoDb (25,6)";
   "[scope: global]
 PutItemCommand (5,40)" -> "[scope: anonymous#25]
 command (30,8)";
-  "[scope: anonymous#25]
-command (30,8)" -> "[scope: anonymous#25]
-results (32,10)";
   "[scope: global]
 queryDynamoDb (25,6)" -> "[scope: global]
 handler (72,13)";

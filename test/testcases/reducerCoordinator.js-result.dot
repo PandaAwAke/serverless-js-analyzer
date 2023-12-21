@@ -56,7 +56,4 @@ params (139,16)";
   "[scope: anonymous#75]
 bucket (78,10)" -> "[scope: anonymous#75]
 lparams (209,8)";
-  "[scope: anonymous#75]
-bucket (78,10)" -> "[scope: getReducerStateInfo#110]
-params (139,16)";
 }

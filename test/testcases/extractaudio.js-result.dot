@@ -44,9 +44,6 @@ endpointPromise (359,4)";
 dynamoDB (20,4)" -> "[scope: getMediaConvertEndpoint#384]
 getItemResponse (395,6)";
   "[scope: global]
-AWS (18,4)" -> "[scope: extractAudio#263]
-endpointPromise (359,4)";
-  "[scope: global]
 dynamoDB (20,4)" -> "[scope: updateDynamoDB#467]
 putData (495,10)";
 }

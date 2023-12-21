@@ -56,7 +56,4 @@ endpointPromise (249,4)";
   "[scope: global]
 dynamoDB (18,4)" -> "[scope: getMediaConvertEndpoint#274]
 getItemResponse (285,6)";
-  "[scope: global]
-AWS (16,4)" -> "[scope: burnCaptions#118]
-endpointPromise (249,4)";
 }

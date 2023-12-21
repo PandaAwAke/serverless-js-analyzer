@@ -59,9 +59,6 @@ videoTitle (50,6)";
 videoTitle (50,6)" -> "[scope: anonymous#12]
 videoTitleArray (55,10)";
   "[scope: global]
-S3Client (2,8)" -> "[scope: global]
-s3Client (10,6)";
-  "[scope: global]
 GetObjectCommand (2,18)" -> "[scope: getFileContents#90]
 getObjectCommand (99,10)";
   "[scope: getFileContents#90]

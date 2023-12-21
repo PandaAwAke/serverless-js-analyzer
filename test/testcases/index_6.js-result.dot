@@ -42,9 +42,6 @@ result (15,14)";
   "[scope: anonymous#4]
 result (15,14)" -> "[scope: global]
 getDrinkByOrderId (4,6)";
-  "[scope: global]
-dynamoDb (2,6)" -> "[scope: anonymous#4]
-result (15,14)";
   "[scope: anonymous#4]
 result (15,14)" -> "[scope: global]
 getAllOrderByDrink (23,6)";

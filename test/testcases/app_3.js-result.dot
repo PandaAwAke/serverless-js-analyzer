@@ -78,9 +78,6 @@ msg (60,8)";
 msg (60,8)" -> "[scope: anonymous#14]
 eb_res (74,8)";
   "[scope: global]
-S3Client (2,8)" -> "[scope: global]
-s3Client (3,6)";
-  "[scope: global]
 GetObjectCommand (2,18)" -> "[scope: getFileContents#111]
 getObjectCommand (120,10)";
   "[scope: getFileContents#111]
