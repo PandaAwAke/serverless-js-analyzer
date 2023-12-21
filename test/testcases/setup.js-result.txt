@@ -1,10 +1,15 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: ddbGeo]
+[scope: global, var: ddb]
+[scope: global, var: config]
+[scope: global, var: createTableInput]
 
 Taint lines:
 21, 22, 24, 25, 29, 30, 33, 36,
 37, 38, 44, 47, 49
+
+Taint edges:
+(global) AWS -> (global) ddb
+(global) ddb -> (global) config
+(global) config -> (global) createTableInput

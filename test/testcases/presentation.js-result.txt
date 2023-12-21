@@ -1,12 +1,19 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: S3Client]
+[scope: global, var: PutObjectCommand]
+[scope: global, var: S3]
+[scope: global, var: saveApiResponse]
+[scope: global, var: saveRecentlyCrawled]
+[scope: global, var: saveWebPage]
+[scope: global, var: regenerateHomePage]
 
 Taint lines:
 5, 6, 67, 68, 81, 82, 95, 121,
 134, 150
+
+Taint edges:
+(global) S3Client -> (global) S3
+(global) PutObjectCommand -> (global) saveApiResponse
+(global) PutObjectCommand -> (global) saveRecentlyCrawled
+(global) PutObjectCommand -> (global) saveWebPage
+(global) PutObjectCommand -> (global) regenerateHomePage

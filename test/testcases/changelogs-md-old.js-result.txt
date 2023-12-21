@@ -1,6 +1,8 @@
 Taint objects:
-[scope: undefined, var: undefined]
+[scope: global, var: dynamodb]
 
 Taint lines:
 7, 47, 48, 49, 53, 54, 55, 59,
 60, 61, 63
+
+Taint edges:

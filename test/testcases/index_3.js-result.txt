@@ -1,9 +1,14 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: DynamoDB]
+[scope: global, var: DynamoDBDocument]
+[scope: global, var: client]
+[scope: global, var: ddbDocClient]
+[scope: anonymous#13, var: results]
 
 Taint lines:
 1, 2, 10, 11, 15, 16
+
+Taint edges:
+(global) DynamoDB -> (global) client
+(global) client -> (global) ddbDocClient
+(global) ddbDocClient -> (anonymous#13) results

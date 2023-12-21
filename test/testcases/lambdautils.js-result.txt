@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: anonymous#127, var: lambda]
+[scope: anonymous#127, var: status]
 
 Taint lines:
 3, 130, 138
+
+Taint edges:
+(global) AWS -> (anonymous#127) lambda
+(anonymous#127) lambda -> (anonymous#127) status

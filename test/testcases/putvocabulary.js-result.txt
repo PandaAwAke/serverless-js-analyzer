@@ -1,14 +1,23 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: global, var: transcribe]
+[scope: anonymous#35, var: updateVocabularyResponse]
+[scope: anonymous#35, var: createVocabularyResponse]
+[scope: anonymous#35, var: putResponse]
+[scope: getVocabularies#145, var: listVocabularyResponse]
+[scope: getVocabularies#145, var: vocabularies]
 
 Taint lines:
 16, 17, 18, 19, 24, 29, 70, 76,
 90, 96, 114, 116, 147, 164, 170, 173,
 174, 177, 178, 179, 183
+
+Taint edges:
+(global) AWS -> (global) dynamoDB
+(global) AWS -> (global) transcribe
+(global) transcribe -> (anonymous#35) updateVocabularyResponse
+(global) transcribe -> (anonymous#35) createVocabularyResponse
+(global) dynamoDB -> (anonymous#35) putResponse
+(global) transcribe -> (getVocabularies#145) listVocabularyResponse
+(getVocabularies#145) listVocabularyResponse -> (getVocabularies#145) vocabularies

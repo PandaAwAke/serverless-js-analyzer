@@ -1,6 +1,9 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: doc]
 
 Taint lines:
 18, 19, 62
+
+Taint edges:
+(global) AWS -> (global) doc

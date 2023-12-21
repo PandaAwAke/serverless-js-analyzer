@@ -1,16 +1,27 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDb]
+[scope: anonymous#4, var: result]
+[scope: global, var: getDrinkByOrderId]
+[scope: anonymous#23, var: result]
+[scope: global, var: getAllOrderByDrink]
+[scope: anonymous#69, var: drink]
+[scope: anonymous#69, var: orders]
+[scope: anonymous#69, var: duration]
+[scope: anonymous#69, var: response]
 
 Taint lines:
 1, 2, 4, 15, 16, 17, 23, 38,
 39, 71, 72, 73, 74, 75, 76, 77,
 78, 79, 83, 84
+
+Taint edges:
+(global) AWS -> (global) dynamoDb
+(global) dynamoDb -> (anonymous#4) result
+(anonymous#4) result -> (global) getDrinkByOrderId
+(global) dynamoDb -> (anonymous#23) result
+(anonymous#23) result -> (global) getAllOrderByDrink
+(global) getDrinkByOrderId -> (anonymous#69) drink
+(anonymous#69) drink -> (anonymous#69) orders
+(anonymous#69) orders -> (anonymous#69) duration
+(anonymous#69) duration -> (anonymous#69) response

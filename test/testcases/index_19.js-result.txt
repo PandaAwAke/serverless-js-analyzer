@@ -1,9 +1,14 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: SNSClient]
+[scope: global, var: PublishCommand]
+[scope: global, var: snsclient]
+[scope: anonymous#17, var: command]
+[scope: global, var: handler]
 
 Taint lines:
 4, 6, 17, 33, 42
+
+Taint edges:
+(global) SNSClient -> (global) snsclient
+(global) PublishCommand -> (anonymous#17) command
+(anonymous#17) command -> (global) handler

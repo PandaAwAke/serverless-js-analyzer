@@ -73,7 +73,7 @@ exports.lambdaHandler = async (event) => {
 });
 
 
-test('应该正常找出所有污点-test2', () => {
+test('应该正常找出所有污点-test2-edges', () => {
   var input = `const { EventBridgeClient, PutEventsCommand } = require('@aws-sdk/client-eventbridge');
 
   exports.lambdaHandler = async (event) => {
@@ -135,7 +135,11 @@ test('应该正常找出所有污点-test2', () => {
 
   var awsTaintSources = awsTaintCollector.collectTaintSourceObjects(ast);
   
-  var taintObjects = taintAnalysis.collectTaintObjects(ast, awsTaintSources);
+  var taintEdges = [];
+
+  var taintObjects = taintAnalysis.collectTaintObjects(ast, awsTaintSources, taintEdges);
+
+  console.log(taintEdges);
 
   expect(taintObjects.at(0).variable).toBe('EventBridgeClient');
   expect(taintObjects.at(1).variable).toBe('PutEventsCommand');

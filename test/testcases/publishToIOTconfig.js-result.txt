@@ -1,8 +1,13 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: iotdata]
+[scope: anonymous#10, var: result]
+[scope: global, var: iotPublish]
 
 Taint lines:
 5, 6, 7, 10, 27, 28, 36
+
+Taint edges:
+(global) AWS -> (global) iotdata
+(global) iotdata -> (anonymous#10) result
+(anonymous#10) result -> (global) iotPublish

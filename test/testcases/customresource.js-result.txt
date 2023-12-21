@@ -1,21 +1,21 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: s3]
+[scope: global, var: apiGateway]
+[scope: global, var: cloudwatchlogs]
+[scope: waitForStage#146, var: result]
+[scope: deleteApiKey#225, var: getApiKeysResponse]
+[scope: deleteApiKey#225, var: keyId]
+[scope: deleteApiKey#225, var: getUsagePlansRequest]
+[scope: deleteApiKey#225, var: getUsagePlansResponse]
+[scope: deleteApiKey#225, var: deleteUsagePlanKeyRequest]
+[scope: deleteApiKey#225, var: deleteApiKeyRequest]
+[scope: createAPIKey#327, var: createApiKeyResponse]
+[scope: createAPIKey#327, var: createUsagePlanResponse]
+[scope: createAPIKey#327, var: createUsagePlanKeyParams]
+[scope: createAPIKey#327, var: createUsagePlanKeyResponse]
+[scope: loadManifest#447, var: getObjectResponse]
+[scope: loadManifest#447, var: body]
 
 Taint lines:
 31, 32, 33, 35, 132, 158, 159, 175,
@@ -25,3 +25,21 @@ Taint lines:
 314, 316, 353, 357, 375, 381, 384, 385,
 387, 392, 395, 396, 401, 456, 458, 460,
 462, 483, 504
+
+Taint edges:
+(global) AWS -> (global) s3
+(global) AWS -> (global) apiGateway
+(global) AWS -> (global) cloudwatchlogs
+(global) apiGateway -> (waitForStage#146) result
+(global) apiGateway -> (deleteApiKey#225) getApiKeysResponse
+(deleteApiKey#225) getApiKeysResponse -> (deleteApiKey#225) keyId
+(deleteApiKey#225) keyId -> (deleteApiKey#225) getUsagePlansRequest
+(deleteApiKey#225) getUsagePlansRequest -> (deleteApiKey#225) getUsagePlansResponse
+(deleteApiKey#225) keyId -> (deleteApiKey#225) deleteUsagePlanKeyRequest
+(deleteApiKey#225) keyId -> (deleteApiKey#225) deleteApiKeyRequest
+(global) apiGateway -> (createAPIKey#327) createApiKeyResponse
+(global) apiGateway -> (createAPIKey#327) createUsagePlanResponse
+(createAPIKey#327) createUsagePlanResponse -> (createAPIKey#327) createUsagePlanKeyParams
+(createAPIKey#327) createUsagePlanKeyParams -> (createAPIKey#327) createUsagePlanKeyResponse
+(global) s3 -> (loadManifest#447) getObjectResponse
+(loadManifest#447) getObjectResponse -> (loadManifest#447) body

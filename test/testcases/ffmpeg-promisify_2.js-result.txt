@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: s3]
+[scope: global, var: ffCreateSnippets]
 
 Taint lines:
 17, 18, 19, 35, 74, 87
+
+Taint edges:
+(global) AWS -> (global) s3
+(global) s3 -> (global) ffCreateSnippets

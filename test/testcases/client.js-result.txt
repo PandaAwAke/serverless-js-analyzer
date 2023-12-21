@@ -1,12 +1,18 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: SignatureV4]
+[scope: global, var: HttpRequest]
+[scope: global, var: formatUrl]
+[scope: getIoTClient#7, var: signer]
+[scope: getIoTClient#7, var: req]
+[scope: getIoTClient#7, var: request]
+[scope: getIoTClient#7, var: iot_url]
 
 Taint lines:
 2, 4, 5, 8, 18, 26, 29, 31,
 33, 35
+
+Taint edges:
+(global) SignatureV4 -> (getIoTClient#7) signer
+(global) HttpRequest -> (getIoTClient#7) req
+(getIoTClient#7) req -> (getIoTClient#7) request
+(getIoTClient#7) request -> (getIoTClient#7) iot_url

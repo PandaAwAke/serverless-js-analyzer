@@ -1,27 +1,43 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: SSMClient]
+[scope: global, var: GetParameterCommand]
+[scope: global, var: S3Client]
+[scope: global, var: GetObjectCommand]
+[scope: global, var: EventBridgeClient]
+[scope: global, var: PutEventsCommand]
+[scope: global, var: s3Client]
+[scope: global, var: ssmClient]
+[scope: global, var: ebClient]
+[scope: anonymous#14, var: api_key_response]
+[scope: anonymous#14, var: apiKey]
+[scope: anonymous#14, var: response]
+[scope: anonymous#14, var: tags]
+[scope: anonymous#14, var: res]
+[scope: anonymous#14, var: msg]
+[scope: anonymous#14, var: eb_res]
+[scope: getFileContents#111, var: s3Client]
+[scope: getFileContents#111, var: getObjectCommand]
+[scope: getFileContents#111, var: response]
+[scope: getFileContents#111, var: fileContents]
 
 Taint lines:
 1, 2, 3, 6, 7, 8, 29, 30,
 36, 50, 51, 53, 54, 56, 57, 58,
 60, 66, 74, 75, 76, 79, 83, 112,
 120, 121, 124, 127, 129
+
+Taint edges:
+(global) S3Client -> (global) s3Client
+(global) SSMClient -> (global) ssmClient
+(global) EventBridgeClient -> (global) ebClient
+(global) GetParameterCommand -> (anonymous#14) api_key_response
+(anonymous#14) api_key_response -> (anonymous#14) apiKey
+(anonymous#14) apiKey -> (anonymous#14) response
+(anonymous#14) response -> (anonymous#14) tags
+(anonymous#14) tags -> (anonymous#14) res
+(anonymous#14) tags -> (anonymous#14) msg
+(anonymous#14) msg -> (anonymous#14) eb_res
+(global) S3Client -> (getFileContents#111) s3Client
+(global) GetObjectCommand -> (getFileContents#111) getObjectCommand
+(getFileContents#111) getObjectCommand -> (getFileContents#111) response
+(getFileContents#111) response -> (getFileContents#111) fileContents

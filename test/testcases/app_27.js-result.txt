@@ -1,8 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: DynamoDBClient]
+[scope: global, var: ScanCommand]
+[scope: global, var: BatchWriteItemCommand]
+[scope: global, var: ddb]
 
 Taint lines:
 6, 7, 24, 44
+
+Taint edges:
+(global) DynamoDBClient -> (global) ddb

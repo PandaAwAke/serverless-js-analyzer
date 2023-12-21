@@ -1,21 +1,34 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: SSMClient]
+[scope: global, var: GetParameterCommand]
+[scope: global, var: S3Client]
+[scope: global, var: GetObjectCommand]
+[scope: global, var: ssmClient]
+[scope: global, var: s3Client]
+[scope: anonymous#12, var: api_key_response]
+[scope: anonymous#12, var: apiKey]
+[scope: anonymous#12, var: response]
+[scope: anonymous#12, var: videoTitle]
+[scope: anonymous#12, var: videoTitleArray]
+[scope: getFileContents#90, var: s3Client]
+[scope: getFileContents#90, var: getObjectCommand]
+[scope: getFileContents#90, var: response]
+[scope: getFileContents#90, var: fileContents]
 
 Taint lines:
 1, 2, 4, 10, 26, 27, 33, 47,
 49, 50, 54, 55, 56, 61, 91, 99,
 100, 103, 106, 108
+
+Taint edges:
+(global) SSMClient -> (global) ssmClient
+(global) S3Client -> (global) s3Client
+(global) GetParameterCommand -> (anonymous#12) api_key_response
+(anonymous#12) api_key_response -> (anonymous#12) apiKey
+(anonymous#12) apiKey -> (anonymous#12) response
+(anonymous#12) response -> (anonymous#12) videoTitle
+(anonymous#12) videoTitle -> (anonymous#12) videoTitleArray
+(global) S3Client -> (getFileContents#90) s3Client
+(global) GetObjectCommand -> (getFileContents#90) getObjectCommand
+(getFileContents#90) getObjectCommand -> (getFileContents#90) response
+(getFileContents#90) response -> (getFileContents#90) fileContents

@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: sqs]
+[scope: anonymous#20, var: result]
 
 Taint lines:
 16, 17, 18, 41, 46
+
+Taint edges:
+(global) AWS -> (global) sqs
+(global) sqs -> (anonymous#20) result

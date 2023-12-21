@@ -1,10 +1,16 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: stepFunctions]
+[scope: anonymous#15, var: sfnResult]
+[scope: global, var: stopRunningExecutions]
+[scope: global, var: main]
 
 Taint lines:
 10, 11, 12, 15, 21, 24, 26, 31,
 32, 35
+
+Taint edges:
+(global) AWS -> (global) stepFunctions
+(global) stepFunctions -> (anonymous#15) sfnResult
+(global) stepFunctions -> (global) stopRunningExecutions
+(global) stopRunningExecutions -> (global) main

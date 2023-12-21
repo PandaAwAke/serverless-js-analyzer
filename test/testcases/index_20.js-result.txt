@@ -1,4 +1,0 @@
-Taint objects:
-
-Taint lines:
-

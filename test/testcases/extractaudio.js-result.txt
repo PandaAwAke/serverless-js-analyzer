@@ -1,11 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: checkForPriorProcessing#190, var: response]
+[scope: extractAudio#263, var: endpointPromise]
+[scope: getMediaConvertEndpoint#384, var: getItemResponse]
+[scope: getMediaConvertEndpoint#384, var: endpointPromise]
+[scope: updateDynamoDB#467, var: putData]
 
 Taint lines:
 18, 19, 20, 200, 203, 205, 206, 207,
@@ -13,3 +13,11 @@ Taint lines:
 235, 236, 237, 239, 240, 268, 357, 359,
 366, 374, 395, 396, 397, 400, 402, 408,
 413, 422, 428, 457, 495, 496
+
+Taint edges:
+(global) AWS -> (global) dynamoDB
+(global) dynamoDB -> (checkForPriorProcessing#190) response
+(global) AWS -> (extractAudio#263) endpointPromise
+(global) dynamoDB -> (getMediaConvertEndpoint#384) getItemResponse
+(global) AWS -> (getMediaConvertEndpoint#384) endpointPromise
+(global) dynamoDB -> (updateDynamoDB#467) putData

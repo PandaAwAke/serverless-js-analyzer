@@ -1,15 +1,25 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: stepFunctions]
+[scope: global, var: documentClient]
+[scope: anonymous#18, var: result]
+[scope: global, var: updateDrinkOrder]
+[scope: anonymous#45, var: sfnResult]
+[scope: global, var: sendTaskSuccess]
+[scope: anonymous#57, var: result]
+[scope: anonymous#57, var: sfnResult]
 
 Taint lines:
 7, 8, 10, 11, 18, 39, 40, 41,
 45, 51, 52, 53, 64, 76, 83, 84,
 85
+
+Taint edges:
+(global) AWS -> (global) stepFunctions
+(global) AWS -> (global) documentClient
+(global) documentClient -> (anonymous#18) result
+(anonymous#18) result -> (global) updateDrinkOrder
+(global) stepFunctions -> (anonymous#45) sfnResult
+(anonymous#45) sfnResult -> (global) sendTaskSuccess
+(global) updateDrinkOrder -> (anonymous#57) result
+(anonymous#57) result -> (anonymous#57) sfnResult

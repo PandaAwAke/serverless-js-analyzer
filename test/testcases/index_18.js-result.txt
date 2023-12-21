@@ -1,15 +1,24 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: DynamoDBClient]
+[scope: global, var: GetItemCommand]
+[scope: global, var: PutItemCommand]
+[scope: global, var: dbclient]
+[scope: anonymous#25, var: command]
+[scope: anonymous#25, var: results]
+[scope: global, var: queryDynamoDb]
+[scope: anonymous#45, var: command]
+[scope: anonymous#45, var: results]
+[scope: global, var: handler]
 
 Taint lines:
 5, 8, 25, 30, 32, 33, 37, 50,
 52, 72, 95
+
+Taint edges:
+(global) DynamoDBClient -> (global) dbclient
+(global) GetItemCommand -> (anonymous#25) command
+(anonymous#25) command -> (anonymous#25) results
+(anonymous#25) results -> (global) queryDynamoDb
+(global) PutItemCommand -> (anonymous#45) command
+(anonymous#45) command -> (anonymous#45) results
+(global) queryDynamoDb -> (global) handler

@@ -1,8 +1,12 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: EventBridgeClient]
+[scope: global, var: PutEventsCommand]
+[scope: anonymous#3, var: eventBridgeClient]
+[scope: anonymous#3, var: putEventCommand]
 
 Taint lines:
 1, 26, 39, 45
+
+Taint edges:
+(global) EventBridgeClient -> (anonymous#3) eventBridgeClient
+(global) PutEventsCommand -> (anonymous#3) putEventCommand

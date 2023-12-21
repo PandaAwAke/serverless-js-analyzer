@@ -1,10 +1,16 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: s3]
+[scope: anonymous#23, var: captionsObject]
+[scope: anonymous#23, var: captionsStr]
+[scope: anonymous#23, var: captionData]
 
 Taint lines:
 16, 17, 18, 55, 57, 59, 62, 63,
 69, 70, 76, 81, 189
+
+Taint edges:
+(global) AWS -> (global) s3
+(global) s3 -> (anonymous#23) captionsObject
+(anonymous#23) captionsObject -> (anonymous#23) captionsStr
+(anonymous#23) captionsStr -> (anonymous#23) captionData

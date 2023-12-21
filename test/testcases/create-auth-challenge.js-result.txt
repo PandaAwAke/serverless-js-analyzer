@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: sns]
+[scope: sendSMSviaSNS#44, var: result]
 
 Taint lines:
 8, 9, 49, 50
+
+Taint edges:
+(global) AWS -> (global) sns
+(global) sns -> (sendSMSviaSNS#44) result

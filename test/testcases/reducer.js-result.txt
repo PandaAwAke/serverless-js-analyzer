@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: aws]
+[scope: global, var: s3]
+[scope: anonymous#16, var: s3getMapperResult]
 
 Taint lines:
 6, 10, 39, 74, 83, 95, 119, 123
+
+Taint edges:
+(global) aws -> (global) s3
+(global) s3 -> (anonymous#16) s3getMapperResult

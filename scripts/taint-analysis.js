@@ -22,7 +22,17 @@ function taintIdentifiersHasVariable(taintIdentifiers, scopeName, variableName) 
  * 
  * @param {any} ast ast
  * @param {array} taintSourceIdentifiers taintSourceIdentifiers
- * @param {any[]} [taintEdges=[]] 
+ * @param {any[]} [taintEdges=[]] 描述所有的 taint 传递边，每个元素的结构为
+ * {
+ *    source: {
+ *      scopeName: ...,
+ *      variable: ...
+ *    },
+ *    target: {
+ *      scopeName: ...,
+ *      variable: ...
+ *    }
+ * }
  */
 function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
   /**
@@ -42,12 +52,7 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
    */
   while (changed) {
     /**
-     * 栈，存感兴趣的语句和变量
-     * 内部元素为四元组：
-     * 0: 语句 (node),
-     * 1: scope 名 (string),
-     * 2: 变量名 (string),
-     * 3: 是否污点 (boolean)
+     * 栈，存感兴趣的语句和变量，元素定义见下方
      */
     const nodeStack = [];
     changed = false;
@@ -59,10 +64,11 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
           if (node.id.type === 'Identifier') {
             const variableName = node.id.name;
             nodeStack.push({
-              node: node,
-              scopeName: currentScopeName,
-              variable: variableName,
-              tainted: false,
+              node: node,                   // 语句 (node)
+              scopeName: currentScopeName,  // scope 名 (string)
+              variable: variableName,       // 变量名 (string)
+              tainted: false,               // 是否污点 (boolean)
+              taintedBy: null,              // 污染是从哪个变量传递来的，结构为 { scopeName: scope 名, variable: 变量名 }
             });
           }
         } else if (node.type === 'AssignmentExpression') {
@@ -74,16 +80,24 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
               scopeName: currentScopeName,
               variable: variableName,
               tainted: false,
+              taintedBy: null,
             });
           }
         }
       },
       leave: function(node, parent, currentScopeName, currentScope, scopeChain) {
-        if (node.type === 'Identifier' &&
-            taintIdentifiersHasVariable(taintIdentifiers, astTraverse.getVarScope(node.name, scopeChain), node.name)) {
-          // 是污点对象，将栈顶语句的"是否污点"修改为 true
-          if (nodeStack.length > 0) {
-            nodeStack.at(-1).tainted = true;
+        if (node.type === 'Identifier') {
+          var identifierScope = astTraverse.getVarScope(node.name, scopeChain);
+          var variableName = node.name;
+          if (taintIdentifiersHasVariable(taintIdentifiers, identifierScope, variableName)) {
+            // 是污点对象，将栈顶语句的"是否污点"修改为 true
+            if (nodeStack.length > 0) {
+              nodeStack.at(-1).tainted = true;
+              nodeStack.at(-1).taintedBy = {
+                scopeName: identifierScope,
+                variable: variableName,
+              };
+            }
           }
         } else if (node.type === 'VariableDeclarator' || node.type === 'AssignmentExpression') {
           if (nodeStack.length > 0 && nodeStack.at(-1).node === node) {
@@ -92,10 +106,18 @@ function collectTaintObjects(ast, taintSourceIdentifiers, taintEdges = []) {
               const variableScope = nodeStack.at(-1).scopeName;
               const variableName = nodeStack.at(-1).variable;
               if (!taintIdentifiersHasVariable(taintIdentifiers, variableScope, variableName)) {
-                taintIdentifiers.push({
+                var newTaintIdentifier = {
                   scopeName: variableScope,
                   variable: variableName
+                };
+
+                taintIdentifiers.push(newTaintIdentifier);
+
+                taintEdges.push({
+                  source: nodeStack.at(-1).taintedBy,
+                  target: newTaintIdentifier
                 });
+                
                 changed = true;
               }
             }

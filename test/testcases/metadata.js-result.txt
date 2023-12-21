@@ -1,15 +1,21 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: IvsClient]
+[scope: global, var: PutMetadataCommand]
+[scope: global, var: DynamoDBClient]
+[scope: global, var: GetItemCommand]
+[scope: global, var: IoTDataPlaneClient]
+[scope: global, var: PublishCommand]
+[scope: global, var: client]
+[scope: global, var: dynamodb]
+[scope: global, var: iotClient]
+[scope: anonymous#11, var: command]
 
 Taint lines:
 1, 2, 3, 5, 6, 7, 32, 33,
 41, 45, 57, 58
+
+Taint edges:
+(global) IvsClient -> (global) client
+(global) DynamoDBClient -> (global) dynamodb
+(global) IoTDataPlaneClient -> (global) iotClient
+(global) PutMetadataCommand -> (anonymous#11) command

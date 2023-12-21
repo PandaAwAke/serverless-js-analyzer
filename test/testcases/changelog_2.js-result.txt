@@ -1,27 +1,44 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: GetCommand]
+[scope: global, var: QueryCommand]
+[scope: global, var: BatchGetCommand]
+[scope: global, var: UpdateCommand]
+[scope: global, var: DynamoDB]
+[scope: anonymous#25, var: result]
+[scope: global, var: getMetadata]
+[scope: anonymous#39, var: results]
+[scope: global, var: bulkGetMetadata]
+[scope: global, var: upsertOne]
+[scope: global, var: upsert]
+[scope: global, var: rejectForDuration]
+[scope: anonymous#155, var: response]
+[scope: global, var: recentlyUpdated]
+[scope: global, var: crawled]
+[scope: anonymous#263, var: results]
+[scope: anonymous#263, var: changelogs]
+[scope: anonymous#263, var: moreChangelogs]
+[scope: global, var: _queryIndexForSecond]
+[scope: global, var: selectChangelogsToCrawl]
 
 Taint lines:
 1, 2, 25, 26, 33, 39, 51, 53,
 63, 80, 112, 120, 136, 137, 155, 156,
 161, 166, 182, 187, 209, 249, 263, 264,
 283, 287, 288, 291, 293, 299, 301
+
+Taint edges:
+(global) GetCommand -> (anonymous#25) result
+(anonymous#25) result -> (global) getMetadata
+(global) BatchGetCommand -> (anonymous#39) results
+(anonymous#39) results -> (global) bulkGetMetadata
+(global) UpdateCommand -> (global) upsertOne
+(global) upsertOne -> (global) upsert
+(global) UpdateCommand -> (global) rejectForDuration
+(global) GetCommand -> (anonymous#155) response
+(anonymous#155) response -> (global) recentlyUpdated
+(global) UpdateCommand -> (global) crawled
+(global) QueryCommand -> (anonymous#263) results
+(anonymous#263) results -> (anonymous#263) changelogs
+(anonymous#263) results -> (anonymous#263) moreChangelogs
+(anonymous#263) moreChangelogs -> (global) _queryIndexForSecond
+(global) _queryIndexForSecond -> (global) selectChangelogsToCrawl

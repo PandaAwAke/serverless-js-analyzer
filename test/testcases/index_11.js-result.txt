@@ -1,7 +1,11 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: s3]
+[scope: anonymous#11, var: getObjectPromise]
 
 Taint lines:
 2, 9, 18, 23
+
+Taint edges:
+(global) AWS -> (global) s3
+(global) s3 -> (anonymous#11) getObjectPromise

@@ -1,19 +1,29 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: SFNClient]
+[scope: global, var: StartExecutionCommand]
+[scope: global, var: DynamoDBClient]
+[scope: global, var: PutItemCommand]
+[scope: global, var: marshall]
+[scope: global, var: docClient]
+[scope: global, var: stepFunctions]
+[scope: anonymous#17, var: startExecCommand]
+[scope: anonymous#17, var: executionResult]
+[scope: anonymous#17, var: item]
+[scope: anonymous#17, var: result]
+[scope: anonymous#17, var: body]
+[scope: anonymous#17, var: response]
 
 Taint lines:
 6, 7, 8, 10, 11, 24, 25, 26,
 29, 30, 32, 35, 36, 40, 42, 46,
 47
+
+Taint edges:
+(global) DynamoDBClient -> (global) docClient
+(global) SFNClient -> (global) stepFunctions
+(global) StartExecutionCommand -> (anonymous#17) startExecCommand
+(anonymous#17) startExecCommand -> (anonymous#17) executionResult
+(anonymous#17) executionResult -> (anonymous#17) item
+(anonymous#17) item -> (anonymous#17) result
+(anonymous#17) executionResult -> (anonymous#17) body
+(anonymous#17) body -> (anonymous#17) response

@@ -1,18 +1,30 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: global, var: s3]
+[scope: anonymous#26, var: getResponse]
+[scope: anonymous#26, var: video]
+[scope: anonymous#26, var: index]
+[scope: anonymous#26, var: videoBucket]
+[scope: anonymous#26, var: videoKey]
+[scope: anonymous#26, var: url]
+[scope: anonymous#26, var: captionsUrl]
+[scope: anonymous#26, var: response]
 
 Taint lines:
 16, 17, 18, 19, 54, 55, 57, 58,
 60, 61, 62, 63, 64, 68, 69, 70,
 73, 75, 80, 81, 89, 91, 93, 96,
 98, 99, 105, 110
+
+Taint edges:
+(global) AWS -> (global) dynamoDB
+(global) AWS -> (global) s3
+(global) dynamoDB -> (anonymous#26) getResponse
+(anonymous#26) getResponse -> (anonymous#26) video
+(anonymous#26) video -> (anonymous#26) index
+(anonymous#26) index -> (anonymous#26) videoBucket
+(anonymous#26) video -> (anonymous#26) videoKey
+(anonymous#26) videoKey -> (anonymous#26) url
+(global) s3 -> (anonymous#26) captionsUrl
+(anonymous#26) video -> (anonymous#26) response

@@ -1,18 +1,27 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: S3Client]
+[scope: global, var: PutObjectCommand]
+[scope: global, var: GetObjectCommand]
+[scope: global, var: SFNClient]
+[scope: global, var: SendTaskSuccessCommand]
+[scope: global, var: SendTaskFailureCommand]
+[scope: global, var: s3Client]
+[scope: global, var: sfnClient]
+[scope: main#11, var: command]
+[scope: main#11, var: taskSuccessCommand]
+[scope: main#11, var: taskFailureCommand]
+[scope: downloadAndStoreFile#105, var: getObjectCommand]
+[scope: downloadAndStoreFile#105, var: response]
 
 Taint lines:
 1, 2, 8, 9, 64, 65, 72, 82,
 89, 96, 111, 112, 118
+
+Taint edges:
+(global) S3Client -> (global) s3Client
+(global) SFNClient -> (global) sfnClient
+(global) PutObjectCommand -> (main#11) command
+(global) SendTaskSuccessCommand -> (main#11) taskSuccessCommand
+(global) SendTaskFailureCommand -> (main#11) taskFailureCommand
+(global) GetObjectCommand -> (downloadAndStoreFile#105) getObjectCommand
+(downloadAndStoreFile#105) getObjectCommand -> (downloadAndStoreFile#105) response

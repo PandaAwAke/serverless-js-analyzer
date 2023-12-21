@@ -1,10 +1,16 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: anonymous#23, var: getResponse]
+[scope: anonymous#23, var: video]
+[scope: updateDynamoDB#87, var: result]
 
 Taint lines:
 16, 17, 18, 43, 44, 46, 47, 52,
 55, 59, 110
+
+Taint edges:
+(global) AWS -> (global) dynamoDB
+(global) dynamoDB -> (anonymous#23) getResponse
+(anonymous#23) getResponse -> (anonymous#23) video
+(global) dynamoDB -> (updateDynamoDB#87) result

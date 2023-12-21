@@ -1,18 +1,31 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: lambda]
+[scope: global, var: dynamoDB]
+[scope: global, var: s3]
+[scope: anonymous#28, var: getResponse]
+[scope: anonymous#28, var: video]
+[scope: anonymous#28, var: videoBucket]
+[scope: anonymous#28, var: inputVideoKey]
+[scope: anonymous#28, var: audioBucket]
+[scope: anonymous#28, var: audioKey]
+[scope: anonymous#28, var: s3Event]
+[scope: anonymous#28, var: params]
 
 Taint lines:
 16, 18, 19, 20, 21, 48, 49, 51,
 52, 54, 56, 58, 59, 64, 68, 71,
 73, 76, 83, 86, 89, 122
+
+Taint edges:
+(global) AWS -> (global) lambda
+(global) AWS -> (global) dynamoDB
+(global) AWS -> (global) s3
+(global) dynamoDB -> (anonymous#28) getResponse
+(anonymous#28) getResponse -> (anonymous#28) video
+(anonymous#28) video -> (anonymous#28) videoBucket
+(anonymous#28) video -> (anonymous#28) inputVideoKey
+(anonymous#28) video -> (anonymous#28) audioBucket
+(anonymous#28) video -> (anonymous#28) audioKey
+(anonymous#28) inputVideoKey -> (anonymous#28) s3Event
+(anonymous#28) s3Event -> (anonymous#28) params

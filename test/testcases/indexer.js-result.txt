@@ -1,10 +1,15 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: QueryCommand]
+[scope: global, var: BatchWriteCommand]
+[scope: global, var: DynamoDB]
+[scope: global, var: addToIndex]
+[scope: anonymous#96, var: results]
+[scope: global, var: completion]
 
 Taint lines:
 1, 2, 14, 86, 96, 101, 116, 121
+
+Taint edges:
+(global) BatchWriteCommand -> (global) addToIndex
+(global) QueryCommand -> (anonymous#96) results
+(anonymous#96) results -> (global) completion

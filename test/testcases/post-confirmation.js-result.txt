@@ -1,9 +1,15 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: cognito]
+[scope: global, var: eventbridge]
+[scope: anonymous#14, var: response]
+[scope: anonymous#14, var: ug_response]
 
 Taint lines:
 7, 8, 9, 11, 39, 40, 48, 49
+
+Taint edges:
+(global) AWS -> (global) cognito
+(global) AWS -> (global) eventbridge
+(global) eventbridge -> (anonymous#14) response
+(global) cognito -> (anonymous#14) ug_response

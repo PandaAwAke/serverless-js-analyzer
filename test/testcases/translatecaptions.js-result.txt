@@ -1,16 +1,27 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: global, var: translate]
+[scope: global, var: s3]
+[scope: anonymous#25, var: captionsObject]
+[scope: anonymous#25, var: captionsStr]
+[scope: anonymous#99, var: p]
+[scope: anonymous#99, var: e]
+[scope: transcribePromisePool#95, var: enqueue]
+[scope: getVideoInfo#132, var: getVideoResponse]
 
 Taint lines:
 16, 17, 18, 19, 20, 51, 53, 99,
 116, 117, 119, 120, 127, 129, 141, 142,
 143, 188, 235
+
+Taint edges:
+(global) AWS -> (global) dynamoDB
+(global) AWS -> (global) translate
+(global) AWS -> (global) s3
+(global) s3 -> (anonymous#25) captionsObject
+(anonymous#25) captionsObject -> (anonymous#25) captionsStr
+(global) translate -> (anonymous#99) p
+(anonymous#99) p -> (anonymous#99) e
+(anonymous#99) e -> (transcribePromisePool#95) enqueue
+(global) dynamoDB -> (getVideoInfo#132) getVideoResponse

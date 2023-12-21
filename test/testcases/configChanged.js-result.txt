@@ -1,8 +1,13 @@
 Taint objects:
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
-[scope: undefined, var: undefined]
+[scope: global, var: AWS]
+[scope: global, var: documentClient]
+[scope: global, var: eventbridge]
+[scope: anonymous#13, var: response]
 
 Taint lines:
 7, 8, 9, 10, 31, 32
+
+Taint edges:
+(global) AWS -> (global) documentClient
+(global) AWS -> (global) eventbridge
+(global) eventbridge -> (anonymous#13) response
