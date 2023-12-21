@@ -1,9 +1,9 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: sqs]
-[scope: 0, var: result]
-[scope: 0, var: addToQueue]
-[scope: 0, var: main]
+[scope: global, var: AWS]
+[scope: global, var: sqs]
+[scope: anonymous#42, var: result]
+[scope: global, var: addToQueue]
+[scope: global, var: main]
 
 Taint lines:
 16, 17, 18, 42, 78, 79, 83, 86

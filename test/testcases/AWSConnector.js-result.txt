@@ -1,7 +1,5 @@
 Taint objects:
 [scope: 0, var: AWS]
-[scope: 1, var: userId]
 
 Taint lines:
-1, 8, 10, 11, 16, 17, 18, 19,
-20, 21, 24, 30
+

@@ -1,6 +1,6 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: athena]
+[scope: global, var: AWS]
+[scope: global, var: athena]
 
 Taint lines:
 1, 3, 152, 159

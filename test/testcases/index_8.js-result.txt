@@ -1,8 +1,8 @@
 Taint objects:
-[scope: 0, var: S3]
-[scope: 0, var: s3]
-[scope: 1, var: originalPhoto]
-[scope: 1, var: resizePromise]
+[scope: global, var: S3]
+[scope: global, var: s3]
+[scope: generateThumbnail#16, var: originalPhoto]
+[scope: generateThumbnail#16, var: resizePromise]
 
 Taint lines:
 2, 10, 17, 19, 20, 28, 77

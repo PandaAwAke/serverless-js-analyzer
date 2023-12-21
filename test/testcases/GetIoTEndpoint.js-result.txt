@@ -1,6 +1,6 @@
 Taint objects:
-[scope: 0, var: aws]
-[scope: 1, var: iot]
+[scope: global, var: aws]
+[scope: anonymous#7, var: iot]
 
 Taint lines:
 5, 16, 17

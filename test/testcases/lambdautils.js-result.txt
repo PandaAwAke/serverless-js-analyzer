@@ -1,7 +1,7 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 1, var: lambda]
-[scope: 1, var: status]
+[scope: global, var: AWS]
+[scope: anonymous#127, var: lambda]
+[scope: anonymous#127, var: status]
 
 Taint lines:
 3, 130, 138

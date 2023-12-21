@@ -1,7 +1,7 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: dynamoDB]
-[scope: 0, var: putResponse]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: anonymous#24, var: putResponse]
 
 Taint lines:
 16, 17, 18, 42

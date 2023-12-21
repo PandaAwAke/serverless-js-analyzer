@@ -1,9 +1,9 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: transcribe]
-[scope: 0, var: dynamoDB]
-[scope: 1, var: jobResult]
-[scope: 1, var: result]
+[scope: global, var: AWS]
+[scope: global, var: transcribe]
+[scope: global, var: dynamoDB]
+[scope: getTranscriptionJob#68, var: jobResult]
+[scope: updateDynamoDB#80, var: result]
 
 Taint lines:
 16, 17, 18, 19, 72, 73, 74, 99

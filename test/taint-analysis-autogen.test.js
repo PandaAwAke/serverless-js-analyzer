@@ -9,7 +9,7 @@ const taintAnalysis = require('../scripts/taint-analysis');
 test('生成单个文件分析结果', () => {
   const fileName = 'changelog_2.js';
 
-  if (fileName.endsWith('.txt')) {
+  if (!fileName.endsWith('.js')) {
     return;
   }
   const dir = './test/testcases';

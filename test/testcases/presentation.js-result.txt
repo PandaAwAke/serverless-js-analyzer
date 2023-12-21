@@ -1,12 +1,6 @@
 Taint objects:
 [scope: 0, var: S3Client]
 [scope: 0, var: PutObjectCommand]
-[scope: 0, var: S3]
-[scope: 0, var: saveApiResponse]
-[scope: 0, var: saveRecentlyCrawled]
-[scope: 0, var: saveWebPage]
-[scope: 0, var: regenerateHomePage]
 
 Taint lines:
-5, 6, 67, 68, 81, 82, 95, 121,
-134, 150
+

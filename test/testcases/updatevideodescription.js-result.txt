@@ -1,7 +1,7 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: dynamoDB]
-[scope: 1, var: result]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: updateDynamoDB#63, var: result]
 
 Taint lines:
 16, 17, 18, 82

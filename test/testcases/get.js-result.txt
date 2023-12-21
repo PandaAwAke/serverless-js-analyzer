@@ -1,6 +1,6 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: ddb]
+[scope: global, var: AWS]
+[scope: global, var: ddb]
 
 Taint lines:
 16, 17, 19, 36

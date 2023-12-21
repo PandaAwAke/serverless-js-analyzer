@@ -1,10 +1,10 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: documentClient]
-[scope: 0, var: eventbridge]
-[scope: 0, var: result]
-[scope: 0, var: ebParams]
-[scope: 0, var: response]
+[scope: global, var: AWS]
+[scope: global, var: documentClient]
+[scope: global, var: eventbridge]
+[scope: anonymous#14, var: result]
+[scope: anonymous#14, var: ebParams]
+[scope: anonymous#14, var: response]
 
 Taint lines:
 7, 8, 10, 11, 38, 39, 42, 46,

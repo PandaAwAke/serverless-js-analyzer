@@ -59,6 +59,8 @@ exports.lambdaHandler = async (event) => {
   
   var taintObjects = taintAnalysis.collectTaintObjects(ast, awsTaintSources);
 
+  console.log(taintObjects)
+
   expect(taintObjects.at(0)[1]).toBe('S3Client');
   expect(taintObjects.at(1)[1]).toBe('PutObjectCommand');
   expect(taintObjects.at(2)[1]).toBe('s3');
@@ -280,12 +282,14 @@ test('应该正常找出所有污点-test3-import', () => {
   
   var taintObjects = taintAnalysis.collectTaintObjects(ast, awsTaintSources);
 
-  expect(taintObjects.at(0).join(',')).toBe('0,QueryCommand');
-  expect(taintObjects.at(1).join(',')).toBe('0,BatchWriteCommand');
-  expect(taintObjects.at(2).join(',')).toBe('0,DynamoDB');
-  expect(taintObjects.at(3).join(',')).toBe('0,addToIndex');
-  expect(taintObjects.at(4).join(',')).toBe('1,results');
-  expect(taintObjects.at(5).join(',')).toBe('0,completion');
+  console.log(taintObjects)
+
+  expect(taintObjects.at(0).join(',')).toBe('global,QueryCommand');
+  expect(taintObjects.at(1).join(',')).toBe('global,BatchWriteCommand');
+  expect(taintObjects.at(2).join(',')).toBe('global,DynamoDB');
+  expect(taintObjects.at(3).join(',')).toBe('global,addToIndex');
+  expect(taintObjects.at(4).join(',')).toBe('anonymous#95,results');
+  expect(taintObjects.at(5).join(',')).toBe('global,completion');
 
   var taintLineNumberSet = taintAnalysis.collectTaintObjectsLineNumbers(ast, taintObjects);
 

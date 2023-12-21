@@ -1,6 +1,5 @@
 Taint objects:
 [scope: 0, var: DynamoDBClient]
-[scope: 0, var: ddbClient]
 
 Taint lines:
-2, 4, 5
+

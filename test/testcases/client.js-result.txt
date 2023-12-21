@@ -2,11 +2,6 @@ Taint objects:
 [scope: 0, var: SignatureV4]
 [scope: 0, var: HttpRequest]
 [scope: 0, var: formatUrl]
-[scope: 1, var: signer]
-[scope: 1, var: req]
-[scope: 1, var: request]
-[scope: 1, var: iot_url]
 
 Taint lines:
-2, 4, 5, 8, 18, 26, 29, 31,
-33, 35
+

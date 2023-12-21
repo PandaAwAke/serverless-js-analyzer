@@ -1,21 +1,21 @@
 Taint objects:
-[scope: 0, var: SSMClient]
-[scope: 0, var: GetParameterCommand]
-[scope: 0, var: S3Client]
-[scope: 0, var: GetObjectCommand]
-[scope: 0, var: ssmClient]
-[scope: 0, var: s3Client]
-[scope: 0, var: api_key_response]
-[scope: 0, var: apiKey]
-[scope: 0, var: response]
-[scope: 0, var: videoTitle]
-[scope: 0, var: videoTitleArray]
-[scope: 1, var: response]
-[scope: 1, var: s3Client]
-[scope: 1, var: getObjectCommand]
-[scope: 1, var: fileContents]
+[scope: global, var: SSMClient]
+[scope: global, var: GetParameterCommand]
+[scope: global, var: S3Client]
+[scope: global, var: GetObjectCommand]
+[scope: global, var: ssmClient]
+[scope: global, var: s3Client]
+[scope: anonymous#12, var: api_key_response]
+[scope: anonymous#12, var: apiKey]
+[scope: anonymous#12, var: response]
+[scope: anonymous#12, var: videoTitle]
+[scope: anonymous#12, var: videoTitleArray]
+[scope: getFileContents#90, var: s3Client]
+[scope: getFileContents#90, var: getObjectCommand]
+[scope: getFileContents#90, var: response]
+[scope: getFileContents#90, var: fileContents]
 
 Taint lines:
 1, 2, 4, 10, 26, 27, 33, 47,
-49, 50, 54, 55, 56, 61, 65, 66,
-80, 84, 91, 99, 100, 103, 106, 108
+49, 50, 54, 55, 56, 61, 91, 99,
+100, 103, 106, 108

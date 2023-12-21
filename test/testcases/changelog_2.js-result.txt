@@ -4,23 +4,6 @@ Taint objects:
 [scope: 0, var: BatchGetCommand]
 [scope: 0, var: UpdateCommand]
 [scope: 0, var: DynamoDB]
-[scope: 1, var: result]
-[scope: 0, var: getMetadata]
-[scope: 1, var: results]
-[scope: 0, var: bulkGetMetadata]
-[scope: 0, var: upsertOne]
-[scope: 0, var: upsert]
-[scope: 0, var: rejectForDuration]
-[scope: 1, var: response]
-[scope: 0, var: recentlyUpdated]
-[scope: 0, var: crawled]
-[scope: 1, var: changelogs]
-[scope: 1, var: moreChangelogs]
-[scope: 0, var: _queryIndexForSecond]
-[scope: 0, var: selectChangelogsToCrawl]
 
 Taint lines:
-1, 2, 25, 26, 33, 39, 51, 53,
-63, 80, 112, 120, 136, 137, 155, 156,
-161, 166, 182, 187, 209, 249, 263, 264,
-283, 287, 288, 291, 293, 299, 301
+

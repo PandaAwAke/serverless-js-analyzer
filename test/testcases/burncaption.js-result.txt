@@ -1,12 +1,13 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: dynamoDB]
-[scope: 0, var: s3]
-[scope: 1, var: getVideoResponse]
-[scope: 1, var: captionsObject]
-[scope: 1, var: captionsStr]
-[scope: 1, var: endpointPromise]
-[scope: 1, var: getItemResponse]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: global, var: s3]
+[scope: getVideoInfo#74, var: getVideoResponse]
+[scope: prepareSrtCaptions#88, var: captionsObject]
+[scope: prepareSrtCaptions#88, var: captionsStr]
+[scope: burnCaptions#118, var: endpointPromise]
+[scope: getMediaConvertEndpoint#274, var: getItemResponse]
+[scope: getMediaConvertEndpoint#274, var: endpointPromise]
 
 Taint lines:
 16, 17, 18, 19, 83, 84, 85, 103,

@@ -1,25 +1,71 @@
 const estraverse = require('estraverse');
 
+/**
+ * 返回一个 node 是否创建一个新的 scope，如果是则返回 scope 名称，否则返回 null
+ * @param {*} node 
+ * @returns scope 名称 (string)，或 null
+ */
 function shouldCreatesNewScope(node) {
-  return node.type === 'FunctionDeclaration' ||
-    node.type === 'FunctionExpression' ||
-    node.type === 'Program';
+  if (!(node.type === 'FunctionDeclaration' ||
+      node.type === 'FunctionExpression' ||
+      node.type === 'ArrowFunctionExpression' ||
+      node.type === 'Program')) {
+    return null;
+  }
+
+  var scopeName = 'anonymous';
+
+  if (node.type === 'FunctionDeclaration') {
+    if (node.id && node.id.type === 'Identifier') {
+      scopeName = node.id.name;
+    }
+  } else if (node.type === 'FunctionExpression') {
+    if (node.id && node.id.type === 'Identifier') {
+      scopeName = node.id.name;
+    }
+  } else if (node.type === 'Program') {
+    scopeName = 'global'
+  }
+
+  if (node.type !== 'Program') {
+    scopeName += '#' + node.loc.start.line;
+  }
+  
+  return scopeName;
 }
 
 /**
- * 寻找一个变量是否在某个 scope 中，成功找到返回 scope 编号，否则返回 -1
+ * 寻找一个变量是否在某个 scope 中，成功找到返回 scope 名称，否则返回 null
  * @param {string} varname 变量名
  * @param {array} scopeChain scopeChain
- * @returns scope 编号，失败返回 -1
+ * @returns scope 名称，失败返回 null
  */
 function getVarScope(varname, scopeChain) {
   for (var i = scopeChain.length - 1; i >= 0; i--) {
-    var scope = scopeChain[i];
+    var scopeName = scopeChain[i][0];
+    var scope = scopeChain[i][1];
     if (scope.indexOf(varname) !== -1) {
-      return i;
+      return scopeName;
     }
   }
-  return -1;
+  return null;
+}
+
+/**
+ * 寻找一个 scope 名称对应的 scope，成功找到返回 scope，否则返回 null
+ * @param {string} scopeName scope 名
+ * @param {array} scopeChain scopeChain
+ * @returns scope，失败返回 null
+ */
+function getScopeByName(scopeName, scopeChain) {
+  for (var i = scopeChain.length - 1; i >= 0; i--) {
+    var scopeName1 = scopeChain[i][0];
+    var scope = scopeChain[i][1];
+    if (scopeName === scopeName1) {
+      return scope;
+    }
+  }
+  return null;
 }
 
 function printScope(scope, node) {
@@ -36,19 +82,22 @@ function printScope(scope, node) {
 }
 
 function traverseAst(root, visitor) {
-  const scopeChain = [];  // scopes
+  const scopeChain = [];  // scopes，元素是 [scopeName, scope]，scope 是一个 variable 字符串列表
 
   estraverse.traverse(root, {
     enter: function(node, parent) {
       // Create and get scope
-      if (shouldCreatesNewScope(node)) {
-        scopeChain.push([]);
+      var scopeName = shouldCreatesNewScope(node);
+      if (scopeName !== null) {
+        scopeChain.push([scopeName, []]);
       }
 
-      if (scopeChain.length == 0) {
+      if (scopeChain.length === 0) {
         return;
       }
-      var currentScope = scopeChain.at(-1);
+
+      var currentScopeName = scopeChain.at(-1)[0];
+      var currentScope = scopeChain.at(-1)[1];
 
       if (node.type === 'VariableDeclarator') {
         // node.id.type 要么是 Identifier，要么是 BindingPattern，目前只考虑 Identifier
@@ -71,21 +120,23 @@ function traverseAst(root, visitor) {
       }
 
       if (visitor.enter) {
-        visitor.enter(node, parent, currentScope, scopeChain);
+        visitor.enter(node, parent, currentScopeName, currentScope, scopeChain);
       }
     },
     leave: function(node, parent) {
       if (scopeChain.length == 0) {
         return;
       }
-      var currentScope = scopeChain.at(-1);
+
+      var currentScopeName = scopeChain.at(-1)[0];
+      var currentScope = scopeChain.at(-1)[1];
 
       if (visitor.leave) {
-        visitor.leave(node, parent, currentScope, scopeChain);
+        visitor.leave(node, parent, currentScopeName, currentScope, scopeChain);
       }
 
       // Try to pop the scope
-      if (shouldCreatesNewScope(node)) {
+      if (shouldCreatesNewScope(node) != null) {
         scopeChain.pop();
       }
     }
@@ -94,6 +145,7 @@ function traverseAst(root, visitor) {
 
 module.exports = {
   getVarScope,
+  getScopeByName,
   printScope,
   traverseAst,
 };

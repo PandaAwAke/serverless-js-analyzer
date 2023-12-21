@@ -15,7 +15,7 @@ function collectTaintSourceObjects(ast) {
   const taintSourceIdentifiers = [];
 
   astTraverse.traverseAst(ast, {
-    enter: function(node, parent, currentScope, scopeChain) {
+    enter: function(node, parent, currentScopeName, currentScope, scopeChain) {
       if (node.type === 'VariableDeclaration') {
         // 考虑类似 const xxx = require('@aws-sdk/...') 的语句
         // xxx 是一个 source
@@ -32,10 +32,10 @@ function collectTaintSourceObjects(ast) {
                     // declaration.id 是 ObjectPattern，需要取出其中的 declaration.id.properties
                     for (const property of declaration.id.properties) {
                       // property.key 或 property.value 应该是一样的 Identifier，用哪个都行
-                      taintSourceIdentifiers.push([scopeChain.length - 1, property.key.name]);
+                      taintSourceIdentifiers.push([currentScopeName, property.key.name]);
                     }
                   } else if (declaration.id.type === 'Identifier') {
-                    taintSourceIdentifiers.push([scopeChain.length - 1, declaration.id.name]);
+                    taintSourceIdentifiers.push([currentScopeName, declaration.id.name]);
                   }
                   break;
                 }
@@ -51,7 +51,7 @@ function collectTaintSourceObjects(ast) {
             if (new RegExp(regex).test(importName.trim())) {  // 匹配成功
               for (const specifier of node.specifiers) {
                 const asName = specifier.local.name;
-                taintSourceIdentifiers.push([scopeChain.length - 1, asName]);
+                taintSourceIdentifiers.push([currentScopeName, asName]);
               }
               break;
             }

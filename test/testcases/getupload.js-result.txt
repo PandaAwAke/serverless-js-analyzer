@@ -1,8 +1,8 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: s3]
-[scope: 0, var: url]
-[scope: 0, var: response]
+[scope: global, var: AWS]
+[scope: global, var: s3]
+[scope: anonymous#24, var: url]
+[scope: anonymous#24, var: response]
 
 Taint lines:
 17, 18, 19, 56, 58, 61, 66, 69,

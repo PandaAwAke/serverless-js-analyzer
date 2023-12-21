@@ -1,11 +1,13 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: stepFunctions]
-[scope: 0, var: documentClient]
-[scope: 0, var: result]
-[scope: 0, var: updateDrinkOrder]
-[scope: 0, var: sfnResult]
-[scope: 0, var: sendTaskSuccess]
+[scope: global, var: AWS]
+[scope: global, var: stepFunctions]
+[scope: global, var: documentClient]
+[scope: anonymous#18, var: result]
+[scope: global, var: updateDrinkOrder]
+[scope: anonymous#45, var: sfnResult]
+[scope: global, var: sendTaskSuccess]
+[scope: anonymous#57, var: result]
+[scope: anonymous#57, var: sfnResult]
 
 Taint lines:
 7, 8, 10, 11, 18, 39, 40, 41,

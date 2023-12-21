@@ -1,12 +1,12 @@
 Taint objects:
-[scope: 0, var: AWS]
-[scope: 0, var: dynamoDB]
-[scope: 0, var: transcribe]
-[scope: 0, var: updateVocabularyResponse]
-[scope: 0, var: createVocabularyResponse]
-[scope: 0, var: putResponse]
-[scope: 1, var: listVocabularyResponse]
-[scope: 1, var: vocabularies]
+[scope: global, var: AWS]
+[scope: global, var: dynamoDB]
+[scope: global, var: transcribe]
+[scope: anonymous#35, var: updateVocabularyResponse]
+[scope: anonymous#35, var: createVocabularyResponse]
+[scope: anonymous#35, var: putResponse]
+[scope: getVocabularies#145, var: listVocabularyResponse]
+[scope: getVocabularies#145, var: vocabularies]
 
 Taint lines:
 16, 17, 18, 19, 24, 29, 70, 76,

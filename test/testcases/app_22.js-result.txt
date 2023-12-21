@@ -1,7 +1,7 @@
 Taint objects:
-[scope: 0, var: aws]
-[scope: 0, var: stepfunctions]
-[scope: 0, var: res]
+[scope: global, var: aws]
+[scope: global, var: stepfunctions]
+[scope: anonymous#15, var: res]
 
 Taint lines:
 12, 13, 37

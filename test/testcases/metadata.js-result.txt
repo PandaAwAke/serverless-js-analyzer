@@ -1,14 +1,14 @@
 Taint objects:
-[scope: 0, var: IvsClient]
-[scope: 0, var: PutMetadataCommand]
-[scope: 0, var: DynamoDBClient]
-[scope: 0, var: GetItemCommand]
-[scope: 0, var: IoTDataPlaneClient]
-[scope: 0, var: PublishCommand]
-[scope: 0, var: client]
-[scope: 0, var: dynamodb]
-[scope: 0, var: iotClient]
-[scope: 0, var: command]
+[scope: global, var: IvsClient]
+[scope: global, var: PutMetadataCommand]
+[scope: global, var: DynamoDBClient]
+[scope: global, var: GetItemCommand]
+[scope: global, var: IoTDataPlaneClient]
+[scope: global, var: PublishCommand]
+[scope: global, var: client]
+[scope: global, var: dynamodb]
+[scope: global, var: iotClient]
+[scope: anonymous#11, var: command]
 
 Taint lines:
 1, 2, 3, 5, 6, 7, 32, 33,

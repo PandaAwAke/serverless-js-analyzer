@@ -1,11 +1,11 @@
 Taint objects:
-[scope: 0, var: S3Client]
-[scope: 0, var: PutObjectCommand]
-[scope: 0, var: GetObjectCommand]
-[scope: 0, var: s3Client]
-[scope: 0, var: command]
-[scope: 1, var: getObjectCommand]
-[scope: 1, var: response]
+[scope: global, var: S3Client]
+[scope: global, var: PutObjectCommand]
+[scope: global, var: GetObjectCommand]
+[scope: global, var: s3Client]
+[scope: anonymous#11, var: command]
+[scope: downloadAndStoreFile#100, var: getObjectCommand]
+[scope: downloadAndStoreFile#100, var: response]
 
 Taint lines:
 1, 8, 76, 77, 105, 106, 113

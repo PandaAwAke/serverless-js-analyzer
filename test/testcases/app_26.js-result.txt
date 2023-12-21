@@ -1,7 +1,7 @@
 Taint objects:
-[scope: 0, var: ApiGatewayManagementApiClient]
-[scope: 0, var: PostToConnectionCommand]
-[scope: 0, var: apiGatewayManagementAPIClient]
+[scope: global, var: ApiGatewayManagementApiClient]
+[scope: global, var: PostToConnectionCommand]
+[scope: anonymous#8, var: apiGatewayManagementAPIClient]
 
 Taint lines:
 6, 12, 18, 28
