@@ -1,0 +1,14 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDB]
+[scope: 1, var: response]
+[scope: 1, var: endpointPromise]
+[scope: 1, var: getItemResponse]
+[scope: 1, var: putData]
+
+Taint lines:
+18, 19, 20, 200, 203, 205, 206, 207,
+208, 209, 211, 212, 228, 231, 233, 234,
+235, 236, 237, 239, 240, 268, 357, 359,
+366, 374, 395, 396, 397, 400, 402, 408,
+413, 422, 428, 457, 495, 496

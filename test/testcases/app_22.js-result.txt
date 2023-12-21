@@ -1,0 +1,7 @@
+Taint objects:
+[scope: 0, var: aws]
+[scope: 0, var: stepfunctions]
+[scope: 0, var: res]
+
+Taint lines:
+12, 13, 37

@@ -1,0 +1,6 @@
+Taint objects:
+[scope: 0, var: aws]
+[scope: 1, var: iot]
+
+Taint lines:
+5, 16, 17

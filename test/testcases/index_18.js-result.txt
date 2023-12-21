@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: DynamoDBClient]
+[scope: 0, var: GetItemCommand]
+[scope: 0, var: PutItemCommand]
+[scope: 0, var: dbclient]
+[scope: 0, var: command]
+[scope: 0, var: results]
+[scope: 0, var: queryDynamoDb]
+[scope: 0, var: handler]
+
+Taint lines:
+5, 8, 25, 30, 32, 33, 37, 50,
+52, 72, 95

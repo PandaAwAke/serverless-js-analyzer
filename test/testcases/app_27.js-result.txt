@@ -1,0 +1,8 @@
+Taint objects:
+[scope: 0, var: DynamoDBClient]
+[scope: 0, var: ScanCommand]
+[scope: 0, var: BatchWriteItemCommand]
+[scope: 0, var: ddb]
+
+Taint lines:
+6, 7, 24, 44

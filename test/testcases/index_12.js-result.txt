@@ -1,0 +1,10 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: client]
+[scope: 1, var: startWorkflowResult]
+[scope: 1, var: executionArn]
+[scope: 1, var: result]
+
+Taint lines:
+16, 25, 30, 74, 80, 81, 105, 111,
+112

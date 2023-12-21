@@ -1,0 +1,9 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: transcribe]
+[scope: 1, var: listVocabularyResponse]
+[scope: 1, var: vocabularies]
+
+Taint lines:
+16, 17, 18, 23, 28, 94, 111, 117,
+120, 121, 124, 125, 126, 130

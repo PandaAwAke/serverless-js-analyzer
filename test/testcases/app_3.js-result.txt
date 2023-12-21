@@ -1,0 +1,28 @@
+Taint objects:
+[scope: 0, var: SSMClient]
+[scope: 0, var: GetParameterCommand]
+[scope: 0, var: S3Client]
+[scope: 0, var: GetObjectCommand]
+[scope: 0, var: EventBridgeClient]
+[scope: 0, var: PutEventsCommand]
+[scope: 0, var: s3Client]
+[scope: 0, var: ssmClient]
+[scope: 0, var: ebClient]
+[scope: 0, var: api_key_response]
+[scope: 0, var: apiKey]
+[scope: 0, var: response]
+[scope: 0, var: tags]
+[scope: 0, var: res]
+[scope: 0, var: msg]
+[scope: 0, var: eb_res]
+[scope: 1, var: response]
+[scope: 1, var: s3Client]
+[scope: 1, var: getObjectCommand]
+[scope: 1, var: fileContents]
+
+Taint lines:
+1, 2, 3, 6, 7, 8, 29, 30,
+36, 50, 51, 53, 54, 56, 57, 58,
+60, 66, 74, 75, 76, 79, 83, 87,
+88, 102, 106, 112, 120, 121, 124, 127,
+129

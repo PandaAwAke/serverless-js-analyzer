@@ -1,0 +1,7 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: eventbridge]
+[scope: 0, var: response]
+
+Taint lines:
+7, 8, 9, 50, 51

@@ -1,0 +1,15 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDb]
+[scope: 0, var: result]
+[scope: 0, var: getDrinkByOrderId]
+[scope: 0, var: getAllOrderByDrink]
+[scope: 0, var: drink]
+[scope: 0, var: orders]
+[scope: 0, var: duration]
+[scope: 0, var: response]
+
+Taint lines:
+1, 2, 4, 15, 16, 17, 23, 38,
+39, 71, 72, 73, 74, 75, 76, 77,
+78, 79, 83, 84

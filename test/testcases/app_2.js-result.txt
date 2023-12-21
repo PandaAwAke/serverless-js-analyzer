@@ -1,0 +1,21 @@
+Taint objects:
+[scope: 0, var: SSMClient]
+[scope: 0, var: GetParameterCommand]
+[scope: 0, var: S3Client]
+[scope: 0, var: GetObjectCommand]
+[scope: 0, var: ssmClient]
+[scope: 0, var: s3Client]
+[scope: 0, var: api_key_response]
+[scope: 0, var: apiKey]
+[scope: 0, var: response]
+[scope: 0, var: videoTitle]
+[scope: 0, var: videoTitleArray]
+[scope: 1, var: response]
+[scope: 1, var: s3Client]
+[scope: 1, var: getObjectCommand]
+[scope: 1, var: fileContents]
+
+Taint lines:
+1, 2, 4, 10, 26, 27, 33, 47,
+49, 50, 54, 55, 56, 61, 65, 66,
+80, 84, 91, 99, 100, 103, 106, 108

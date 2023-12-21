@@ -1,0 +1,8 @@
+Taint objects:
+[scope: 0, var: EventBridgeClient]
+[scope: 0, var: PutEventsCommand]
+[scope: 0, var: eventBridgeClient]
+[scope: 0, var: putEventCommand]
+
+Taint lines:
+1, 26, 39, 45

@@ -1,0 +1,14 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDB]
+[scope: 0, var: transcribe]
+[scope: 0, var: updateVocabularyResponse]
+[scope: 0, var: createVocabularyResponse]
+[scope: 0, var: putResponse]
+[scope: 1, var: listVocabularyResponse]
+[scope: 1, var: vocabularies]
+
+Taint lines:
+16, 17, 18, 19, 24, 29, 70, 76,
+90, 96, 114, 116, 147, 164, 170, 173,
+174, 177, 178, 179, 183

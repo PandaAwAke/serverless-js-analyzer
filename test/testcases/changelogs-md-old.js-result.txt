@@ -1,0 +1,6 @@
+Taint objects:
+[scope: 0, var: dynamodb]
+
+Taint lines:
+7, 47, 48, 49, 53, 54, 55, 59,
+60, 61, 63

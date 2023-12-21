@@ -1,0 +1,15 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDB]
+[scope: 0, var: s3]
+[scope: 1, var: getVideoResponse]
+[scope: 1, var: captionsObject]
+[scope: 1, var: captionsStr]
+[scope: 1, var: endpointPromise]
+[scope: 1, var: getItemResponse]
+
+Taint lines:
+16, 17, 18, 19, 83, 84, 85, 103,
+104, 108, 141, 247, 249, 256, 264, 285,
+286, 287, 290, 292, 298, 303, 312, 318,
+347

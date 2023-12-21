@@ -1,0 +1,27 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: s3]
+[scope: 0, var: apiGateway]
+[scope: 0, var: cloudwatchlogs]
+[scope: 1, var: result]
+[scope: 1, var: getApiKeysResponse]
+[scope: 1, var: keyId]
+[scope: 1, var: getUsagePlansRequest]
+[scope: 1, var: getUsagePlansResponse]
+[scope: 1, var: deleteUsagePlanKeyRequest]
+[scope: 1, var: deleteApiKeyRequest]
+[scope: 1, var: createApiKeyResponse]
+[scope: 1, var: createUsagePlanResponse]
+[scope: 1, var: createUsagePlanKeyParams]
+[scope: 1, var: createUsagePlanKeyResponse]
+[scope: 1, var: getObjectResponse]
+[scope: 1, var: body]
+
+Taint lines:
+31, 32, 33, 35, 132, 158, 159, 175,
+197, 214, 235, 242, 246, 248, 249, 251,
+252, 255, 256, 261, 264, 265, 266, 271,
+275, 276, 280, 296, 304, 309, 310, 311,
+314, 316, 353, 357, 375, 381, 384, 385,
+387, 392, 395, 396, 401, 456, 458, 460,
+462, 483, 504

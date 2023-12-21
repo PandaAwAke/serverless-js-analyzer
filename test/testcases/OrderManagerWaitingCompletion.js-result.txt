@@ -1,0 +1,6 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: cloudWatch]
+
+Taint lines:
+5, 6, 7, 49

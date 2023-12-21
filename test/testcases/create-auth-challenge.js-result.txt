@@ -1,0 +1,7 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: sns]
+[scope: 1, var: result]
+
+Taint lines:
+8, 9, 49, 50

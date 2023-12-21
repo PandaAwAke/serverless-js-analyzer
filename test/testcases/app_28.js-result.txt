@@ -1,0 +1,9 @@
+Taint objects:
+[scope: 0, var: DynamoDBClient]
+[scope: 0, var: PutItemCommand]
+[scope: 0, var: marshall]
+[scope: 0, var: ddb]
+[scope: 0, var: putItemCommand]
+
+Taint lines:
+6, 7, 8, 13, 15, 22

@@ -1,0 +1,7 @@
+Taint objects:
+[scope: 0, var: DynamoDBDocumentClient]
+[scope: 0, var: ddbClient]
+[scope: 0, var: DynamoDB]
+
+Taint lines:
+1, 2, 21, 23

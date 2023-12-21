@@ -1,0 +1,18 @@
+Taint objects:
+[scope: 0, var: S3Client]
+[scope: 0, var: PutObjectCommand]
+[scope: 0, var: GetObjectCommand]
+[scope: 0, var: SFNClient]
+[scope: 0, var: SendTaskSuccessCommand]
+[scope: 0, var: SendTaskFailureCommand]
+[scope: 0, var: s3Client]
+[scope: 0, var: sfnClient]
+[scope: 1, var: command]
+[scope: 1, var: taskSuccessCommand]
+[scope: 1, var: taskFailureCommand]
+[scope: 1, var: getObjectCommand]
+[scope: 1, var: response]
+
+Taint lines:
+1, 2, 8, 9, 64, 65, 72, 82,
+89, 96, 111, 112, 118

@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDB]
+[scope: 0, var: scanResponse]
+[scope: 0, var: videos]
+[scope: 0, var: responseBody]
+[scope: 0, var: response]
+[scope: 1, var: transcribe]
+
+Taint lines:
+16, 17, 18, 51, 52, 64, 67, 68,
+73, 77, 80, 83, 86, 89, 94, 100,
+101, 106, 111, 120

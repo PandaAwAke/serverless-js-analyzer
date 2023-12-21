@@ -1,0 +1,12 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: ddbGeo]
+[scope: 0, var: ddb]
+[scope: 0, var: config]
+[scope: 0, var: myGeoTableManager]
+[scope: 0, var: result]
+[scope: 0, var: questions]
+
+Taint lines:
+16, 17, 19, 20, 21, 22, 24, 43,
+51, 54, 79, 83

@@ -1,0 +1,10 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: documentClient]
+[scope: 0, var: result]
+[scope: 0, var: incrementCount]
+[scope: 0, var: orderNumber]
+
+Taint lines:
+5, 6, 7, 10, 22, 23, 24, 30,
+31

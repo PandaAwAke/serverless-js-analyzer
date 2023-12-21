@@ -1,0 +1,10 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: stepFunctions]
+[scope: 0, var: sfnResult]
+[scope: 0, var: getQueueSize]
+[scope: 0, var: QueueSize]
+
+Taint lines:
+5, 6, 7, 10, 17, 18, 25, 28,
+29, 36

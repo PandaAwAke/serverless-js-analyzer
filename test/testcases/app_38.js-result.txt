@@ -1,0 +1,8 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: docClient]
+[scope: 0, var: result]
+[scope: 0, var: processMessage]
+
+Taint lines:
+18, 19, 20, 42, 61, 62

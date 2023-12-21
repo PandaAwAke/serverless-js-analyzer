@@ -1,0 +1,12 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: s3]
+[scope: 0, var: Bucket]
+[scope: 0, var: Key]
+[scope: 0, var: results]
+[scope: 0, var: buffer]
+[scope: 0, var: object]
+
+Taint lines:
+7, 8, 9, 25, 26, 29, 30, 33,
+36, 37, 38, 39

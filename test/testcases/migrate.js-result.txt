@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: regionOneClient]
+[scope: 0, var: regionTwoClient]
+[scope: 0, var: regionTwoSns]
+[scope: 1, var: results]
+[scope: 1, var: changelogs]
+[scope: 1, var: moreChangelogs]
+[scope: 1, var: res]
+
+Taint lines:
+2, 4, 5, 6, 9, 20, 24, 25,
+28, 30, 34, 36, 39, 52, 62

@@ -1,0 +1,7 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: dynamoDB]
+[scope: 1, var: result]
+
+Taint lines:
+16, 17, 18, 100

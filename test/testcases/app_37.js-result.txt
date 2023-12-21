@@ -1,0 +1,8 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: docClient]
+[scope: 0, var: result]
+[scope: 0, var: saveToDDB]
+
+Taint lines:
+18, 19, 20, 39, 58, 59

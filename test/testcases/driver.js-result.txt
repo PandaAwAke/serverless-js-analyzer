@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: s3]
+[scope: 1, var: lambda]
+[scope: 2, var: lStatus]
+[scope: 1, var: lmapper]
+[scope: 1, var: lreducer]
+[scope: 1, var: lreducerMgr]
+[scope: 8, var: lambdaCost]
+
+Taint lines:
+11, 15, 46, 90, 114, 147, 148, 149,
+152, 154, 156, 158, 160, 179, 196, 197

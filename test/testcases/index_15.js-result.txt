@@ -1,0 +1,8 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: S3]
+[scope: 1, var: lineReader]
+
+Taint lines:
+3, 4, 61, 62, 65, 75, 129, 154,
+182

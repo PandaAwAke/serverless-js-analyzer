@@ -1,0 +1,9 @@
+Taint objects:
+[scope: 0, var: SNSClient]
+[scope: 0, var: PublishCommand]
+[scope: 0, var: snsclient]
+[scope: 0, var: command]
+[scope: 0, var: handler]
+
+Taint lines:
+4, 6, 17, 33, 42

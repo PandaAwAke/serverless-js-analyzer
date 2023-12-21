@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: stepFunctions]
+[scope: 0, var: documentClient]
+[scope: 0, var: result]
+[scope: 0, var: updateDrinkOrder]
+[scope: 0, var: sfnResult]
+[scope: 0, var: sendTaskSuccess]
+
+Taint lines:
+7, 8, 10, 11, 18, 39, 40, 41,
+45, 51, 52, 53, 64, 76, 83, 84,
+85

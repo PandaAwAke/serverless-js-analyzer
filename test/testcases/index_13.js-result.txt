@@ -1,0 +1,10 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: httpRequest]
+[scope: 0, var: signer]
+[scope: 0, var: options]
+[scope: 0, var: output]
+
+Taint lines:
+12, 25, 63, 64, 65, 66, 67, 69,
+70, 71, 73, 74, 75, 76, 79, 98

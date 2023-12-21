@@ -1,0 +1,6 @@
+Taint objects:
+[scope: 0, var: dynamodb]
+[scope: 0, var: docClient]
+
+Taint lines:
+1, 2, 55

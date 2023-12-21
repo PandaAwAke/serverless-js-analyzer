@@ -1,0 +1,16 @@
+Taint objects:
+[scope: 0, var: AWS]
+[scope: 0, var: AWS]
+[scope: 0, var: s3]
+[scope: 1, var: lambda]
+[scope: 1, var: status]
+[scope: 1, var: bucket]
+[scope: 1, var: key]
+[scope: 2, var: params]
+[scope: 1, var: lparams]
+[scope: 3, var: params]
+
+Taint lines:
+21, 22, 29, 40, 47, 58, 72, 78,
+79, 80, 139, 140, 201, 209, 210, 214,
+259, 263, 265, 272, 286

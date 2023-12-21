@@ -1,0 +1,13 @@
+Taint objects:
+[scope: 0, var: S3]
+[scope: 0, var: GetObjectCommand]
+[scope: 0, var: PutObjectCommand]
+[scope: 0, var: getSignedUrl]
+[scope: 0, var: s3]
+[scope: 0, var: data]
+[scope: 0, var: getObjectCommand]
+[scope: 0, var: url]
+
+Taint lines:
+8, 9, 10, 14, 26, 29, 33, 36,
+41, 46, 52

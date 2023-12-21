@@ -1,0 +1,12 @@
+Taint objects:
+[scope: 0, var: S3Client]
+[scope: 0, var: PutObjectCommand]
+[scope: 0, var: GetObjectCommand]
+[scope: 0, var: s3Client]
+[scope: 0, var: command]
+[scope: 1, var: getObjectCommand]
+[scope: 1, var: response]
+
+Taint lines:
+1, 9, 102, 103, 119, 120, 158, 159,
+165
