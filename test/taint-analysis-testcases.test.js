@@ -1,6 +1,6 @@
 const esprima = require('esprima');
 
-const awsTaintCollector = require('../scripts/collectors/aws-taint-collector');
+const awsTaintCollector = require('../scripts/collectors/require-import-collector');
 const taintAnalysis = require('../scripts/taint-analysis');
 
 test('应该正常找出所有污点-test1', () => {

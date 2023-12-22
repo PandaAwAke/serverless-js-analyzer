@@ -1,6 +1,6 @@
 const esprima = require('esprima');
 
-const awsTaintCollector = require('../scripts/collectors/aws-taint-collector');
+const awsTaintCollector = require('../scripts/collectors/require-import-collector');
 
 test('应该正常找出 aws sources', () => {
   var input = `

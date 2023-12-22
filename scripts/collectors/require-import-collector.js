@@ -15,7 +15,7 @@ const astTraverse = require('../ast-traverse');
  */
 function collectTaintSourceObjects(ast) {
   // 匹配 require 括号内的正则表达式，匹配成功就算 aws 对象
-  const AWS_REQUIRE_REGEX_PATTERNS = [
+  const REQUIRE_IMPORT_REGEX_PATTERNS = [
     '@?aws-sdk.*',
     'dynamodb.*'
   ];
@@ -33,7 +33,7 @@ function collectTaintSourceObjects(ast) {
             if (callee.type === 'Identifier' && callee.name === 'require' &&
                 declaration.init.arguments.length > 0 && declaration.init.arguments[0].type === 'Literal') {
               const requireName = declaration.init.arguments[0].value;
-              for (const regex of AWS_REQUIRE_REGEX_PATTERNS) {
+              for (const regex of REQUIRE_IMPORT_REGEX_PATTERNS) {
                 if (new RegExp(regex).test(requireName.trim())) { // 匹配成功
                   if (declaration.id.type === 'ObjectPattern') {
                     // 类似 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3'); 的语句
@@ -69,7 +69,7 @@ function collectTaintSourceObjects(ast) {
         // 考虑类似 import * as AWS from 'aws-sdk'; 的语句
         if (node.source.type === 'Literal') {
           const importName = node.source.value;
-          for (const regex of AWS_REQUIRE_REGEX_PATTERNS) {
+          for (const regex of REQUIRE_IMPORT_REGEX_PATTERNS) {
             if (new RegExp(regex).test(importName.trim())) {  // 匹配成功
               for (const specifier of node.specifiers) {
                 const identifier = specifier.local;
