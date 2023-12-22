@@ -1,0 +1,59 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.13.6",
+    "aws-iot-device-sdk": "^2.2.6",
+    "aws-sdk": "^2.863.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.9.1",
+    "gmaps-heatmap": "^1.0.2",
+    "moment": "^2.29.1",
+    "ngeohash": "^0.6.3",
+    "nodes2ts": "^2.0.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue2-google-maps": "^0.10.7",
+    "vuetify": "^2.4.6",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.11",
+    "@vue/cli-plugin-eslint": "~4.5.11",
+    "@vue/cli-plugin-router": "^4.5.11",
+    "@vue/cli-service": "~4.5.11",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "vue-cli-plugin-vuetify": "~2.2.2",
+    "vue-template-compiler": "^2.6.12",
+    "vuetify-loader": "^1.7.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

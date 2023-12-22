@@ -1,0 +1,2 @@
+boto3>=1.4.4
+TwitterAPI>=2.4.5

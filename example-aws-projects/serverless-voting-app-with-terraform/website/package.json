@@ -1,0 +1,40 @@
+{
+	"name": "serverless-polling-app",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev --port 8080",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@aws-crypto/sha256-js": "2.0.1",
+		"@aws-sdk/client-cognito-identity": "3.363.0",
+		"@aws-sdk/protocol-http": "3.159.0",
+		"@aws-sdk/signature-v4": "3.159.0",
+		"@aws-sdk/util-format-url": "3.159.0",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "1.0.0-next.38",
+		"@sveltejs/kit": "next",
+		"@tailwindcss/typography": "^0.5.4",
+		"autoprefixer": "^10.4.8",
+		"chart.js": "3.8.2",
+		"daisyui": "2.20.0",
+		"eslint": "^8.21.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"mqtt": "4.3.7",
+		"postcss": "^8.4.31",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^2.7.1",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.49.0",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.7",
+		"vite": "^3.2.7"
+	},
+	"type": "module"
+}
