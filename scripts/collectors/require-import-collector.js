@@ -1,9 +1,17 @@
 const astTraverse = require('../ast-traverse');
 
+
+// 匹配 require 括号内或 import 模块名的正则表达式，匹配成功就算污点对象
+const REQUIRE_IMPORT_REGEX_PATTERNS = [
+  '@?aws-sdk.*',
+  'dynamodb.*'
+];
+
+
 /**
- * 收集所有 Serverless 相关的入口对象 (污点分析的 sources)
+ * 收集所有 require/import 相关的入口对象 (污点分析的 sources)
  * @param {any} node 
- * @returns 所有 aws 污点对象，是一个列表，每个元素是
+ * @returns 所有污点对象，是一个列表，每个元素是
  * {
  *    scopeName: scope 名,
  *    variable: 变量名,
@@ -14,12 +22,6 @@ const astTraverse = require('../ast-traverse');
  * }
  */
 function collectTaintSourceObjects(ast) {
-  // 匹配 require 括号内的正则表达式，匹配成功就算 aws 对象
-  const REQUIRE_IMPORT_REGEX_PATTERNS = [
-    '@?aws-sdk.*',
-    'dynamodb.*'
-  ];
-
   const taintSourceIdentifiers = [];
 
   astTraverse.traverseAst(ast, {
