@@ -1,11 +1,15 @@
-const astTraverse = require('../ast-traverse');
+const fs = require('fs');
 
+const astTraverse = require('./ast-traverse');
 
-// 匹配 require 括号内或 import 模块名的正则表达式，匹配成功就算污点对象
-const REQUIRE_IMPORT_REGEX_PATTERNS = [
-  '@?aws-sdk.*',
-  'dynamodb.*'
-];
+const taintSourceFilePath = './settings/taint-source-modules';
+
+function readTaintSourceFile() {
+  if (fs.existsSync(taintSourceFilePath)) {
+    return fs.readFileSync(taintSourceFilePath, 'utf-8').split('\n').map(s => s.trim()).filter(s => s.length > 0);
+  }
+  return [];
+}
 
 
 /**
@@ -24,6 +28,8 @@ const REQUIRE_IMPORT_REGEX_PATTERNS = [
 function collectTaintSourceObjects(ast) {
   const taintSourceIdentifiers = [];
 
+  const moduleRegexPatterns = readTaintSourceFile();
+
   astTraverse.traverseAst(ast, {
     enter: function(node, parent, currentScopeName, currentScope, scopeChain) {
       if (node.type === 'VariableDeclaration') {
@@ -35,7 +41,7 @@ function collectTaintSourceObjects(ast) {
             if (callee.type === 'Identifier' && callee.name === 'require' &&
                 declaration.init.arguments.length > 0 && declaration.init.arguments[0].type === 'Literal') {
               const requireName = declaration.init.arguments[0].value;
-              for (const regex of REQUIRE_IMPORT_REGEX_PATTERNS) {
+              for (const regex of moduleRegexPatterns) {
                 if (new RegExp(regex).test(requireName.trim())) { // 匹配成功
                   if (declaration.id.type === 'ObjectPattern') {
                     // 类似 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3'); 的语句
@@ -71,7 +77,7 @@ function collectTaintSourceObjects(ast) {
         // 考虑类似 import * as AWS from 'aws-sdk'; 的语句
         if (node.source.type === 'Literal') {
           const importName = node.source.value;
-          for (const regex of REQUIRE_IMPORT_REGEX_PATTERNS) {
+          for (const regex of moduleRegexPatterns) {
             if (new RegExp(regex).test(importName.trim())) {  // 匹配成功
               for (const specifier of node.specifiers) {
                 const identifier = specifier.local;

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const esprima = require('esprima');
 
-const awsTaintCollector = require('../scripts/collectors/require-import-collector');
+const awsTaintCollector = require('../scripts/require-import-collector');
 const taintAnalysis = require('../scripts/taint-analysis');
 const output = require('../scripts/output');
 

@@ -1,9 +1,9 @@
 /**
- * 此文件用于找出一个项目目录下的所有 Serverless 后端 js 文件
+ * 此文件用于找出一个项目目录下的所有后端 js 文件
  * 
  * 有如下规则：
  * 1. 不检查 TypeScript 文件，文件后缀名必须为 .js
- * 2. 根据 serverless-ignore 文件进行过滤，不考虑其中定义的文件名规则
+ * 2. 根据 js-ignore 文件进行过滤，不考虑其中定义的文件名规则
  * 3. 不考虑以 "." 开头的文件名
  * 4. 不考虑不能被 esprima 解析的文件名
  */
@@ -12,16 +12,16 @@ const fs = require('fs');
 const path = require('path');
 const esprima = require('esprima');
 
-const ignoreFilePath = 'serverless-ignore';
+const ignoreFilePath = './settings/js-ignore';
 
-function readServerlessIgnoreFile() {
+function readJsIgnoreFile() {
   if (fs.existsSync(ignoreFilePath)) {
     return fs.readFileSync(ignoreFilePath, 'utf-8').split('\n').map(s => s.trim()).filter(s => s.length > 0);
   }
   return [];
 }
 
-const ignoreRules = readServerlessIgnoreFile();
+const ignoreRules = readJsIgnoreFile();
 
 /**
  * 检测文件名是否符合忽略规则

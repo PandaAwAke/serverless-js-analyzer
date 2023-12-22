@@ -1,47 +1,93 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div id="app">
+    <div class="width: 100%;">
+      <el-container>
+        <el-header height="55px" class="header">
+          <!-- 标题栏左半边 -->
+          <div>
+            <span>
+              <a href="/" style="line-height: 30px; vertical-align: middle;">
+                <el-icon size="30px" color="white"><HomeFilled /></el-icon>
+              </a>
+            </span>
+            <span class="header-text">
+              JavaScript 污点分析工具
+            </span>
+          </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+          <!-- 标题栏右半边 -->
+          <div class="header-right">
+            
+          </div>
+        </el-header>
+        
+        <!-- Container -->
+        <el-container>
+
+          <el-main style="padding: 12px;">
+            
+              <!-- 路由出口 -->
+              <!-- 路由匹配到的组件将渲染在这里 -->
+              <router-view></router-view>
+            
+          </el-main>
+        </el-container>
+      </el-container>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
+
+<script lang="ts" setup>
+  import { ref } from 'vue';
+
+</script>
+
+
+<script lang="ts">
+
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+
+</script>
+
+
 <style scoped>
-header {
-  line-height: 1.5;
+
+.router-link-active {
+  text-decoration: none;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #324057;
 }
+
+.header-text {
+  margin-left: 16px;
+  letter-spacing: 2px;
+  font-size: 24px;
+  color: white;
+  line-height: 55px;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+
 </style>
