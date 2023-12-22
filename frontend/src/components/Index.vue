@@ -34,33 +34,35 @@
     <el-divider />
     <h2>工具使用</h2>
     <h3>第一步：选择待分析项目文件夹</h3>
-    工具会自动找出其中所有的合法 JavaScript 文件，将它们复制到被选择文件的父目录下的 output 文件夹中
+    工具会自动找出其中所有的合法 JavaScript 文件，将它们复制到选择的项目目录下的 output 文件夹中
     <div style="margin: 6px auto; padding: 12px;">
       <el-form>
-        <input ref="fileInput" type="file" hidden
-          @change="selectProjectDirectory((<HTMLInputElement> $refs.fileInput).files![0])"
-          webkitdirectory />
-        <el-button type="primary" size="large" style="font-size: 16px;"
-          @click="(<HTMLInputElement> $refs.fileInput).click();">选择项目文件夹
-        </el-button>
+        <el-input v-model="projectDirectory" placeholder="请输入项目文件夹的绝对路径"></el-input>
       </el-form>
     </div>
     
     <h3>第二步：进行分析</h3>
+    <div>
+      <el-button type="primary" size="large" style="font-size: 16px;" @click="analyze">执行分析</el-button>
+    </div>
 
     <h3>第三步：查看分析结果</h3>
+    分析成功后，在选择的项目目录下的 output 文件夹中查看输出结果
 
   </div>
 </template>
 
 <script lang="ts" setup>
-
+  import axios from "axios";
+  import { ElMessageBox } from 'element-plus';
 </script>
 
 <script lang="ts">
   export default {
     data() {
       return {
+        projectDirectory: '',
+        baseUrl: 'http://localhost:3000',
       }
     },
 
@@ -69,8 +71,26 @@
     },
 
     methods: {
-      selectProjectDirectory(dir: File) {
-        console.log(dir)
+      analyze() {
+        if (this.projectDirectory && this.projectDirectory.length > 0) {
+          axios.get(`${this.baseUrl}/analyze`, {params: {
+              dir: this.projectDirectory
+            }})
+            .then(response => {
+              ElMessageBox.alert('分析成功！', '提示', {
+                confirmButtonText: 'OK'
+              });
+            })
+            .catch(error => {
+              ElMessageBox.alert('分析失败！', '提示', {
+                confirmButtonText: 'OK'
+              });
+            });
+        } else {
+          ElMessageBox.alert('请输入项目文件夹', '提示', {
+            confirmButtonText: 'OK'
+          });
+        }
       },
     },
 

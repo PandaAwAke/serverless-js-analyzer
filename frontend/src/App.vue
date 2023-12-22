@@ -23,13 +23,10 @@
         
         <!-- Container -->
         <el-container>
-
           <el-main style="padding: 12px;">
-            
               <!-- 路由出口 -->
               <!-- 路由匹配到的组件将渲染在这里 -->
               <router-view></router-view>
-            
           </el-main>
         </el-container>
       </el-container>
@@ -39,8 +36,6 @@
 
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
-
 </script>
 
 
