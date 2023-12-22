@@ -2,6 +2,8 @@
   <div class="container">
     <h1>JavaScript 第三方模块污点分析工具</h1>
     本系统可为 JavaScript 项目进行第三方模块污点分析。
+    <br>
+    工具配置：
     <ol>
       <li>
         在项目的 ./backend/settings/js-ignore 设定您希望不要检查的 js 文件名规则
@@ -40,6 +42,8 @@ li {
 
 .container {
   margin: 0 10px;
+  font-size: 20px;
+  line-height: 36px;
 }
 
 </style>
