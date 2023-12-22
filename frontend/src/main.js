@@ -10,7 +10,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import Index from './components/Index.vue';
 
 const routes = [
-  { path: '/', component: Index, meta: { title: 'JavaScript 污点分析工具' } },
+  { path: '/', component: Index, meta: { title: 'JavaScript 第三方模块污点分析工具' } },
 ]
 
 const router = VueRouter.createRouter({
