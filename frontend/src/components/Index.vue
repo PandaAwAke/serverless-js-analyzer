@@ -1,7 +1,17 @@
 <template>
   <div class="container">
-    <h1>JavaScript 第三方模块污点分析工具</h1>
+    <h2>JavaScript 第三方模块污点分析工具</h2>
     本系统可为 JavaScript 项目进行第三方模块污点分析。
+    <br>
+    <h3>工具功能</h3>
+    <ul>
+      <li>
+        由用户定义一些关注的第三方库，例如 @aws-sdk 下的各种功能库，这些库是本工具关注的“污点”
+      </li>
+      <li>
+        由用户定义一些关注的第三方库，例如 @aws-sdk 下的各种功能库，这些库是本工具关注的“污点”
+      </li>
+    </ul>
     <br>
     工具配置：
     <ol>
